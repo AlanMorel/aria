@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/home/Home';
+import Links from './components/navigation/Links';
 import Post from './components/post/Post';
 import News from './components/news/News';
 import Rankings from './components/rankings/Rankings';
@@ -11,18 +12,6 @@ import Forum from './components/forum/Forum';
 import Vote from './components/vote/Vote';
 
 import './App.css';
-
-const Links = () => (
-  <nav>
-    <Link to="/">Home</Link>
-    <Link to={{pathname: '/rankings'}}>Rankings</Link>
-    <Link to={{pathname: '/news'}}>News</Link>
-    <Link to={{pathname: '/join'}}>Join</Link>
-    <Link to={{pathname: '/downloads'}}>Downloads</Link>
-    <Link to={{pathname: '/forum'}}>Forum</Link>
-    <Link to={{pathname: '/vote'}}>Vote</Link>
-  </nav>
-)
 
 const App = () => (
   <Router>
