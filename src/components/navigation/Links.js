@@ -5,13 +5,16 @@ class Links extends React.Component {
   render() {
     return (
       <nav>
-        <Link to="/">Home</Link>
-        <Link to={{pathname: '/rankings'}}>Rankings</Link>
-        <Link to={{pathname: '/news'}}>News</Link>
-        <Link to={{pathname: '/join'}}>Join</Link>
-        <Link to={{pathname: '/downloads'}}>Downloads</Link>
-        <Link to={{pathname: '/forum'}}>Forum</Link>
-        <Link to={{pathname: '/vote'}}>Vote</Link>
+        <ul>
+          <li><Link to="/">Aria</Link></li>
+          <li><Link to={{pathname: '/about'}}>About</Link></li>
+          <li><Link to={{pathname: '/news'}}>News</Link></li>
+          <li><Link to={{pathname: '/rankings'}}>Rankings</Link></li>
+          <li><Link to={{pathname: '/join'}}>Join</Link></li>
+          <li><Link to={{pathname: '/downloads'}}>Downloads</Link></li>
+          <li><Link to={{pathname: '/forum'}}>Forum</Link></li>
+          <li><Link to={{pathname: '/vote'}}>Vote</Link></li>
+        </ul>
       </nav>
     );
   }
