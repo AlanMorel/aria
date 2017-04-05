@@ -13,6 +13,6 @@ Config.facebook_username = "aria";
 Config.twitter_handle = "@aria"
 Config.discord_server_id = 0;
 
-Config.base_url = "http://jsonplaceholder.typicode.com/";
+Config.base_url = "http://austin-adams.us/mock/";
 
 module.exports = Config;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Config from '../../Config';
 
 class Links extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class Links extends React.Component {
           <li><Link to={{pathname: '/rankings'}}>Rankings</Link></li>
           <li><Link to={{pathname: '/join'}}>Join</Link></li>
           <li><Link to={{pathname: '/downloads'}}>Downloads</Link></li>
-          <li><Link to={{pathname: '/forum'}}>Forum</Link></li>
+          <li><Link to={{pathname: Config.forum_link}}>Forum</Link></li>
           <li><Link to={{pathname: '/vote'}}>Vote</Link></li>
         </ul>
       </nav>

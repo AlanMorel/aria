@@ -6,7 +6,7 @@ class News extends React.Component {
   componentDidMount() {
     console.log(Config);
     Axios
-      .get(Config.base_url + `posts`)
+      .get(Config.base_url + `posts/1.json`)
       .then(response => {
             const posts = response.data
             console.log(posts);
