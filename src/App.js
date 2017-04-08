@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/home/Home';
 import About from './components/about/About';
-import Header from './components/navigation/Header';
+import Header from './components/navigation/header/Header';
 import Post from './components/post/Post';
 import News from './components/news/News';
 import Rankings from './components/rankings/Rankings';
@@ -11,7 +11,7 @@ import Join from './components/join/Join';
 import Downloads from './components/downloads/Downloads';
 import Vote from './components/vote/Vote';
 
-import './App.css';
+import './stylesheets/App.css';
 
 const App = () => (
   <Router>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Config from '../../Config';
+import Config from '../../../Config';
 
 class Links extends React.Component {
     render() {
       return (
-        <nav>
+        <nav className="links">
           <ul>
             <li><Link to="/">Aria</Link></li>
             <li><Link to={{pathname: '/about'}}>About</Link></li>
