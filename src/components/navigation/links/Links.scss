@@ -1,3 +1,20 @@
 .active {
-  font-weight: bold;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.links {
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 0.9rem;
+
+    a {
+        padding: 1rem;
+        display: inline-block;
+        transition: background-color 0.25s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
 }
