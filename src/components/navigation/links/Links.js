@@ -13,7 +13,7 @@ class Links extends React.Component {
             <li><NavLink activeClassName="active" to={{pathname: '/rankings'}}>Rankings</NavLink></li>
             <li><NavLink activeClassName="active" to={{pathname: '/join'}}>Join</NavLink></li>
             <li><NavLink activeClassName="active" to={{pathname: '/downloads'}}>Downloads</NavLink></li>
-            <li><NavLink activeClassName="active" to={{pathname: Config.forum_link}}>Forum</NavLink></li>
+            <li><a href={Config.forum_link}>Forum</a></li>
             <li><NavLink activeClassName="active" to={{pathname: '/vote'}}>Vote</NavLink></li>
           </ul>
         </nav>
