@@ -7,7 +7,7 @@ class Home extends React.Component {
       return (
           <div>
               <Banner title={Config.server_name}></Banner>
-              <main></main>
+              <main class="home"></main>
           </div>
       );
     }

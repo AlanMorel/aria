@@ -11,10 +11,14 @@ class Newslist extends React.Component {
         var posts = this.props.posts.map(function(post) {
             return (
                 <div key={post.id}>
-                    <li>{post.author}</li>
+                    <h2>{post.title}</h2>
+                    <div>{post.author}</div>
+
                 </div>
             );
         });
+
+        console.log(posts);
 
         return (
             <section>

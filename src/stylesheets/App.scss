@@ -6,7 +6,10 @@
 @import "../components/navigation/header/Header.scss";
 @import "../components/navigation/banner/Banner.scss";
 
+@import "../components/navigation/links/Links.scss";
+@import "../components/news/News.scss";
+
 main {
-  width: $body-width;
-  margin: auto;
+    width: $body-width;
+    margin: auto;
 }

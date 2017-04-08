@@ -7,7 +7,7 @@ class About extends React.Component {
         return (
             <div>
                 <Banner title="About"></Banner>
-                <main>{Config.about_content}</main>
+                <main class="about">{Config.about_content}</main>
             </div>
         );
     }

@@ -6,7 +6,7 @@ class Downloads extends React.Component {
       return (
           <div>
               <Banner title="Downloads"></Banner>
-              <main></main>
+              <main class="downloads"></main>
           </div>
       );
     }

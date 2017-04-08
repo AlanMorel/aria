@@ -14,8 +14,8 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url + `posts/1.json`).then(response => {
-            this.setState({posts: response.data});
+        Axios.get(Config.base_url + `news`).then(response => {
+            this.setState({posts: response.data.data});
         });
     }
 
@@ -23,7 +23,7 @@ class News extends React.Component {
         return (
             <div>
                 <Banner title="News"></Banner>
-                <main>
+                <main class="news">
                   <Newslist posts={this.state.posts}/>
                 </main>
             </div>

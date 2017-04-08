@@ -6,7 +6,7 @@ class Vote extends React.Component {
       return (
           <div>
               <Banner title="Vote"></Banner>
-              <main></main>
+              <main class="vote"></main>
           </div>
       );
     }

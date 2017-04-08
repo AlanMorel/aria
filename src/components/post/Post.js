@@ -6,7 +6,7 @@ class Post extends React.Component {
       return (
           <div>
               <Banner title="Post"></Banner>
-              <main></main>
+              <main class="post"></main>
           </div>
       );
     }
