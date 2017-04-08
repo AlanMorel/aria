@@ -1,5 +1,7 @@
 var Config = {};
 
+Config.server_name = "Aria";
+
 Config.setup_download_link = "https://www.google.com/";
 Config.client_download_link = "https://www.google.com/";
 
