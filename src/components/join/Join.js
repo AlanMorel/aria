@@ -6,7 +6,7 @@ class Join extends React.Component {
         return (
             <div>
                 <Banner title="Join"></Banner>
-                <div></div>
+                <main></main>
             </div>
         );
     }

@@ -6,6 +6,7 @@ class Home extends React.Component {
       return (
           <div>
               <Banner title="Homepage"></Banner>
+              <main></main>
           </div>
       );
     }
