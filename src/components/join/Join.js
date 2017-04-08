@@ -1,8 +1,14 @@
 import React from 'react';
+import Banner from '../navigation/banner/Banner';
 
 class Join extends React.Component {
     render() {
-        return <h1>Join</h1>;
+        return (
+            <div>
+                <Banner title="Join"></Banner>
+                <div></div>
+            </div>
+        );
     }
 }
 

@@ -1,8 +1,13 @@
 import React from 'react';
+import Banner from '../navigation/banner/Banner';
 
 class Downloads extends React.Component {
     render() {
-        return <h1>Downloads</h1>;
+      return (
+          <div>
+              <Banner title="Downloads"></Banner>
+          </div>
+      );
     }
 }
 

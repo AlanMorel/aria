@@ -1,0 +1,9 @@
+html, body {
+  margin: 0; }
+
+li {
+  display: inline; }
+
+ul {
+  margin: 0;
+  padding: 0; }

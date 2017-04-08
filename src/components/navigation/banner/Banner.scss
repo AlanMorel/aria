@@ -1,0 +1,19 @@
+@import "../../../stylesheets/Variables.scss";
+
+.banner {
+   position: relative;
+   max-height: 15rem;
+   overflow: hidden;
+
+   img {
+        width: 100%;
+   }
+
+   h1 {
+      position: absolute;
+      font-family: $secondary-font;
+      font-weight: bold;
+      top: 10rem;
+      left: 5rem;
+   }
+}

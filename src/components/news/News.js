@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import Config from '../../Config';
 import Newslist from '../../components/news/newslist/Newslist';
+import Banner from '../navigation/banner/Banner';
 
 class News extends React.Component {
 
@@ -21,7 +22,7 @@ class News extends React.Component {
     render() {
         return (
             <div>
-                <h1>News</h1>
+                <Banner title="News"></Banner>
                 <Newslist posts={this.state.posts}/>
             </div>
         );
