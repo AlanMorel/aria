@@ -6,7 +6,7 @@ class Rankings extends React.Component {
       return (
           <div>
               <Banner title="Rankings"></Banner>
-              <main class="rankings"></main>
+              <main className="rankings"></main>
           </div>
       );
     }

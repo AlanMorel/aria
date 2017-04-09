@@ -18,8 +18,6 @@ class Newslist extends React.Component {
             );
         });
 
-        console.log(posts);
-
         return (
             <section>
                 {posts}
