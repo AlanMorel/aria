@@ -5,7 +5,7 @@ class Downloads extends React.Component {
     render() {
       return (
           <div>
-              <Banner title="Downloads"></Banner>
+              <Banner title="Downloads" subtitle="Get the files you need to get in-game!"></Banner>
               <main className="downloads"></main>
           </div>
       );

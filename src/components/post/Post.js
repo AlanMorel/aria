@@ -26,7 +26,7 @@ class Post extends React.Component {
         var date = new Date(post.created_at).toLocaleDateString("en-us", options);
         return (
             <div>
-                <Banner title="Post"></Banner>
+                <Banner title="Post" subtitle=""></Banner>
                 <main className="post">
                   <div>
                       <h2>{post.title}</h2>

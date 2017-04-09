@@ -6,27 +6,33 @@
     overflow: hidden;
     margin-bottom: 1rem;
 
-    .banner-title {
-        padding: 0.5rem 0;
+    .banner-heading {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: inline-block;
+        padding: 1rem 0;
+        font-family: $secondary-font;
     }
 
     img {
         width: 100%;
     }
 
-    div {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        display: inline-block;
+    h1,
+    h2 {
+        width: $body-width;
+        margin: auto;
     }
 
     h1 {
         font-size: 3rem;
-        font-family: $secondary-font;
         font-weight: 700;
-        width: $body-width;
-        margin: auto;
+    }
+
+    h2 {
+        font-size: 1rem;
+        font-weight: 400;
     }
 }

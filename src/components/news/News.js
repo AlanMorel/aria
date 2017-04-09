@@ -22,9 +22,9 @@ class News extends React.Component {
     render() {
         return (
             <div>
-                <Banner title="News"></Banner>
+                <Banner title="News" subtitle="Stay up-to-date with messages from the team."></Banner>
                 <main className="news">
-                  <Newslist posts={this.state.posts}/>
+                    <Newslist posts={this.state.posts}/>
                 </main>
             </div>
         );

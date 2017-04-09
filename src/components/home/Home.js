@@ -6,7 +6,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <Banner title={Config.server_name}></Banner>
+                <Banner title={Config.server_name} subtitle=""></Banner>
                 <main className="home"></main>
             </div>
         );
