@@ -7,9 +7,9 @@ class Newslist extends React.Component {
 
     render() {
 
-        if (!this.props.posts.length) {
-            return <div></div>;
-        }
+          if (!this.props.posts || !this.props.posts.length) {
+              return <div></div>;
+          }
 
           var posts = this.props.posts.map(function(post) {
           var date = new Date(post.created_at).toLocaleDateString("en-us", options);

@@ -15,7 +15,7 @@ class News extends React.Component {
 
     componentDidMount() {
         Axios.get(Config.base_url + `news`).then(response => {
-            this.setState({posts: response.data.data});
+            this.setState({posts: response.data});
         });
     }
 
