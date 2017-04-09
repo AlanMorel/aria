@@ -1,9 +1,16 @@
 @import "../../stylesheets/Variables.scss";
 
 .news {
+    h2 {
+        font-size: 1.5rem;
+        font-family: $secondary-font;
+    }
 
-  h2 {
-    font-family: $primary-font;
-    font-size: 2rem;
-  }
+    .meta-data {
+        font-family: $primary-font;
+    }
+
+    .content {
+        font-family: $primary-font;
+    }
 }

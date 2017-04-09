@@ -4,12 +4,12 @@ import Config from '../../Config';
 
 class Home extends React.Component {
     render() {
-      return (
-          <div>
-              <Banner title={Config.server_name}></Banner>
-              <main class="home"></main>
-          </div>
-      );
+        return (
+            <div>
+                <Banner title={Config.server_name}></Banner>
+                <main className="home"></main>
+            </div>
+        );
     }
 }
 
