@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Config from '../../Config';
 import Banner from '../navigation/banner/Banner';
 
-var options = { month: "short", day: "numeric" };
+var options = { month: "long", day: "numeric" };
 
 class Post extends React.Component {
 
