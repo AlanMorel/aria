@@ -5,7 +5,7 @@ class Banner extends React.Component {
         return (
             <div className="banner">
               <img src="/images/background.png" alt=""/>
-              <div>
+              <div className="banner-title">
                 <h1>{this.props.title}</h1>
               </div>
             </div>

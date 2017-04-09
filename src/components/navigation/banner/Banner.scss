@@ -4,6 +4,11 @@
     position: relative;
     max-height: 15rem;
     overflow: hidden;
+    margin-bottom: 1rem;
+
+    .banner-title {
+        padding: 0.5rem 0;
+    }
 
     img {
         width: 100%;
@@ -11,7 +16,7 @@
 
     div {
         position: absolute;
-        top: 10rem;
+        bottom: 0;
         left: 0;
         width: 100%;
         display: inline-block;

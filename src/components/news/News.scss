@@ -8,9 +8,15 @@
 
     .meta-data {
         font-family: $primary-font;
+        font-size: 1rem;
+        margin: 1rem 0;
     }
 
     .content {
         font-family: $primary-font;
+    }
+
+    .newslist-post {
+        margin-bottom: 2rem;
     }
 }
