@@ -18,4 +18,6 @@ Config.discord_server_id = 0;
 
 Config.base_url = "http://laravel.austin-adams.us/";
 
+Config.post_type = ['General', 'Announcement', 'Update', 'Event', 'Development', 'Community', 'News'];
+
 module.exports = Config;

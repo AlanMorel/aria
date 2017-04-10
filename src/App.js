@@ -18,14 +18,16 @@ const App = () => (
     <div>
       <Header/>
       <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/news" component={News}/>
-      <Route path="/post/:id" component={Post} />
+      <Route exact path="/about" component={About}/>
+      <Route exact path="/news" component={News}/>
+      <Route exact path="/news/:param1" component={News}/>
+      <Route exact path="/news/:param1/:param2" component={News}/>
       <Route exact path="/post" component={Post}/>
-      <Route path="/rankings" component={Rankings}/>
-      <Route path="/join" component={Join}/>
-      <Route path="/downloads" component={Downloads}/>
-      <Route path="/vote" component={Vote}/>
+      <Route exact path="/post/:id" component={Post} />
+      <Route exact path="/rankings" component={Rankings}/>
+      <Route exact path="/join" component={Join}/>
+      <Route exact path="/downloads" component={Downloads}/>
+      <Route exact path="/vote" component={Vote}/>
     </div>
   </Router>
 );

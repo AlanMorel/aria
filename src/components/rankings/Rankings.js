@@ -7,7 +7,7 @@ class Rankings extends React.Component {
     render() {
         return (
             <div>
-                <Banner title="Rankings" subtitle={"See who's who in " + Config.server_name}></Banner>
+                <Banner title="Rankings" subtitle={"See who's who in " + Config.server_name + "."}></Banner>
                 <main className="rankings"></main>
             </div>
         );
