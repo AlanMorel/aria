@@ -36,6 +36,8 @@ class Rankings extends React.Component {
         }
 
         Axios.get(Config.base_url + `rankings` + append).then(response => {
+          console.log(response.data);
+
             this.setState({players: response.data});
         });
     }
@@ -49,13 +51,12 @@ class Rankings extends React.Component {
             );
         });
 
-        console.log(players);
-
         return (
             <div>
                 <Banner title="Rankings" subtitle={"See who's who in " + Config.server_name + "."}></Banner>
-                <main className="rankings"></main>
-                <section>{players}</section>
+                <main className="rankings">
+                  <section>{players}</section>
+                </main>
             </div>
         );
     }
