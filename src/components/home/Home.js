@@ -24,7 +24,9 @@ class Home extends React.Component {
         return (
             <div>
                 <Banner title={Config.server_name} subtitle=""></Banner>
-                <main className="home"></main>
+                <main className="home">
+                  
+                </main>
             </div>
         );
     }
