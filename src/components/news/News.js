@@ -1,8 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
 import Config from '../../Config';
-import Newslist from '../../components/news/newslist/Newslist';
+
 import Banner from '../navigation/banner/Banner';
+import Newslist from '../../components/news/newslist/Newslist';
 
 class News extends React.Component {
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Banner from '../navigation/banner/Banner';
 
 class Vote extends React.Component {

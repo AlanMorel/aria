@@ -1,5 +1,6 @@
 import React from 'react';
 import Config from '../../Config';
+
 import Banner from '../navigation/banner/Banner';
 
 class About extends React.Component {

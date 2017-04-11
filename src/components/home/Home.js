@@ -1,6 +1,7 @@
 import React from 'react';
-import Banner from '../navigation/banner/Banner';
 import Config from '../../Config';
+
+import Banner from '../navigation/banner/Banner';
 
 class Home extends React.Component {
     render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Links from '../../../components/navigation/links/Links';
 
 class Header extends React.Component {

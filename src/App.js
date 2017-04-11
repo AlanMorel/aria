@@ -26,6 +26,9 @@ const App = () => (
       <Route exact path="/post" component={Post}/>
       <Route exact path="/post/:id" component={Post} />
       <Route exact path="/rankings" component={Rankings}/>
+      <Route exact path="/rankings/:param1" component={Rankings}/>
+      <Route exact path="/rankings/:param1/:param2" component={Rankings}/>
+      <Route exact path="/rankings/:param1/:param2/:param3" component={Rankings}/>
       <Route exact path="/join" component={Join}/>
       <Route exact path="/downloads" component={Downloads}/>
       <Route exact path="/vote" component={Vote}/>
