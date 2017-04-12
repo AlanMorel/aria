@@ -17,6 +17,7 @@ import './stylesheets/App.css';
 const App = () => (
   <Router>
     <div>
+      <Join/>
       <Header/>
       <Route exact path="/" component={Home}/>
       <Route exact path="/about" component={About}/>
