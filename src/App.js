@@ -2,13 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/home/Home';
+import Login from './components/login/Login';
+import Join from './components/join/Join';
 import About from './components/about/About';
 import Header from './components/navigation/header/Header';
 import Footer from './components/footer/Footer';
 import Post from './components/post/Post';
 import News from './components/news/News';
 import Rankings from './components/rankings/Rankings';
-import Join from './components/join/Join';
 import Downloads from './components/downloads/Downloads';
 import Vote from './components/vote/Vote';
 
@@ -18,6 +19,7 @@ const App = () => (
   <Router>
     <div>
       <Join/>
+      <Login/>
       <Header/>
       <Route exact path="/" component={Home}/>
       <Route exact path="/about" component={About}/>
@@ -30,7 +32,6 @@ const App = () => (
       <Route exact path="/rankings/:param1" component={Rankings}/>
       <Route exact path="/rankings/:param1/:param2" component={Rankings}/>
       <Route exact path="/rankings/:param1/:param2/:param3" component={Rankings}/>
-      <Route exact path="/join" component={Join}/>
       <Route exact path="/downloads" component={Downloads}/>
       <Route exact path="/vote" component={Vote}/>
       <Footer/>

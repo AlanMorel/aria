@@ -2,14 +2,14 @@ import React from 'react';
 import Axios from 'axios';
 import Config from '../../Config';
 
-class Join extends React.Component {
+class Login extends React.Component {
 
-    register(e) {
+    login(e) {
         e.preventDefault();
 
         var form = new FormData(this.refs.form);
 
-        Axios.post(Config.base_url + "join", form).then((response) => {
+        Axios.post(Config.base_url + "login", form).then((response) => {
             console.log(response.data);
 
             if (response.data.success){
@@ -30,14 +30,8 @@ class Join extends React.Component {
     render() {
         return (
             <div>
-                <main className="join">
-                    <form onSubmit={ this.register.bind(this) } ref="form">
-
-                        <label htmlFor="name">Name</label>
-                        <input className="text" name="full_name" type="text"/>
-
-                        <label htmlFor="email">Email</label>
-                        <input className="text" name="email" type="email"/>
+                <main className="login">
+                    <form onSubmit={ this.login.bind(this) } ref="form">
 
                         <label htmlFor="username">Username</label>
                         <input className="text" name="username" type="text"/>
@@ -45,13 +39,7 @@ class Join extends React.Component {
                         <label htmlFor="password">Password</label>
                         <input className="password" name="password" type="password"/>
 
-                        <label htmlFor="confirm">Confirm</label>
-                        <input className="confirm" name="password_confirmation" type="password"/>
-
-                        <label htmlFor="repatcha">Repatcha</label>
-                        <input className="repatcha" name="g-recaptcha-response" type="text"/>
-
-                        <input className="button" type="submit" value="Join"/>
+                        <input className="button" type="submit" value="Login"/>
                     </form>
                 </main>
             </div>
@@ -59,4 +47,4 @@ class Join extends React.Component {
     }
 }
 
-export default Join;
+export default Login;
