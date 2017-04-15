@@ -29,7 +29,7 @@ class Login extends React.Component {
     }
     render() {
 
-        if (!this.props.show){
+        if (!this.props.open){
             return (<div></div>);
         }
 
@@ -38,9 +38,7 @@ class Login extends React.Component {
                 <main className="login">
                     <form onSubmit={ this.login.bind(this) } ref="form">
 
-                        <div onClick={ this.props.close }>
-                            Close
-                        </div>
+                        <div onClick={ this.props.close }>Close</div>
 
                         <label htmlFor="username">Username</label>
                         <input className="text" name="username" type="text"/>

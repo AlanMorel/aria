@@ -30,7 +30,7 @@ class Join extends React.Component {
 
     render() {
 
-        if (!this.props.show){
+        if (!this.props.open){
             return (<div></div>);
         }
 
@@ -39,9 +39,7 @@ class Join extends React.Component {
                 <main className="join">
                     <form onSubmit={ this.register.bind(this) } ref="form">
 
-                        <div onClick={ this.props.close }>
-                            Close
-                        </div>
+                        <div onClick={ this.props.close }>Close</div>
 
                         <div>
                             <label htmlFor="name">Name</label>
