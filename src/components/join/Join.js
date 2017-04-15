@@ -39,6 +39,7 @@ class Join extends React.Component {
                 <main className="join">
                     <form onSubmit={ this.register.bind(this) } ref="form">
 
+                        <div className="prompt-title">Join {Config.server_name}!</div>
                         <div onClick={ this.props.close }>Close</div>
 
                         <div>
@@ -47,8 +48,8 @@ class Join extends React.Component {
                         </div>
 
                         <div>
-                        <label htmlFor="email">Email</label>
-                        <input className="text" name="email" type="email"/>
+                            <label htmlFor="email">Email</label>
+                            <input className="text" name="email" type="email"/>
                         </div>
 
                         <div>
