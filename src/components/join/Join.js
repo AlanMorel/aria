@@ -4,6 +4,13 @@ import Config from '../../Config';
 
 class Join extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            errors: []
+        };
+    }
+
     register(e) {
         e.preventDefault();
 
@@ -21,6 +28,8 @@ class Join extends React.Component {
                     errors.push(response.data.error[key][0]);
                 }
 
+                this.setState({errors: errors});
+
                 console.log(errors);
                 console.log("Failure");
             }
@@ -34,13 +43,17 @@ class Join extends React.Component {
             return (<div></div>);
         }
 
+        if (this.state.errors.length){
+            var alert = (<div className="alert">Incorrect password!</div>);
+        }
+
         return (
             <div>
                 <main className="join">
                     <form onSubmit={ this.register.bind(this) } ref="form">
 
-                        <div className="prompt-title">Join {Config.server_name}!</div>
-                        <div onClick={ this.props.close }>Close</div>
+                        <div className="prompt-title">Join {Config.server_name}</div>
+                        <div className="prompt-close" onClick={ this.props.close }>x</div>
 
                         <div>
                             <label htmlFor="name">Name</label>
@@ -71,6 +84,8 @@ class Join extends React.Component {
                             <label htmlFor="repatcha">Repatcha</label>
                             <input className="repatcha" name="g-recaptcha-response" type="text"/>
                         </div>
+
+                        {alert}
 
                         <div>
                             <input className="button" type="submit" value="Join"/>

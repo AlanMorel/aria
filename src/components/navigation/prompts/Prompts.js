@@ -19,22 +19,18 @@ class Prompts extends React.Component {
     }
 
     openJoin() {
-        console.log("openingJoin");
         this.setState({showJoin: true});
     }
 
     closeJoin() {
-        console.log("closingJoin");
         this.setState({showJoin: false});
     }
 
     openLogin() {
-        console.log("openLogin");
         this.setState({showLogin: true});
     }
 
     closeLogin() {
-        console.log("closeLogin");
         this.setState({showLogin: false});
     }
 

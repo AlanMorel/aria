@@ -24,19 +24,56 @@
         padding: 1rem;
         background-color: #52b07f;
         color: white;
+        border-radius: 4px;
+        border: solid 2px #45946b;
     }
 
     label {
         display: block;
+
+        div & {
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
     }
 
     input {
         width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: $secondary-font;
+        font-size: 1rem;
+    }
+
+    input[type=submit] {
+        background-color: #3498db;
+        color: white;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border: solid 1px #2980b9;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #2980b9;
     }
 
     .prompt-title {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
+        font-family: $secondary-font;
+    }
+
+    .prompt-close {
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0 0.5rem;
     }
 
     .prompt-button {
@@ -50,6 +87,20 @@
 
         &:hover {
             background-color: #3db4ea;
+        }
+    }
+
+    .alert {
+        padding: 0.5rem;
+        color: black;
+        background-color: #ffb900;
+        margin-top: 1rem;
+        border-radius: 4px;
+    }
+
+    .button {
+        div & {
+            margin-top: 1rem;
         }
     }
 }

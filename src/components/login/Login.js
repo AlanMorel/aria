@@ -4,6 +4,13 @@ import Config from '../../Config';
 
 class Login extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            errors: []
+        };
+    }
+
     login(e) {
         e.preventDefault();
 
@@ -21,6 +28,8 @@ class Login extends React.Component {
                     errors.push(response.data.error[key][0]);
                 }
 
+                this.setState({errors: errors});
+
                 console.log(errors);
                 console.log("Failure");
             }
@@ -33,18 +42,29 @@ class Login extends React.Component {
             return (<div></div>);
         }
 
+        if (this.state.errors.length){
+            var alert = (<div className="alert">Incorrect password!</div>);
+        }
+
         return (
             <div>
                 <main className="login">
                     <form onSubmit={ this.login.bind(this) } ref="form">
 
-                        <div onClick={ this.props.close }>Close</div>
+                        <div className="prompt-title">Login</div>
+                        <div className="prompt-close" onClick={ this.props.close }>x</div>
 
-                        <label htmlFor="username">Username</label>
-                        <input className="text" name="username" type="text"/>
+                        <div>
+                            <label htmlFor="username">Username</label>
+                            <input className="text" name="username" type="text"/>
+                        </div>
 
-                        <label htmlFor="password">Password</label>
-                        <input className="password" name="password" type="password"/>
+                        <div>
+                            <label htmlFor="password">Password</label>
+                            <input className="password" name="password" type="password"/>
+                        </div>
+
+                        {alert}
 
                         <input className="button" type="submit" value="Login"/>
                     </form>
