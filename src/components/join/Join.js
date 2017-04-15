@@ -27,31 +27,55 @@ class Join extends React.Component {
         });
 
     }
+
     render() {
+
+        if (!this.props.show){
+            return (<div></div>);
+        }
+
         return (
             <div>
                 <main className="join">
                     <form onSubmit={ this.register.bind(this) } ref="form">
 
-                        <label htmlFor="name">Name</label>
-                        <input className="text" name="full_name" type="text"/>
+                        <div onClick={ this.props.close }>
+                            Close
+                        </div>
 
+                        <div>
+                            <label htmlFor="name">Name</label>
+                            <input className="text" name="full_name" type="text"/>
+                        </div>
+
+                        <div>
                         <label htmlFor="email">Email</label>
                         <input className="text" name="email" type="email"/>
+                        </div>
 
-                        <label htmlFor="username">Username</label>
-                        <input className="text" name="username" type="text"/>
+                        <div>
+                            <label htmlFor="username">Username</label>
+                            <input className="text" name="username" type="text"/>
+                        </div>
 
-                        <label htmlFor="password">Password</label>
-                        <input className="password" name="password" type="password"/>
+                        <div>
+                            <label htmlFor="password">Password</label>
+                            <input className="password" name="password" type="password"/>
+                        </div>
 
-                        <label htmlFor="confirm">Confirm</label>
-                        <input className="confirm" name="password_confirmation" type="password"/>
+                        <div>
+                            <label htmlFor="confirm">Confirm</label>
+                            <input className="confirm" name="password_confirmation" type="password"/>
+                        </div>
 
-                        <label htmlFor="repatcha">Repatcha</label>
-                        <input className="repatcha" name="g-recaptcha-response" type="text"/>
+                        <div>
+                            <label htmlFor="repatcha">Repatcha</label>
+                            <input className="repatcha" name="g-recaptcha-response" type="text"/>
+                        </div>
 
-                        <input className="button" type="submit" value="Join"/>
+                        <div>
+                            <input className="button" type="submit" value="Join"/>
+                        </div>
                     </form>
                 </main>
             </div>
