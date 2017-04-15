@@ -40,11 +40,15 @@ class Join extends React.Component {
     render() {
 
         if (!this.props.open){
-            return (<div></div>);
+            return (
+                <div></div>
+            );
         }
 
         if (this.state.errors.length){
-            var alert = (<div className="alert">Incorrect password!</div>);
+            var alert = (
+                <div className="alert">{this.state.errors[0]}</div>
+            );
         }
 
         return (
@@ -52,8 +56,8 @@ class Join extends React.Component {
                 <main className="join">
                     <form onSubmit={ this.register.bind(this) } ref="form">
 
+                        <div className="prompt-close" onClick={ this.props.close }>&#10006;</div>
                         <div className="prompt-title">Join {Config.server_name}</div>
-                        <div className="prompt-close" onClick={ this.props.close }>x</div>
 
                         <div>
                             <label htmlFor="name">Name</label>

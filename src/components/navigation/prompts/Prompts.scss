@@ -70,10 +70,15 @@
     .prompt-close {
         position: absolute;
         top: 0;
-        right: 1rem;
+        right: 0;
         font-size: 2rem;
         cursor: pointer;
         padding: 0 0.5rem;
+        border-bottom-left-radius: 4px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
     }
 
     .prompt-button {
