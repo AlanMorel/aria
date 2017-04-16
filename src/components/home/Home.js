@@ -3,6 +3,8 @@ import Axios from 'axios';
 import Config from '../../Config';
 
 import Banner from '../navigation/banner/Banner';
+import Discord from '../social/discord/Discord';
+import Twitter from '../social/twitter/Twitter';
 
 class Home extends React.Component {
 
@@ -25,7 +27,9 @@ class Home extends React.Component {
             <div>
                 <Banner title={Config.server_name} subtitle=""></Banner>
                 <main className="home">
-                  
+                  <Discord></Discord>
+                  <Twitter></Twitter>
+
                 </main>
             </div>
         );

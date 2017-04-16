@@ -14,10 +14,31 @@ Config.drop_rate = 1;
 
 Config.facebook_username = "aria";
 Config.twitter_handle = "@aria"
-Config.discord_server_id = 0;
+
+Config.discord = {
+    base_url: 'https://discordapp.com/widget',
+    server_id: '204832571467628545',
+    theme: 'light',
+    width: 350,
+    height: 500,
+    allowtransparency: true,
+    frameborder: 0
+}
+
+Config.twitter = {
+    handle: 'PlayMapleOrion'
+}
 
 Config.base_url = "http://laravel.austin-adams.us/";
 
-Config.post_type = ['General', 'Announcement', 'Update', 'Event', 'Development', 'Community', 'News'];
+Config.post_type = [
+    'General',
+    'Announcement',
+    'Update',
+    'Event',
+    'Development',
+    'Community',
+    'News'
+];
 
 module.exports = Config;
