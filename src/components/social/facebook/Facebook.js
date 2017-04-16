@@ -6,7 +6,7 @@ class Facebook extends React.Component {
     render() {
         var styles = {
             border: 'none',
-            overflow: 'hidden',
+            overflow: 'hidden'
         };
 
         var url = Config.facebook.base_url;

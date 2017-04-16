@@ -8,7 +8,7 @@ class About extends React.Component {
         return (
             <div>
                 <Banner title="About" subtitle={"What's this " + Config.server_name + " thing?"}></Banner>
-                <main className="about">{Config.about_content}</main>
+                <main className="about">This is where the about content goes.</main>
             </div>
         );
     }
