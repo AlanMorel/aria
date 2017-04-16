@@ -29,6 +29,20 @@ Config.twitter = {
     handle: 'PlayMapleOrion'
 }
 
+Config.facebook = {
+    base_url: 'https://www.facebook.com/',
+    username: 'PlayMapleOrion',
+    width: 340,
+    height: 500,
+    small_header: false,
+    adapt_container_width: true,
+    hide_cover: false,
+    show_facepile: true,
+    scrolling: 'no',
+    frameborder: 0,
+    allowtransparency: true
+}
+
 Config.base_url = "http://laravel.austin-adams.us/";
 
 Config.post_type = [

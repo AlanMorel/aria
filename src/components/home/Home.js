@@ -5,6 +5,7 @@ import Config from '../../Config';
 import Banner from '../navigation/banner/Banner';
 import Discord from '../social/discord/Discord';
 import Twitter from '../social/twitter/Twitter';
+import Facebook from '../social/facebook/Facebook';
 
 class Home extends React.Component {
 
@@ -29,6 +30,7 @@ class Home extends React.Component {
                 <main className="home">
                   <Discord></Discord>
                   <Twitter></Twitter>
+                  <Facebook></Facebook>
 
                 </main>
             </div>
