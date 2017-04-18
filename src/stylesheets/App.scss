@@ -23,6 +23,11 @@ main {
     font-family: $primary-font;
 }
 
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
 iframe {
     border: none;
 }

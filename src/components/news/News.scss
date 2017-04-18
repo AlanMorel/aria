@@ -1,17 +1,42 @@
 @import "../../stylesheets/Variables.scss";
 
 .news {
+
     h2 {
         font-size: 1.5rem;
         font-family: $secondary-font;
+        margin: 0.5rem 0;
     }
 
     .meta-data {
         font-size: 1rem;
-        margin: 1rem 0;
+        margin: 0.5rem 0;
+    }
+
+    .content {
+        font-size: 0.9rem;
     }
 
     .newslist-post {
         margin-bottom: 2rem;
+        border: solid 1px lightgray;
+    }
+
+    .newslist-image {
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+        overflow-x: hidden;
+
+        img {
+            width: 110%;
+        }
+    }
+
+    .newslist-information {
+        width: 70%;
+        display: inline-block;
+        padding: 0 1rem;
+        box-sizing: border-box;
     }
 }
