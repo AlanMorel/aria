@@ -24,12 +24,13 @@
         border-bottom-right-radius: 4px;
 
         li {
-            display: inline;
-            margin-right: 1.5rem;
+            display: inline-block;
+            margin-right: 3rem;
         }
     }
 
-    .server-online, .server-offline {
+    .server-offline,
+    .server-online {
         font-family: $primary-font;
         color: white;
         font-size: 0.75rem;
@@ -45,19 +46,38 @@
     .server-offline {
         background-color: #bb5654;
     }
+
+    .icon {
+        width: 10%;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 0.5rem;
+    }
+
+    .description {
+        width: 90%;
+        display: inline-block;
+        box-sizing: border-box;
+        padding-left: 2rem;
+    }
 }
 
 .loading,
 .offline,
 .online {
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem 1.5rem;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
 
 .loading {
+    font-size: 1.25rem;
+    padding-left: 5rem;
     color: black;
-    border-top: solid 1rem #aaa;
+    background-color: #ddd;
+    border-top: solid 1rem #ddd;
+    border-radius: 4px;
+    min-height: 5rem;
 }
 
 .online {

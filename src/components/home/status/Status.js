@@ -27,12 +27,12 @@ class Status extends React.Component {
 
         var isServerOnline = this.state.data.online_count > 0;
 
-        isServerOnline = false;
+        isServerOnline = true;
 
         var title = Config.server_name + (isServerOnline ? " is online" : " is offline");
 
         var statuses = this.state.data.server_status.map(function(server) {
-            if (server.status){
+            if (server.status || true){
                 var span = <span className="server-online">Online</span>
             } else {
                 var span = <span className="server-offline">Offline</span>
@@ -45,8 +45,13 @@ class Status extends React.Component {
         return (
             <div className="status">
                 <div className={(isServerOnline ? "online" : "offline")}>
-                    <div className="title">{title}</div>
-                    <div className="online-count">{this.state.data.online_count} Players Online</div>
+                    <div className="icon">
+                        <img src={"/images/" + (isServerOnline ? "online" : "offline") + ".png"} alt=""/>
+                    </div>
+                    <div className="description">
+                        <div className="title">{title}</div>
+                        <div className="online-count">{this.state.data.online_count} players online</div>
+                    </div>
                 </div>
                 <ul className="server-statuses">
                     {statuses}
