@@ -9,6 +9,10 @@
     font-size: 0.9rem;
     font-family: $primary-font;
 
+    li {
+        display: inline;
+    }
+    
     a {
         padding: 1rem;
         display: inline-block;

@@ -11,6 +11,8 @@
 @import "../components/social/discord/Discord.scss";
 
 @import "../components/home/Home.scss";
+@import "../components/home/status/Status.scss";
+
 @import "../components/join/Join.scss";
 @import "../components/login/Login.scss";
 @import "../components/news/News.scss";
@@ -21,13 +23,4 @@ main {
     width: $body-width;
     margin: auto;
     font-family: $primary-font;
-}
-
-img {
-    width: 100%;
-    vertical-align: middle;
-}
-
-iframe {
-    border: none;
 }
