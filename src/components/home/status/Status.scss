@@ -14,39 +14,6 @@
         padding: 0.5rem 0;
     }
 
-    .server-statuses {
-        padding: 1rem;
-        font-family: $secondary-font;
-        font-size: 1rem;
-        color: black;
-        background-color: #e8e8e8;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-
-        li {
-            display: inline-block;
-            margin-right: 3rem;
-        }
-    }
-
-    .server-offline,
-    .server-online {
-        font-family: $primary-font;
-        color: white;
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
-        border-radius: 4px;
-        margin-left: 0.5rem;
-    }
-
-    .server-online {
-        background-color: #0d8e23;
-    }
-
-    .server-offline {
-        background-color: #bb5654;
-    }
-
     .icon {
         width: 10%;
         display: inline-block;
@@ -71,13 +38,9 @@
 }
 
 .loading {
-    font-size: 1.25rem;
-    padding-left: 5rem;
     color: black;
     background-color: #ddd;
-    border-top: solid 1rem #ddd;
-    border-radius: 4px;
-    min-height: 5rem;
+    border-top: solid 1rem #aaa;
 }
 
 .online {
@@ -88,4 +51,37 @@
 .offline {
     background-color: #ea706d;
     border-top: solid 1rem #bb5654;
+}
+
+.server-statuses {
+    padding: 1rem;
+    font-family: $secondary-font;
+    font-size: 1rem;
+    color: black;
+    background-color: #e8e8e8;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    li {
+        display: inline-block;
+        margin-right: 3rem;
+    }
+
+    .server-offline,
+    .server-online {
+        font-family: $primary-font;
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        margin-left: 0.5rem;
+    }
+
+    .server-online {
+        background-color: #0d8e23;
+    }
+
+    .server-offline {
+        background-color: #bb5654;
+    }
 }

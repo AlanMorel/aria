@@ -18,21 +18,29 @@ class Status extends React.Component {
         });
     }
 
-    render() {
+    getStatus() {
         if (!this.state.data.server_status) {
-            return (
-                <div className="status loading">Loading server status...</div>
-            );
+            return "loading";
         }
-
         var isServerOnline = this.state.data.online_count > 0;
 
-        isServerOnline = true;
+        return isServerOnline ? "online" : "offline";
+    }
 
-        var title = Config.server_name + (isServerOnline ? " is online" : " is offline");
+    getTitle() {
+        if (!this.state.data.server_status) {
+            return "Loading server status...";
+        }
 
-        var statuses = this.state.data.server_status.map(function(server) {
-            if (server.status || true){
+        return Config.server_name + (this.state.data.online_count > 0 ? " is online" : " is offline");
+    }
+
+    getStatuses() {
+        if (!this.state.data.server_status) {
+            return;
+        }
+        return this.state.data.server_status.map(function(server) {
+            if (server.status){
                 var span = <span className="server-online">Online</span>
             } else {
                 var span = <span className="server-offline">Offline</span>
@@ -42,22 +50,35 @@ class Status extends React.Component {
             )
         });
 
+    }
+
+    getOnlineCount() {
+        if (!this.state.data.server_status){
+            return;
+        }
+        return this.state.data.online_count + " players online";
+    }
+
+    render() {
+
+        var title = this.getTitle();
+        var status = this.getStatus();
+        var statuses = this.getStatuses();
+        var onlineCount = this.getOnlineCount();
+
         return (
             <div className="status">
-                <div className={(isServerOnline ? "online" : "offline")}>
+                <div className={status}>
                     <div className="icon">
-                        <img src={"/images/" + (isServerOnline ? "online" : "offline") + ".png"} alt=""/>
+                        <img src={"/images/" + status + ".png"} alt=""/>
                     </div>
                     <div className="description">
                         <div className="title">{title}</div>
-                        <div className="online-count">{this.state.data.online_count} players online</div>
+                        <div className="online-count">{onlineCount}</div>
                     </div>
                 </div>
-                <ul className="server-statuses">
-                    {statuses}
-                </ul>
+                <ul className="server-statuses">{statuses}</ul>
             </div>
-
         );
     }
 }
