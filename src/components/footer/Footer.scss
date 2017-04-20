@@ -1,3 +1,11 @@
+@import "../../stylesheets/Variables.scss";
+
 footer {
-  width: 100%;
+    margin-top: 5rem;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    color: white;
+    font-family: $primary-font;
+    padding: 2rem 0;
 }

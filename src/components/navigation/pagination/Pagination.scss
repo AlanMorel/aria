@@ -5,11 +5,11 @@
     text-align: center;
 
     .current {
-        background-color: #7789ff;
+        background-color: #408789;
     }
 
     ul {
-        background-color: #c2cbff;
+        background-color: #8dc79e;
         display: inline-block;
     }
 
@@ -23,9 +23,10 @@
         padding: 1rem 1.5rem;
         min-width: 3rem;
         display: inline-block;
+        color: white;
 
         &:not(.current):hover {
-            background-color: #a8b5ff;
+            background-color: #5fa795;
         }
     }
 }
