@@ -20,8 +20,8 @@ class News extends React.Component {
         return (
             <div>
                 <Banner title={title} subtitle="Stay up-to-date with messages from the team."></Banner>
-                <main>
-                    <Newslist pagination="true"/>
+                <main className="news">
+                    <Newslist pagination={true}/>
                 </main>
             </div>
         );

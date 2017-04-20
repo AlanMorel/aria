@@ -53,7 +53,7 @@ class Newslist extends React.Component {
 
     render() {
 
-        if (this.props.pagination == true) {
+        if (this.props.pagination) {
             var prev = this.state.data.prev;
             var current = this.state.data.current;
             var next = this.state.data.next;
@@ -83,7 +83,7 @@ class Newslist extends React.Component {
         });
 
         return (
-            <section className="news">
+            <section className="newslist">
                 {posts}
                 {pagination}
             </section>

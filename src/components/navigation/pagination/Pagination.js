@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Config from '../../../Config';
 
 class Pagination extends React.Component {
     render() {
