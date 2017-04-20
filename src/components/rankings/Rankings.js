@@ -11,7 +11,9 @@ class Rankings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {},
+            data: {
+                data: []
+            },
             loaded: false
         };
     }
@@ -52,10 +54,6 @@ class Rankings extends React.Component {
     }
 
     render() {
-
-        if (!this.state.loaded){
-            return <div></div>;
-        }
 
         var players = this.state.data.data.map(function(player) {
             return (

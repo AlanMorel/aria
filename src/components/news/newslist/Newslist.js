@@ -6,6 +6,7 @@ var options = { month: "short", day: "numeric" };
 class Newslist extends React.Component {
 
     render() {
+
           var posts = this.props.posts.map(function(post) {
               var date = new Date(post.created_at).toLocaleDateString("en-us", options);
               var content = post.content.substring(0, 250) + "...";

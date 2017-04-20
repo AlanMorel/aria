@@ -11,8 +11,9 @@ class News extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {},
-            loaded: false
+            data: {
+                data: []
+            }
         };
     }
 
@@ -22,8 +23,7 @@ class News extends React.Component {
             //TODO check for success
             console.log(response.data);
             this.setState({
-                data: response.data,
-                loaded: true
+                data: response.data
             });
         });
     }
@@ -58,10 +58,6 @@ class News extends React.Component {
     }
 
     render() {
-
-        if (!this.state.loaded){
-            return <div></div>;
-        }
 
         var title = this.getTitle();
         var posts = this.state.data.data;

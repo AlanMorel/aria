@@ -11,8 +11,7 @@ class Post extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            post: {},
-            loaded: false
+            post: {}
         };
     }
 
@@ -20,8 +19,7 @@ class Post extends React.Component {
         var id = this.props.match.params.id;
         Axios.get(Config.base_url + `post/` + id).then(response => {
             this.setState({
-                post: response.data,
-                loaded: true
+                post: response.data
             });
         });
     }
