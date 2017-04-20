@@ -4,39 +4,47 @@ import Config from '../../Config';
 
 import Banner from '../navigation/banner/Banner';
 import Newslist from '../../components/news/newslist/Newslist';
+import Pagination from '../../components/navigation/pagination/Pagination';
 
 class News extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            posts: {}
+            data: {}
         };
     }
 
     componentDidMount() {
+
+        Axios.get(Config.base_url + `news` + this.getResource()).then(response => {
+            //TODO check for success
+            console.log(response.data);
+            this.setState({data: response.data});
+        });
+    }
+
+    getResource() {
         var param1 = this.props.match.params.param1;
         var param2 = this.props.match.params.param2;
 
         console.log(param1, param2);
 
-        var append = "";
+        var resource = "";
 
         if (param1) {
-            append += "/" + param1;
+            resource += "/" + param1;
         }
 
         if (param2) {
-            append += "/" + param2;
+            resource += "/" + param2;
         }
 
-        Axios.get(Config.base_url + `news` + append).then(response => {
-            //TODO check for success
-            this.setState({posts: response.data.data});
-        });
+        return resource;
+
     }
 
-    getBannerTitle() {
+    getTitle() {
         var title = this.props.match.params.param1;
         if (title == null || !isNaN(title)) {
             return "News";
@@ -46,11 +54,19 @@ class News extends React.Component {
     }
 
     render() {
+        var title = this.getTitle();
+        var posts = this.state.data.data;
+        var prev = this.state.data.prev;
+        var current = this.state.data.current;
+        var next = this.state.data.next;
+        var last = this.state.data.last;
+
         return (
             <div>
-                <Banner title={this.getBannerTitle()} subtitle="Stay up-to-date with messages from the team."></Banner>
+                <Banner title={title} subtitle="Stay up-to-date with messages from the team."></Banner>
                 <main className="news">
-                    <Newslist posts={this.state.posts}/>
+                    <Newslist posts={posts}/>
+                    <Pagination type="news" prev={prev} current={current} next={next} last={last}/>
                 </main>
             </div>
         );

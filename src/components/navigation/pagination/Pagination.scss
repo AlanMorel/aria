@@ -1,0 +1,28 @@
+@import "../../../stylesheets/Variables.scss";
+
+.pagination {
+
+    margin-bottom: 2rem;
+    text-align: center;
+
+    .current {
+        background-color: #7789ff;
+    }
+
+    ul {
+        background-color: #c2cbff;
+        display: inline-block;
+    }
+
+    li {
+        display: inline;
+        text-align: center;
+        width: 100%;
+    }
+
+    a {
+        padding: 1rem 1.5rem;
+        min-width: 3rem;
+        display: inline-block;
+    }
+}
