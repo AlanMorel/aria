@@ -7,8 +7,11 @@ class Status extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {},
-            loaded: false
+            data: {
+                online_count: 0,
+                server_status: []
+            },
+            fetching: true
         };
     }
 
@@ -17,22 +20,21 @@ class Status extends React.Component {
             console.log(response.data);
             this.setState({
                 data: response.data,
-                loaded: true
+                fetching: false
             });
         });
     }
 
     getStatus() {
-        if (!this.state.loaded) {
+        if (this.state.fetching) {
             return "loading";
         }
-        var isServerOnline = this.state.data.online_count > 0;
 
-        return isServerOnline ? "online" : "offline";
+        return this.state.data.online_count > 0 ? "online" : "offline";
     }
 
     getTitle() {
-        if (!this.state.loaded) {
+        if (this.state.fetching) {
             return "Loading server status...";
         }
 
@@ -40,9 +42,6 @@ class Status extends React.Component {
     }
 
     getStatuses() {
-        if (!this.state.loaded) {
-            return;
-        }
         return this.state.data.server_status.map(function(server) {
             if (server.status){
                 var span = <span className="server-online">Online</span>
@@ -57,7 +56,7 @@ class Status extends React.Component {
     }
 
     getOnlineCount() {
-        if (!this.state.loaded){
+        if (this.state.fetching){
             return;
         }
         return this.state.data.online_count + " players online";
