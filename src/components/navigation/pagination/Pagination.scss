@@ -1,7 +1,6 @@
 @import "../../../stylesheets/Variables.scss";
 
 .pagination {
-
     margin-bottom: 2rem;
     text-align: center;
 
@@ -24,5 +23,9 @@
         padding: 1rem 1.5rem;
         min-width: 3rem;
         display: inline-block;
+
+        &:not(.current):hover {
+            background-color: #a8b5ff;
+        }
     }
 }

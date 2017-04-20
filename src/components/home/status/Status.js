@@ -7,19 +7,23 @@ class Status extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {}
+            data: {},
+            loaded: false
         };
     }
 
     componentDidMount() {
         Axios.get(Config.base_url + `server`).then(response => {
             console.log(response.data);
-            this.setState({data: response.data});
+            this.setState({
+                data: response.data,
+                loaded: true
+            });
         });
     }
 
     getStatus() {
-        if (!this.state.data.server_status) {
+        if (!this.state.loaded) {
             return "loading";
         }
         var isServerOnline = this.state.data.online_count > 0;
@@ -28,7 +32,7 @@ class Status extends React.Component {
     }
 
     getTitle() {
-        if (!this.state.data.server_status) {
+        if (!this.state.loaded) {
             return "Loading server status...";
         }
 
@@ -36,7 +40,7 @@ class Status extends React.Component {
     }
 
     getStatuses() {
-        if (!this.state.data.server_status) {
+        if (!this.state.loaded) {
             return;
         }
         return this.state.data.server_status.map(function(server) {
@@ -53,7 +57,7 @@ class Status extends React.Component {
     }
 
     getOnlineCount() {
-        if (!this.state.data.server_status){
+        if (!this.state.loaded){
             return;
         }
         return this.state.data.online_count + " players online";

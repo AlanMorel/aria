@@ -11,7 +11,8 @@ class Rankings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: {},
+            loaded: false
         };
     }
 
@@ -19,7 +20,10 @@ class Rankings extends React.Component {
         Axios.get(Config.base_url + `rankings` + this.getResource()).then(response => {
           console.log(response.data);
 
-            this.setState({data: response.data});
+            this.setState({
+                data: response.data,
+                loaded: true
+            });
         });
     }
 
@@ -48,9 +52,8 @@ class Rankings extends React.Component {
     }
 
     render() {
-        console.log(this.state.data.length);
 
-        if (this.state.data.length < 1){
+        if (!this.state.loaded){
             return <div></div>;
         }
 

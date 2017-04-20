@@ -11,7 +11,8 @@ class News extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {}
+            data: {},
+            loaded: false
         };
     }
 
@@ -20,7 +21,10 @@ class News extends React.Component {
         Axios.get(Config.base_url + `news` + this.getResource()).then(response => {
             //TODO check for success
             console.log(response.data);
-            this.setState({data: response.data});
+            this.setState({
+                data: response.data,
+                loaded: true
+            });
         });
     }
 
@@ -54,6 +58,11 @@ class News extends React.Component {
     }
 
     render() {
+
+        if (!this.state.loaded){
+            return <div></div>;
+        }
+
         var title = this.getTitle();
         var posts = this.state.data.data;
         var prev = this.state.data.prev;
