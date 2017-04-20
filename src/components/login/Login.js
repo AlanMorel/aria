@@ -38,7 +38,6 @@ class Login extends React.Component {
     }
 
     render() {
-
         if (!this.props.open){
             return (
                 <div></div>

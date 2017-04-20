@@ -20,7 +20,6 @@ class Rankings extends React.Component {
 
     componentDidMount() {
         Axios.get(Config.base_url + `rankings` + this.getResource()).then(response => {
-          console.log(response.data);
 
             this.setState({
                 data: response.data,

@@ -18,10 +18,7 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-
         Axios.get(Config.base_url + `news` + this.getResource()).then(response => {
-            //TODO check for success
-            console.log(response.data);
             this.setState({
                 data: response.data
             });
@@ -45,7 +42,6 @@ class News extends React.Component {
         }
 
         return resource;
-
     }
 
     getTitle() {
@@ -58,7 +54,6 @@ class News extends React.Component {
     }
 
     render() {
-
         var title = this.getTitle();
         var posts = this.state.data.data;
         var prev = this.state.data.prev;
