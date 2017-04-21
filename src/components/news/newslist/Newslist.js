@@ -73,8 +73,7 @@ class Newslist extends React.Component {
                         </div>
                         <div className="newslist-information">
                             <h2>{post.title}</h2>
-                            <h3 className="meta-data">Written by {post.author}
-                                on {date}</h3>
+                            <h3 className="meta-data">Written by {post.author} on {date}</h3>
                             <div className="content">{content}</div>
                         </div>
                     </div>

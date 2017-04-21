@@ -1,0 +1,19 @@
+@import "../../../stylesheets/Variables.scss";
+
+$icon-size: 20px;
+
+.alert {
+    background-color: #424caf;
+    color: white;
+    padding: 0.75rem 0;
+
+    .announcement {
+        background-image: url("/images/announcement.png");
+        background-size: $icon-size $icon-size;
+        display: inline-block;
+        width: $icon-size;
+        height: $icon-size;
+        vertical-align: top;
+        margin: 0 0.5rem;
+    }
+}

@@ -15,7 +15,9 @@ class Home extends React.Component {
             <div>
                 <Banner title={Config.server_name} subtitle=""></Banner>
                 <main className="home">
+                    <h1>Latest News and Events</h1>
                     <Newslist pagination={false}/>
+                    <h1>Server Status</h1>
                     <Status/>
                     <Discord/>
                     <Twitter/>

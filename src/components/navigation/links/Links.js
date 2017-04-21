@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Config from '../../../Config';
+import Alert from '../../../components/navigation/alert/Alert';
 
 class Links extends React.Component {
     render() {
@@ -15,6 +16,7 @@ class Links extends React.Component {
             <li><a href={Config.forum_link}>Forum</a></li>
             <li><NavLink activeClassName="active" to={{pathname: '/vote'}}>Vote</NavLink></li>
           </ul>
+          <Alert></Alert>
         </nav>
       );
     }

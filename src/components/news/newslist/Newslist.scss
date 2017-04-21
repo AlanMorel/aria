@@ -20,6 +20,10 @@
     .newslist-post {
         margin-bottom: 2rem;
         border: solid 1px lightgray;
+
+        &:hover {
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+        }
     }
 
     .newslist-image {
