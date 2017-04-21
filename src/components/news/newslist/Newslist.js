@@ -23,6 +23,7 @@ class Newslist extends React.Component {
 
     componentDidMount() {
         Axios.get(Config.base_url + `news` + this.getResource()).then(response => {
+            console.log(response.data);
             this.setState({data: response.data});
         });
     }
@@ -63,13 +64,14 @@ class Newslist extends React.Component {
 
         var posts = this.state.data.data.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
-            var content = post.content.substring(0, 250) + "...";
+            var content = post.content.substring(0, 400) + "...";
 
             return (
                 <NavLink to={"post/" + post.id} key={post.id}>
                     <div className="newslist-post">
                         <div className="newslist-image">
                             <img src="/images/background.png" alt=""/>
+                            <div className={"type " + post.type.toLowerCase()}>{post.type}</div>
                         </div>
                         <div className="newslist-information">
                             <h2>{post.title}</h2>

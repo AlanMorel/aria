@@ -2,6 +2,28 @@
 
 .newslist {
 
+    .type {
+        padding: 0.5rem;
+        color: white;
+        border-bottom: solid 0.25rem rgba(0, 0, 0, 0.35);
+    }
+
+    .general {
+        background-color: #b20047;
+    }
+
+    .development {
+        background-color: #ff4c4c;
+    }
+
+    .event {
+        background-color: #7519ff;
+    }
+
+    .community {
+        background-color: #2e5ce6;
+    }
+
     h2 {
         font-size: 1.5rem;
         font-family: $secondary-font;
@@ -9,8 +31,10 @@
     }
 
     .meta-data {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        font-family: $secondary-font;
         margin: 0.5rem 0;
+        font-weight: 500;
     }
 
     .content {
@@ -19,10 +43,16 @@
 
     .newslist-post {
         margin-bottom: 2rem;
-        border: solid 1px lightgray;
+        border: solid 1px #cbd0ff;
+        background-color: #fcfbff;
 
         &:hover {
             box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+            background-color: #f6f7ff;
+
+            h2 {
+                color: #384092;
+            }
         }
     }
 
