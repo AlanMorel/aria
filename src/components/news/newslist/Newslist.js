@@ -30,12 +30,14 @@ class Newslist extends React.Component {
 
     getResource() {
 
-        if (!this.props.match) {
+        console.log(this.props.params);
+
+        if (!this.props.params) {
             return "";
         }
 
-        var param1 = this.props.match.params.param1;
-        var param2 = this.props.match.params.param2;
+        var param1 = this.props.params.param1;
+        var param2 = this.props.params.param2;
 
         console.log(param1, param2);
 

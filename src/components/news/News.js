@@ -16,12 +16,13 @@ class News extends React.Component {
 
     render() {
         var title = this.getTitle();
+        var params = this.props.match.params;
 
         return (
             <div>
                 <Banner title={title} subtitle="Stay up-to-date with messages from the team."></Banner>
                 <main className="news">
-                    <Newslist pagination={true}/>
+                    <Newslist params={params} pagination={true}/>
                 </main>
             </div>
         );

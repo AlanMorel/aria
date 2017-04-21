@@ -10,13 +10,16 @@ import Twitter from '../social/twitter/Twitter';
 import Facebook from '../social/facebook/Facebook';
 
 class Home extends React.Component {
+
     render() {
+        var params = this.props.match.params;
+
         return (
             <div>
                 <Banner title={Config.server_name} subtitle=""></Banner>
                 <main className="home">
                     <h1>Latest News and Events</h1>
-                    <Newslist pagination={false}/>
+                    <Newslist params={params} pagination={false}/>
                     <h1>Server Status</h1>
                     <Status/>
                     <Discord/>
