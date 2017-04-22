@@ -66,7 +66,7 @@ class Newslist extends React.Component {
 
         var posts = this.state.data.data.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
-            var content = post.content.substring(0, 300) + "...";
+            var content = post.content.substring(0, 250) + "...";
 
             return (
                 <NavLink to={"post/" + post.id} key={post.id}>
@@ -79,6 +79,7 @@ class Newslist extends React.Component {
                             <h2>{post.title}</h2>
                             <h3 className="meta-data">Written by {post.author} on {date}</h3>
                             <div className="content">{content}</div>
+                            <div className="read-me">Read more</div>
                         </div>
                     </div>
                 </NavLink>
