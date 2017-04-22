@@ -43,14 +43,9 @@ class Status extends React.Component {
 
     getStatuses() {
         return this.state.data.server_status.map(function(server) {
-            var span;
-            if (server.status){
-                span = <span className="server-online">Online</span>
-            } else {
-                span = <span className="server-offline">Offline</span>
-            }
+            var className = "server-" + (server.status ? "online" : "offline");
             return (
-                <li key={server.name}>{server.name} {span}</li>
+                <li key={server.name}>{server.name} <span className={className}></span></li>
             )
         });
 

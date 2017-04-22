@@ -22,18 +22,16 @@ class Facebook extends React.Component {
         url += "&appId";
 
         return (
-            <div>
-                <main className="facebook">
-                    <iframe
-                        src={url}
-                        width={Config.facebook.width}
-                        height={Config.facebook.height}
-                        style={styles}
-                        scrolling={Config.facebook.scrolling}
-                        frameBorder={Config.facebook.frameborder}
-                        allowTransparency={Config.facebook.allowtransparency}>
-                    </iframe>
-                </main>
+            <div className="facebook">
+                <iframe
+                    src={url}
+                    width={Config.facebook.width}
+                    height={Config.facebook.height}
+                    style={styles}
+                    scrolling={Config.facebook.scrolling}
+                    frameBorder={Config.facebook.frameborder}
+                    allowTransparency={Config.facebook.allowtransparency}>
+                </iframe>
             </div>
         );
     }

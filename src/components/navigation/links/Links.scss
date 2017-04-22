@@ -12,13 +12,13 @@
     li {
         display: inline;
     }
-    
+
     a {
         padding: 1rem;
         display: inline-block;
         transition: background-color 0.25s;
         color: white;
-        min-width: 4rem;
+        min-width: 5.5rem;
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.1);

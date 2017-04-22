@@ -23,9 +23,19 @@
 @import "../components/post/Post.scss";
 @import "../components/rankings/Rankings.scss";
 
+body {
+    background-image: url("/images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
 main {
     width: $body-width;
-    margin: auto;
+    padding: 0 calc(50% - #{$half-body-width}) 5rem;
     font-family: $primary-font;
     flex: 1 0 auto;
+    padding-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
 }

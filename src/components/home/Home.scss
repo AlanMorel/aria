@@ -1,7 +1,10 @@
 @import "../../stylesheets/Variables.scss";
 
+$home-width: 80rem;
+
 .home {
-    width: 100rem;
+    width: $home-width;
+    padding: 0 calc(50% - #{$home-width / 2}) 5rem;
 
     .left {
         width: 60%;
