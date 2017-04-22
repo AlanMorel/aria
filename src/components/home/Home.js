@@ -10,7 +10,7 @@ import Twitter from '../social/twitter/Twitter';
 import Facebook from '../social/facebook/Facebook';
 
 class Home extends React.Component {
-    
+
     componentDidMount() {
         Config.setTitle("Home");
     }
@@ -22,13 +22,17 @@ class Home extends React.Component {
             <div>
                 <Banner title={Config.server_name} subtitle=""></Banner>
                 <main className="home">
-                    <h1>Latest News and Events</h1>
-                    <Newslist params={params} pagination={false}/>
-                    <h1>Server Status</h1>
-                    <Status/>
-                    <Discord/>
-                    <Twitter/>
-                    <Facebook/>
+                    <div className="left">
+                        <h1>Latest News and Events</h1>
+                        <Newslist params={params} pagination={false}/>
+                    </div>
+                    <div className="right">
+                        <h1>Server Status</h1>
+                        <Status/>
+                        <Discord/>
+                        <Twitter/>
+                        <Facebook/>
+                    </div>
                 </main>
             </div>
         );

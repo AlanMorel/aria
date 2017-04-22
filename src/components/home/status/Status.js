@@ -35,7 +35,7 @@ class Status extends React.Component {
 
     getTitle() {
         if (this.state.fetching) {
-            return "Loading server status...";
+            return "Loading server status";
         }
 
         return Config.server_name + (this.state.data.online_count > 0 ? " is online" : " is offline");
@@ -43,10 +43,11 @@ class Status extends React.Component {
 
     getStatuses() {
         return this.state.data.server_status.map(function(server) {
+            var span;
             if (server.status){
-                var span = <span className="server-online">Online</span>
+                span = <span className="server-online">Online</span>
             } else {
-                var span = <span className="server-offline">Offline</span>
+                span = <span className="server-offline">Offline</span>
             }
             return (
                 <li key={server.name}>{server.name} {span}</li>

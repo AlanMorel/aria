@@ -1,5 +1,23 @@
 @import "../../stylesheets/Variables.scss";
 
 .home {
+    width: 100rem;
 
+    .left {
+        width: 60%;
+        padding-right: 1%;
+
+        box-sizing: border-box;
+        display:inline-block;
+        vertical-align: top;
+    }
+
+    .right {
+        width: 40%;
+        padding-left: 1%;
+
+        box-sizing: border-box;
+        display:inline-block;
+        vertical-align: top;
+    }
 }
