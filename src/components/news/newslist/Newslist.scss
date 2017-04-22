@@ -28,13 +28,15 @@
     h2 {
         font-size: 1.5rem;
         font-family: $secondary-font;
-        margin: 0.5rem 0;
+        margin: 0.25rem 0;
+        height: 2rem;
+        overflow: hidden;
     }
 
     .meta-data {
         font-size: 0.8rem;
         font-family: $secondary-font;
-        margin: 0.5rem 0;
+        margin: 0.25rem 0 0.5rem;
         font-weight: 500;
     }
 
@@ -42,9 +44,10 @@
         position: absolute;
         bottom: 0.5rem;
         right: 1rem;
-        font-weight: lighter;
-        font-size: 0.9rem;
         font-family: $secondary-font;
+        font-weight: 400;
+        font-size: 0.7rem;
+        text-transform: uppercase;
     }
 
     .content {
@@ -62,14 +65,14 @@
             box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
             background-color: #f6f7ff;
 
-            h2 {
+            h2, .read-me {
                 color: #384092;
             }
         }
     }
 
     .newslist-image {
-        width: 30%;
+        width: 25%;
         display: inline-block;
         vertical-align: top;
         overflow-x: hidden;
@@ -80,7 +83,7 @@
     }
 
     .newslist-information {
-        width: 70%;
+        width: 75%;
         display: inline-block;
         padding: 0 1rem;
         box-sizing: border-box;

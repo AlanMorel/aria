@@ -10,6 +10,10 @@ import Twitter from '../social/twitter/Twitter';
 import Facebook from '../social/facebook/Facebook';
 
 class Home extends React.Component {
+    
+    componentDidMount() {
+        Config.setTitle("Home");
+    }
 
     render() {
         var params = this.props.match.params;

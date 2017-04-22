@@ -19,6 +19,7 @@ class Rankings extends React.Component {
     }
 
     componentDidMount() {
+        Config.setTitle("Rankings");
         Axios.get(Config.base_url + `rankings` + this.getResource()).then(response => {
 
             this.setState({

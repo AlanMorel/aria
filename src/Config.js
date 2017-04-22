@@ -7,6 +7,7 @@ Config.client_download_link = "https://www.google.com/";
 
 Config.forum_link = "https://www.google.com/";
 
+Config.version = 83;
 Config.exp_rate = 1;
 Config.meso_rate = 1;
 Config.drop_rate = 1;
@@ -56,5 +57,9 @@ Config.post_type = [
     'Community',
     'News'
 ];
+
+Config.setTitle = function(title) {
+    document.title = title + " | " + Config.server_name + " - v" + Config.version + " MapleStory Private Server";
+};
 
 module.exports = Config;

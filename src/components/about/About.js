@@ -4,6 +4,11 @@ import Config from '../../Config';
 import Banner from '../navigation/banner/Banner';
 
 class About extends React.Component {
+
+    componentDidMount() {
+        Config.setTitle("About");
+    }
+    
     render() {
         return (
             <div>

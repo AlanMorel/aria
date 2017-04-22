@@ -1,9 +1,14 @@
 import React from 'react';
+import Config from '../../Config';
 
 import Banner from '../navigation/banner/Banner';
 import Newslist from '../../components/news/newslist/Newslist';
 
 class News extends React.Component {
+
+    componentDidMount() {
+        Config.setTitle("News");
+    }
 
     getTitle() {
         var title = this.props.match.params.param1;
