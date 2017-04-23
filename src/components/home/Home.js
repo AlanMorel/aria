@@ -18,8 +18,6 @@ class Home extends React.Component {
     }
 
     render() {
-        var params = this.props.match.params;
-
         return (
             <div>
                 <Banner title={Config.server_name} subtitle=""></Banner>
