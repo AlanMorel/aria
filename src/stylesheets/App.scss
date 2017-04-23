@@ -18,12 +18,14 @@
 
 @import "../components/join/Join.scss";
 @import "../components/login/Login.scss";
+
 @import "../components/news/News.scss";
 @import "../components/news/newslist/Newslist.scss";
 @import "../components/post/Post.scss";
 @import "../components/rankings/Rankings.scss";
 @import "../components/rankings/player/Player.scss";
 @import "../components/rankings/rankingslist/Rankingslist.scss";
+@import "../components/downloads/Downloads.scss";
 
 body {
     background-image: url("/images/background.png");
