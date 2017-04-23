@@ -11,6 +11,7 @@
     ul {
         background-color: #8dc79e;
         display: inline-block;
+        border: solid 2px #408789;
     }
 
     li {
@@ -21,7 +22,7 @@
 
     a {
         padding: 1rem 1.5rem;
-        min-width: 3rem;
+        min-width: 6rem;
         display: inline-block;
         color: white;
 

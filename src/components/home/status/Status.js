@@ -35,7 +35,7 @@ class Status extends React.Component {
 
     getTitle() {
         if (this.state.fetching) {
-            return "Loading server status";
+            return "Loading...";
         }
 
         return Config.server_name + (this.state.data.online_count > 0 ? " is online" : " is offline");

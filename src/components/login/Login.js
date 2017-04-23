@@ -51,28 +51,26 @@ class Login extends React.Component {
         }
 
         return (
-            <div>
-                <main className="login">
-                    <form onSubmit={ this.login.bind(this) } ref="form">
+            <div className="login">
+                <form onSubmit={ this.login.bind(this) } ref="form">
 
-                        <div className="prompt-close" onClick={ this.props.close }>&#10006;</div>
-                        <div className="prompt-title">Login</div>
+                    <div className="prompt-close" onClick={ this.props.close }>&#10006;</div>
+                    <div className="prompt-title">Login</div>
 
-                        <div>
-                            <label htmlFor="username">Username</label>
-                            <input className="text" name="username" type="text"/>
-                        </div>
+                    <div>
+                        <label htmlFor="username">Username</label>
+                        <input className="text" name="username" type="text"/>
+                    </div>
 
-                        <div>
-                            <label htmlFor="password">Password</label>
-                            <input className="password" name="password" type="password"/>
-                        </div>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                        <input className="password" name="password" type="password"/>
+                    </div>
 
-                        {alert}
+                    {alert}
 
-                        <input className="button" type="submit" value="Login"/>
-                    </form>
-                </main>
+                    <input className="button" type="submit" value="Login"/>
+                </form>
             </div>
         );
     }
