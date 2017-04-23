@@ -2,9 +2,25 @@
 
 footer {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    border-top: solid 1px black;
+    background-color: rgba(0, 0, 0, 0.85);
     text-align: center;
     color: white;
     font-family: $primary-font;
     padding: 2rem 0;
+
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .copyright {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .credits {
+        font-family: $secondary-font;
+        font-size: 0.9rem;
+    }
 }
