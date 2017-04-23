@@ -66,7 +66,7 @@ class Newslist extends React.Component {
 
         var posts = this.state.data.data.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
-            var content = post.content.substring(0, 250) + "...";
+            var content = post.content.substring(0, 200) + "...";
 
             return (
                 <NavLink to={"post/" + post.id} key={post.id}>

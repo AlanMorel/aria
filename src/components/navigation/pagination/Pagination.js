@@ -11,6 +11,7 @@ class Pagination extends React.Component {
 
       return (
         <nav className="pagination">
+            <div className="page-info">Page {current} / {last}</div>
           <ul>
               <li><Link to={{pathname: base + '1'}}>First</Link></li>
               <li><Link to={{pathname: base + prev}}>Prev</Link></li>

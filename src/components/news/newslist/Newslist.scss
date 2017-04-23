@@ -60,9 +60,9 @@
         border: solid 1px #cbd0ff;
         background-color: #fcfbff;
         position: relative;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
 
         &:hover {
-            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
             background-color: #f6f7ff;
 
             h2, .read-me {

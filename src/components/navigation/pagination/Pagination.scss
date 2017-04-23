@@ -10,24 +10,28 @@
 
     ul {
         background-color: #8dc79e;
-        display: inline-block;
         border: solid 2px #408789;
+        display: flex;
     }
 
     li {
-        display: inline;
+        flex: 1;
         text-align: center;
-        width: 100%;
     }
 
     a {
-        padding: 1rem 1.5rem;
-        min-width: 6rem;
-        display: inline-block;
+        padding: 1rem 0;
+        flex: 1;
+        display: block;
         color: white;
+        text-align: center;
 
         &:not(.current):hover {
             background-color: #5fa795;
         }
+    }
+
+    .page-info {
+        margin-bottom: 1.5rem;
     }
 }

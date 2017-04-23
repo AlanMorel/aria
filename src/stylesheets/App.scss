@@ -22,6 +22,8 @@
 @import "../components/news/newslist/Newslist.scss";
 @import "../components/post/Post.scss";
 @import "../components/rankings/Rankings.scss";
+@import "../components/rankings/player/Player.scss";
+@import "../components/rankings/rankingslist/Rankingslist.scss";
 
 body {
     background-image: url("/images/background.png");
@@ -33,7 +35,7 @@ body {
 
 main {
     width: $body-width;
-    padding: 0 calc(50% - #{$half-body-width}) 5rem;
+    padding: 0 calc(50% - #{$half-body-width}) 2rem;
     font-family: $primary-font;
     flex: 1 0 auto;
     padding-top: 2rem;

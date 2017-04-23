@@ -3,7 +3,7 @@
 .prompts {
     position: absolute;
     top: 2rem;
-    left: calc(50% + 13.5rem);
+    right: calc(50% - #{$half-body-width});
 
     .join,
     .login {
