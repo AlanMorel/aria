@@ -8,14 +8,10 @@ class Pagination extends React.Component {
         var params = this.props.params;
 
         for (var i in params){
-            if (!params[i]){
+            if (!params[i] || !isNaN(params[i])){
                 break;
             }
-            if (!isNaN(params[i])){
-                console.log(params[i] + " is a number");
-                break;
-            }
-            console.log(params[i] + " is not a number");
+
             url += params[i] + '/';
         }
 
