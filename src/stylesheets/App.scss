@@ -9,6 +9,7 @@
 @import "../components/navigation/alert/Alert.scss";
 @import "../components/navigation/prompts/Prompts.scss";
 @import "../components/navigation/pagination/Pagination.scss";
+@import "../components/navigation/category/Category.scss";
 
 @import "../components/footer/Footer.scss";
 @import "../components/social/discord/Discord.scss";
@@ -37,6 +38,7 @@ body {
 
 main {
     width: $body-width;
+    min-height: 50vh;
     padding: 0 calc(50% - #{$half-body-width}) 2rem;
     font-family: $primary-font;
     flex: 1 0 auto;
