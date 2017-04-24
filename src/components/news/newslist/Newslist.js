@@ -23,56 +23,57 @@ class Newslist extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url + `news` + this.getResource()).then(response => {
+        this.requestData(this.props.params);
+    }
+
+    componentWillReceiveProps (newProps) {
+      if (this.props.params.param1 !== newProps.params.param1) {
+          this.requestData(newProps.params);
+      } else if (this.props.params.param2 !== newProps.params.param2) {
+            this.requestData(newProps.params);
+        } else if (this.props.params.param3 !== newProps.params.param3) {
+            this.requestData(newProps.params);
+        }
+    }
+
+    requestData(params){
+        Axios.get(Config.base_url + `news` + this.getResource(params)).then(response => {
             console.log(response.data);
             this.setState({data: response.data});
         });
     }
 
-    getResource() {
+    getResource(params) {
 
-        console.log(this.props.params);
+        console.log(params);
 
-        if (!this.props.params) {
+        if (!params) {
             return "";
         }
 
-        var param1 = this.props.params.param1;
-        var param2 = this.props.params.param2;
-
-        console.log(param1, param2);
+        console.log(params.param1, params.param2);
 
         var resource = "";
 
-        if (param1) {
-            resource += "/" + param1;
+        if (params.param1) {
+            resource += "/" + params.param1;
         }
 
-        if (param2) {
-            resource += "/" + param2;
+        if (params.param2) {
+            resource += "/" + params.param2;
         }
 
         return resource;
     }
 
-    render() {
-
-        if (this.props.pagination) {
-            var page_info = {
-                prev: this.state.data.prev,
-                current: this.state.data.current,
-                next: this.state.data.next,
-                last: this.state.data.last
-            }
-            var params = [this.props.params.param1, this.props.params.param2];
-            var pagination = <Pagination type="news" page_info={page_info} params={params} />
+    getPosts() {
+        if (this.state.data.success === false){
+            return (
+                <div className="error">No posts to display.</div>
+            );
         }
 
-        if (this.props.category) {
-            var category = <Category type="news" active={this.props.params.param1}/>
-        }
-
-        var posts = this.state.data.data.map(function(post) {
+        return this.state.data.data.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
             var content = post.content.substring(0, 200) + "...";
 
@@ -93,11 +94,29 @@ class Newslist extends React.Component {
                 </NavLink>
             );
         });
+    }
+
+    render() {
+
+        if (this.props.pagination && this.state.data.success) {
+            var page_info = {
+                prev: this.state.data.prev,
+                current: this.state.data.current,
+                next: this.state.data.next,
+                last: this.state.data.last
+            }
+            var params = [this.props.params.param1, this.props.params.param2];
+            var pagination = <Pagination type="news" page_info={page_info} params={params} />
+        }
+
+        if (this.props.category) {
+            var category = <Category type="news" active={this.props.params.param1}/>
+        }
 
         return (
             <section className="newslist">
                 {category}
-                {posts}
+                {this.getPosts()}
                 {pagination}
             </section>
         );

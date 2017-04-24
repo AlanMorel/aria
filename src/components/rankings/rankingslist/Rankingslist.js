@@ -18,58 +18,72 @@ class Rankings extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url + `rankings` + this.getResource()).then(response => {
+        this.requestData(this.props.params);
+    }
+
+    componentWillReceiveProps (newProps) {
+      if (this.props.params.param1 !== newProps.params.param1) {
+          this.requestData(newProps.params);
+      } else if (this.props.params.param2 !== newProps.params.param2) {
+          this.requestData(newProps.params);
+      }
+    }
+
+    requestData(params){
+        Axios.get(Config.base_url + `rankings` + this.getResource(params)).then(response => {
             console.log(response.data);
-            this.setState({
-                data: response.data
-            });
+            this.setState({data: response.data});
         });
     }
 
-    getResource() {
+    getResource(params) {
 
-        console.log(this.props.params);
+        console.log(params);
 
-        if (!this.props.params) {
+        if (!params) {
             return "";
         }
 
-        var param1 = this.props.params.param1;
-        var param2 = this.props.params.param2;
-        var param3 = this.props.params.param3;
-
-        console.log(param1, param2, param3);
+        console.log(params.param1, params.param2, params.param3);
 
         var resource = "";
 
-        if (param1) {
-            resource += "/" + param1;
+        if (params.param1) {
+            resource += "/" + params.param1;
         }
 
-        if (param2) {
-            resource += "/" + param2;
+        if (params.param2) {
+            resource += "/" + params.param2;
         }
 
-        if (param3) {
-            resource += "/" + param3;
+        if (params.param3) {
+            resource += "/" + params.param3;
         }
 
         return resource;
     }
 
-    render() {
+    getPlayers(){
+        if (this.state.data.success === false){
+            return (
+                <div className="error">No players to display.</div>
+            );
+        }
 
-        var players = this.state.data.data.map(function(player) {
+        return this.state.data.data.map(function(player) {
             return (
                 <Player player={player} key={player.name}></Player>
             );
         });
+    }
+
+    render() {
 
         if (this.props.category) {
             var category = <Category type="rankings" active={this.props.params.param1}/>
         }
 
-        if (this.props.pagination) {
+        if (this.props.pagination && this.state.data.success) {
             var page_info = {
                 prev: this.state.data.prev,
                 current: this.state.data.current,
@@ -83,7 +97,7 @@ class Rankings extends React.Component {
         return (
             <section className="rankingslist">
                   {category}
-                  <div>{players}</div>
+                  <div>{this.getPlayers()}</div>
                   {pagination}
             </section>
         );
