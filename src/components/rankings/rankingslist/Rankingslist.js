@@ -66,15 +66,18 @@ class Rankings extends React.Component {
         });
 
         if (this.props.category) {
-            var category = <Category type="rankings" />
+            var category = <Category type="rankings" active={this.props.params.param1}/>
         }
 
         if (this.props.pagination) {
-            var prev = this.state.data.prev;
-            var current = this.state.data.current;
-            var next = this.state.data.next;
-            var last = this.state.data.last;
-            var pagination = <Pagination type="rankings" prev={prev} current={current} next={next} last={last}/>
+            var page_info = {
+                prev: this.state.data.prev,
+                current: this.state.data.current,
+                next: this.state.data.next,
+                last: this.state.data.last
+            }
+            var params = [this.props.params.param1, this.props.params.param2, this.props.params.param3];
+            var pagination = <Pagination type="rankings" page_info={page_info} params={params}/>
         }
 
         return (

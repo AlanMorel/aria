@@ -58,15 +58,18 @@ class Newslist extends React.Component {
     render() {
 
         if (this.props.pagination) {
-            var prev = this.state.data.prev;
-            var current = this.state.data.current;
-            var next = this.state.data.next;
-            var last = this.state.data.last;
-            var pagination = <Pagination type="news" prev={prev} current={current} next={next} last={last}/>
+            var page_info = {
+                prev: this.state.data.prev,
+                current: this.state.data.current,
+                next: this.state.data.next,
+                last: this.state.data.last
+            }
+            var params = [this.props.params.param1, this.props.params.param2];
+            var pagination = <Pagination type="news" page_info={page_info} params={params} />
         }
 
         if (this.props.category) {
-            var category = <Category type="news" />
+            var category = <Category type="news" active={this.props.params.param1}/>
         }
 
         var posts = this.state.data.data.map(function(post) {

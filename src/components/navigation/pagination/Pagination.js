@@ -2,12 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Pagination extends React.Component {
+
+    getBase(){
+        var url = '/' + this.props.type + '/';
+        var params = this.props.params;
+
+        for (var i in params){
+            if (!params[i]){
+                break;
+            }
+            if (!isNaN(params[i])){
+                console.log(params[i] + " is a number");
+                break;
+            }
+            console.log(params[i] + " is not a number");
+            url += params[i] + '/';
+        }
+
+        return url;
+    }
+
     render() {
-        var base = '/' + this.props.type + '/';
-        var prev = this.props.prev;
-        var current = this.props.current;
-        var next = this.props.next;
-        var last = this.props.last;
+        var base = this.getBase();
+
+        var prev = this.props.page_info.prev;
+        var current = this.props.page_info.current;
+        var next = this.props.page_info.next;
+        var last = this.props.page_info.last;
 
       return (
         <nav className="pagination">
