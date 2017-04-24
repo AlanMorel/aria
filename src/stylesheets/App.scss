@@ -39,7 +39,7 @@ body {
 main {
     width: $body-width;
     min-height: 50vh;
-    padding: 0 calc(50% - #{$half-body-width}) 2rem;
+    padding: 0 calc(50% - #{$half-body-width}) 3rem;
     font-family: $primary-font;
     flex: 1 0 auto;
     padding-top: 2rem;
