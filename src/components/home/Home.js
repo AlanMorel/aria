@@ -24,9 +24,9 @@ class Home extends React.Component {
                 <main className="home">
                     <div className="left">
                         <h1>Latest News and Events</h1>
-                        <Newslist pagination={false}/>
+                        <Newslist pagination={false} category={false}/>
                         <h1>Player Rankings</h1>
-                        <Rankingslist pagination={false}/>
+                        <Rankingslist pagination={false} category={false}/>
                     </div>
                     <div className="right">
                         <h1>Server Status</h1>

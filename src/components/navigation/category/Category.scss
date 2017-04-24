@@ -2,4 +2,24 @@
 
 .category {
 
+    margin-bottom: 2rem;
+
+    li {
+        display: inline-block;
+        background-color: lightblue;
+        border: solid 1px #7dbfd4;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        margin-right: 0.5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #7dbfd4;
+        }
+
+        .active {
+
+        }
+    }
 }

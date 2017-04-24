@@ -17,7 +17,7 @@ class Rankings extends React.Component {
             <div>
                 <Banner title="Rankings" subtitle={"See who's who in " + Config.server_name + "."}></Banner>
                 <main className="rankings">
-                    <Rankingslist params={params} pagination={true}/>
+                    <Rankingslist params={params} pagination={true} category={true}/>
                 </main>
             </div>
         );

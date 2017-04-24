@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Config from '../../../Config';
 
 import Player from '../../../components/rankings/player/Player';
+import Category from '../../navigation/category/Category';
 import Pagination from '../../navigation/pagination/Pagination';
 
 class Rankings extends React.Component {
@@ -64,6 +65,10 @@ class Rankings extends React.Component {
             );
         });
 
+        if (this.props.category) {
+            var category = <Category type="rankings" />
+        }
+
         if (this.props.pagination) {
             var prev = this.state.data.prev;
             var current = this.state.data.current;
@@ -74,6 +79,7 @@ class Rankings extends React.Component {
 
         return (
             <section className="rankingslist">
+                  {category}
                   <div>{players}</div>
                   {pagination}
             </section>

@@ -51,11 +51,11 @@ Config.base_url = "http://laravel.austin-adams.us/";
 Config.post_type = [
     'General',
     'Announcement',
+    'News',
     'Update',
     'Event',
     'Development',
-    'Community',
-    'News'
+    'Community'
 ];
 
 Config.setTitle = function(title) {
