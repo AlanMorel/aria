@@ -37,8 +37,8 @@ class Prompts extends React.Component {
     render() {
         return (
             <div className="prompts">
-                <a href="#" onClick={this.openJoin} className="prompt-button">Join</a>
-                <a href="#" onClick={this.openLogin} className="prompt-button">Login</a>
+                <a onClick={this.openJoin} className="prompt-button">Join</a>
+                <a onClick={this.openLogin} className="prompt-button">Login</a>
                 <Join open={this.state.showJoin} close={this.closeJoin}/>
                 <Login open={this.state.showLogin} close={this.closeLogin}/>
             </div>

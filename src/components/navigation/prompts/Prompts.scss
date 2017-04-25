@@ -91,6 +91,7 @@
         border-radius: 0.5rem;
         color: white;
         border: solid 1px #333b8a;
+        cursor: pointer;
 
         &:hover {
             background-color: #333b8a;
@@ -103,6 +104,9 @@
         background-color: #ffb900;
         margin-top: 1rem;
         border-radius: 4px;
+        font-family: $secondary-font;
+        text-align: center;
+        font-size: 0.9rem;
     }
 
     .button {

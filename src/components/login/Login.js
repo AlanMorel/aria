@@ -39,6 +39,9 @@ class Login extends React.Component {
 
     render() {
         if (!this.props.open){
+            this.state = {
+                errors: []
+            };
             return (
                 <div></div>
             );

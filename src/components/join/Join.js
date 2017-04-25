@@ -34,11 +34,13 @@ class Join extends React.Component {
                 console.log("Failure");
             }
         });
-
     }
 
     render() {
         if (!this.props.open){
+            this.state = {
+                errors: []
+            };
             return (
                 <div></div>
             );
