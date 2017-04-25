@@ -78,7 +78,7 @@ class Newslist extends React.Component {
             var content = post.content.substring(0, 200) + "...";
 
             return (
-                <NavLink to={"post/" + post.id} key={post.id}>
+                <NavLink to={"/post/" + post.id} key={post.id}>
                     <div className="newslist-post">
                         <div className="newslist-image">
                             <img src="/images/background.png" alt=""/>
