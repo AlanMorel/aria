@@ -28,7 +28,7 @@ class Newslist extends React.Component {
 
     componentWillReceiveProps (newProps) {
       if (this.props.params.param1 !== newProps.params.param1) {
-          this.requestData(newProps.params);
+            this.requestData(newProps.params);
       } else if (this.props.params.param2 !== newProps.params.param2) {
             this.requestData(newProps.params);
         } else if (this.props.params.param3 !== newProps.params.param3) {
