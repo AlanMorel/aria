@@ -70,9 +70,15 @@ class Rankings extends React.Component {
             );
         }
 
+        var base = (this.state.data.current - 1) * 5;
+        var offset = base;
+
+        console.log("base: " + base);
+
         return this.state.data.data.map(function(player) {
+            offset += 1;
             return (
-                <Player player={player} key={player.name}></Player>
+                <Player player={player} rank={offset} key={player.name}></Player>
             );
         });
     }

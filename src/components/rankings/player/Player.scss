@@ -32,6 +32,11 @@
         font-weight: 400;
     }
 
+    .rank {
+        font-family: $primary-font;
+        font-weight: lighter;
+    }
+
     .avatar {
         position: absolute;
         right: 2rem;
