@@ -84,7 +84,7 @@ class Newslist extends React.Component {
                         <div className="newslist-image">
                             <img src="/images/background.png" alt=""/>
                             <div className={"type " + post.type.toLowerCase()}>{post.type}</div>
-                            <div className="view-count">{post.views} views</div>
+                            <div className="views">{post.views} views</div>
 
                         </div>
                         <div className="newslist-information">

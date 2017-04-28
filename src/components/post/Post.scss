@@ -1,7 +1,16 @@
 @import "../../stylesheets/Variables.scss";
 
 .post {
+    .container {
+        position: relative;
+        background-color: white;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        border: solid 1px lightgray;
+    }
+
     h2 {
+        margin: 0;
         font-size: 1.5rem;
         font-family: $secondary-font;
     }
@@ -9,9 +18,26 @@
     .meta-data {
         font-size: 1rem;
         margin: 1rem 0;
+        font-family: $secondary-font;
+        font-weight: 500;
     }
 
     .newslist-post {
         margin-bottom: 2rem;
+    }
+
+    .content {
+        font-family: $secondary-font;
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.01rem;
+    }
+
+    .views {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        text-transform: uppercase;
     }
 }

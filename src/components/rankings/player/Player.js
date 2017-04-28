@@ -1,5 +1,4 @@
 import React from 'react';
-import Config from '../../../Config';
 import Jobs from '../../../Jobs';
 
 class Player extends React.Component {
