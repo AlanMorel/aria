@@ -40,6 +40,20 @@
         font-weight: 500;
     }
 
+    .view-count {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 0.4rem;
+        font-size: 0.4rem;
+        background: rgba(255, 255, 255, 0.75);
+        color: black;
+        font-family: $secondary-font;
+        font-weight: 400;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
+
     .read-me {
         position: absolute;
         bottom: 0.5rem;

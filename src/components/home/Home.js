@@ -6,6 +6,7 @@ import Status from '../home/status/Status';
 
 import Newslist from '../news/newslist/Newslist';
 import Rankingslist from '../rankings/rankingslist/Rankingslist';
+import More from '../navigation/more/More';
 
 import Discord from '../social/discord/Discord';
 import Twitter from '../social/twitter/Twitter';
@@ -25,8 +26,10 @@ class Home extends React.Component {
                     <div className="left">
                         <h1>Latest News and Events</h1>
                         <Newslist pagination={false} category={false}/>
+                        <More type="news"/>
                         <h1>Player Rankings</h1>
                         <Rankingslist pagination={false} category={false}/>
+                        <More type="rankings"/>
                     </div>
                     <div className="right">
                         <h1>Server Status</h1>

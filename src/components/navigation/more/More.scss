@@ -1,0 +1,18 @@
+@import "../../../stylesheets/Variables.scss";
+
+.more {
+    background-color: #fff0f0;
+    border-radius: 0.5rem;
+    border: solid 1px #fb9999;
+
+    &:hover {
+        background-color: #ffe2e2;
+    }
+
+    a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        font-family: $secondary-font;
+    }
+}

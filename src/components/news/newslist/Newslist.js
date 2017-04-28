@@ -76,6 +76,7 @@ class Newslist extends React.Component {
         return this.state.data.data.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
             var content = post.content.substring(0, 200) + "...";
+            post.views = 1337;
 
             return (
                 <NavLink to={"/post/" + post.id} key={post.id}>
@@ -83,6 +84,8 @@ class Newslist extends React.Component {
                         <div className="newslist-image">
                             <img src="/images/background.png" alt=""/>
                             <div className={"type " + post.type.toLowerCase()}>{post.type}</div>
+                            <div className="view-count">{post.views} views</div>
+
                         </div>
                         <div className="newslist-information">
                             <h2>{post.title}</h2>
