@@ -15,7 +15,7 @@ class Promo extends React.Component {
             <div className="promo">
                 <Link to={link}>
                     <img src="/images/promo.png" alt=""/>
-                    <span>{text}</span>
+                    <span className="text">{text}</span>
                 </Link>
             </div>
         );

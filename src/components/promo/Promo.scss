@@ -3,4 +3,28 @@
 .promo {
     display: inline-block;
     width: 50%;
+    position: relative;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+
+    .text {
+        position: absolute;
+        bottom: 1rem;
+        left: 0.5rem;
+        background: #b20047;
+        color: white;
+        padding: 0.5rem 1rem;
+        font-weight: lighter;
+        font-family: $secondary-font;
+    }
+
+    a {
+        display: block;
+
+        &:hover {
+            .text {
+                background: black;
+            }
+        }
+    }
 }
