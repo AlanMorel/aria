@@ -6,10 +6,12 @@ import Player from '../../../components/rankings/player/Player';
 import Category from '../../navigation/category/Category';
 import Pagination from '../../navigation/pagination/Pagination';
 
-class Rankings extends React.Component {
+class Rankingslist extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
+        this.changeJob = this.changeJob.bind(this);
+
         this.state = {
             data: {
                 data: []
@@ -100,9 +102,38 @@ class Rankings extends React.Component {
             var pagination = <Pagination type="rankings" page_info={page_info} params={params}/>
         }
 
+        if (this.props.params.param1 && this.props.params.param1.toLowerCase() == "job"){
+            var jobSelection = (
+                <select>
+                    <option>Select Job</option>
+                    <optgroup label="Explorers">
+                        <option value="beginner">Beginner</option>
+                        <option value="warrior">Warriors</option>
+                        <option value="magician">Magician</option>
+                        <option value="bowman">Bowman</option>
+                        <option value="thief">Thief</option>
+                        <option value="pirate">Pirate</option>
+                    </optgroup>
+                    <optgroup label="Cygnus Knights">
+                        <option value="noblesse">Noblesse</option>
+                        <option value="dawn-warrior">Dawn Warrior</option>
+                        <option value="blaze-wizard">Blaze Wizard</option>
+                        <option value="wind-archer">Wind Archer</option>
+                        <option value="night-walker">Night Walker</option>
+                        <option value="thunder-breaker">Thunder Breaker</option>
+                    </optgroup>
+                    <optgroup label="Heroes">
+                        <option value="aran">Aran</option>
+                        <option value="evan">Evan</option>
+                    </optgroup>
+                </select>
+            );
+        }
+
         return (
             <section className="rankingslist">
                   {category}
+                  {jobSelection}
                   <div>{this.getPlayers()}</div>
                   {pagination}
             </section>
@@ -110,4 +141,4 @@ class Rankings extends React.Component {
     }
 }
 
-export default Rankings;
+export default Rankingslist;

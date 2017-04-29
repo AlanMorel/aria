@@ -18,6 +18,7 @@ class Post extends React.Component {
     componentDidMount() {
         var id = this.props.match.params.id;
         Axios.get(Config.base_url + `post/` + id).then(response => {
+            console.log(response.data);
             this.setState({
                 post: response.data
             });
@@ -26,7 +27,6 @@ class Post extends React.Component {
 
     render() {
         var post = this.state.post;
-        post.views = 1337;
         var date = new Date(post.created_at).toLocaleDateString("en-us", options);
         return (
             <div>
