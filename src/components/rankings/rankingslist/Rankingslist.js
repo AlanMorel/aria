@@ -101,7 +101,7 @@ class Rankingslist extends React.Component {
             var pagination = <Pagination type="rankings" page_info={page_info} params={params}/>
         }
 
-        if (this.props.params.param1 && this.props.params.param1.toLowerCase() == "job"){
+        if (this.props.params && this.props.params.param1 && this.props.params.param1.toLowerCase() == "job"){
             var jobSelection = (
                 <select>
                     <option>Select Job</option>
