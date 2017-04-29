@@ -1,5 +1,11 @@
 @import "../../stylesheets/Variables.scss";
 
 .join {
-
+    .repatcha-container {
+        text-align: center;
+    }
+    .recaptcha {
+        margin-top: 2rem;
+        display: inline-block;
+    }
 }

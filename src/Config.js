@@ -7,6 +7,8 @@ Config.client_download_link = "https://www.google.com/";
 
 Config.forum_link = "https://www.google.com/";
 
+Config.recaptcha_key = "6LcJOh8UAAAAAINqVN5dTY5XgroY3utxiKrHft1X";
+
 Config.version = 83;
 Config.exp_rate = 1;
 Config.meso_rate = 1;

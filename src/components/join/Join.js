@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import Config from '../../Config';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 class Join extends React.Component {
 
@@ -36,6 +37,10 @@ class Join extends React.Component {
                 console.log("Failure");
             }
         });
+    }
+
+    onChange(value) {
+      console.log("Captcha value:", value);
     }
 
     render() {
@@ -86,9 +91,8 @@ class Join extends React.Component {
                         <input className="confirm" name="password_confirmation" type="password"/>
                     </div>
 
-                    <div>
-                        <label htmlFor="repatcha">Repatcha</label>
-                        <input className="repatcha" name="g-recaptcha-response" type="text"/>
+                    <div className="repatcha-container">
+                        <ReCAPTCHA className="recaptcha" ref="recaptcha" onChange={this.onChange} sitekey={Config.recaptcha_key}/>
                     </div>
 
                     {alert}
