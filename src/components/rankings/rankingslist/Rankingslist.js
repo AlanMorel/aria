@@ -10,7 +10,6 @@ class Rankingslist extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-        this.changeJob = this.changeJob.bind(this);
 
         this.state = {
             data: {
