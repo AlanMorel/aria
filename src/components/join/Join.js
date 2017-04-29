@@ -21,6 +21,8 @@ class Join extends React.Component {
 
             if (response.data.success){
                 console.log("Success");
+                this.props.openPopup("Welcome!", "Your account has been registered successfully. We're glad to have you on board!");
+                this.props.close();
             } else {
                 var errors = [];
 

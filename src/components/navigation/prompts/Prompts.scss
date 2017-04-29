@@ -6,7 +6,8 @@
     right: calc(50% - #{$half-body-width});
 
     .join,
-    .login {
+    .login,
+    .popup {
         background-color: rgba(0, 0, 0, 0.25);
         position: fixed;
         width: 100%;

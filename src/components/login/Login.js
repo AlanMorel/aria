@@ -21,6 +21,7 @@ class Login extends React.Component {
 
             if (response.data.success){
                 console.log("Success");
+                this.props.close();
             } else {
                 var errors = [];
 
