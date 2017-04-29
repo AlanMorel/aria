@@ -2,10 +2,6 @@ import React from 'react';
 
 class Popup extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         if (!this.props.state.show){
             return (
