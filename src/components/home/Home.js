@@ -22,7 +22,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <Banner title={Config.server_name} subtitle=""></Banner>
+                <Banner title={Config.server_name} subtitle={"v" + Config.version + " MapleStory Private Server (" + Config.exp_rate + "x exp, " + Config.meso_rate + "x meso, " + Config.drop_rate + "x drop)"}></Banner>
                 <main className="home">
                     <div className="left">
                         <h1>Latest News and Events</h1>
