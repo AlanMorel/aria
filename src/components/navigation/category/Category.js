@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 var categories = {
-    rankings: ["All", "Overall", "Fame", "Job"],
+    rankings: ["All", "Overall", "Job", "Fame", "Search"],
     news: ["All", "General", "Announcement", "Update", "Event", "Community"]
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import Config from '../../../Config';
 
@@ -10,11 +11,12 @@ class Rankingslist extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-
+        this.searchUsernameChange = this.searchUsernameChange.bind(this);
         this.state = {
             data: {
                 data: []
-            }
+            },
+            username: ""
         };
     }
 
@@ -84,6 +86,23 @@ class Rankingslist extends React.Component {
         });
     }
 
+    isRankingsType(type) {
+        if (!this.props.params) {
+            return false;
+        }
+        if (!this.props.params.param1) {
+            return false;
+        }
+        if (this.props.params.param1.toLowerCase() !== type){
+            return false;
+        }
+        return true;
+    }
+
+    searchUsernameChange(event) {
+        this.setState({username: event.target.value});
+    }
+
     render() {
 
         if (this.props.category) {
@@ -101,9 +120,9 @@ class Rankingslist extends React.Component {
             var pagination = <Pagination type="rankings" page_info={page_info} params={params}/>
         }
 
-        if (this.props.params && this.props.params.param1 && this.props.params.param1.toLowerCase() === "job"){
+        if (this.isRankingsType("job")){
             var jobSelection = (
-                <select>
+                <select className="job">
                     <option>Select Job</option>
                     <optgroup label="Explorers">
                         <option value="beginner">Beginner</option>
@@ -127,12 +146,20 @@ class Rankingslist extends React.Component {
                     </optgroup>
                 </select>
             );
+        } else if (this.isRankingsType("search")){
+            var search = (
+                <div className="search">
+                    <input type="text" name="name" placeholder="Player Name" onChange={this.searchUsernameChange}/>
+                    <Link className="submit" to={{pathname: '/rankings/search/' + this.state.username}}>Search</Link>
+                </div>
+            );
         }
 
         return (
             <section className="rankingslist">
                   {category}
                   {jobSelection}
+                  {search}
                   <div>{this.getPlayers()}</div>
                   {pagination}
             </section>
