@@ -2,7 +2,7 @@
 
 .player {
     background-color: rgba(0,0,0,0.05);
-    padding: 1rem;
+    padding: 1rem 1rem 0.25rem;
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     position: relative;
@@ -10,15 +10,14 @@
     border: solid 1px #d2d2d2;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
 
-    &:hover {
-        background-color: rgba(0,0,0,0.075);
-    }
-
     h2 {
-        margin: 0.5rem 0;
+        margin: 0;
+        padding: 0.5rem;
         font-family: $secondary-font;
         font-weight: 400;
         font-size: 2rem;
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 0.5rem;
     }
 
     h3 {
@@ -39,11 +38,11 @@
 
     .avatar {
         position: absolute;
-        right: 2rem;
-        top: -3rem;
+        right: 0;
+        top: -5rem;
 
         img {
-            width: 15rem;
+            width: 20rem;
         }
     }
 
