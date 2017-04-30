@@ -25,11 +25,14 @@ class Rankingslist extends React.Component {
     }
 
     componentWillReceiveProps (newProps) {
-      if (this.props.params.param1 !== newProps.params.param1) {
+        if (!this.props.params || !newProps.params){
+            return;
+        }
+        if (this.props.params.param1 !== newProps.params.param1) {
           this.requestData(newProps.params);
-      } else if (this.props.params.param2 !== newProps.params.param2) {
+        } else if (this.props.params.param2 !== newProps.params.param2) {
           this.requestData(newProps.params);
-      }
+        }
     }
 
     requestData(params){
@@ -40,8 +43,6 @@ class Rankingslist extends React.Component {
     }
 
     getResource(params) {
-
-        console.log(params);
 
         if (!params) {
             return "";
@@ -75,8 +76,6 @@ class Rankingslist extends React.Component {
 
         var base = (this.state.data.current - 1) * 5;
         var offset = base;
-
-        console.log("base: " + base);
 
         return this.state.data.data.map(function(player) {
             offset += 1;

@@ -27,9 +27,12 @@ class Newslist extends React.Component {
     }
 
     componentWillReceiveProps (newProps) {
-      if (this.props.params.param1 !== newProps.params.param1) {
+        if (!this.props.params || !newProps.params){
+            return;
+        }
+        if (this.props.params.param1 !== newProps.params.param1) {
             this.requestData(newProps.params);
-      } else if (this.props.params.param2 !== newProps.params.param2) {
+        } else if (this.props.params.param2 !== newProps.params.param2) {
             this.requestData(newProps.params);
         } else if (this.props.params.param3 !== newProps.params.param3) {
             this.requestData(newProps.params);
@@ -44,8 +47,6 @@ class Newslist extends React.Component {
     }
 
     getResource(params) {
-
-        console.log(params);
 
         if (!params) {
             return "";
@@ -84,7 +85,6 @@ class Newslist extends React.Component {
                             <img src="/images/background.png" alt=""/>
                             <div className={"type " + post.type.toLowerCase()}>{post.type}</div>
                             <div className="views">{post.views} views</div>
-
                         </div>
                         <div className="newslist-information">
                             <h2>{post.title}</h2>

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Prompts from '../../../components/navigation/prompts/Prompts';
-
 class Banner extends React.Component {
 
     render() {
@@ -11,7 +9,6 @@ class Banner extends React.Component {
                     <h1>{this.props.title}</h1>
                     <h2>{this.props.subtitle}</h2>
                 </div>
-                <Prompts></Prompts>
             </div>
         );
     }

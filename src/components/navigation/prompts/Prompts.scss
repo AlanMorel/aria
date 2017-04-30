@@ -2,8 +2,9 @@
 
 .prompts {
     position: absolute;
-    top: 2rem;
+    top: 7rem;
     right: calc(50% - #{$half-body-width});
+    z-index: 1;
 
     .join,
     .login,
