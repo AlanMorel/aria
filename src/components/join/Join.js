@@ -39,7 +39,7 @@ class Join extends React.Component {
         });
     }
 
-    onChange(value) {
+    recaptchaOnChange(value) {
       console.log("Captcha value:", value);
     }
 
@@ -92,7 +92,7 @@ class Join extends React.Component {
                     </div>
 
                     <div className="repatcha-container">
-                        <ReCAPTCHA className="recaptcha" ref="recaptcha" onChange={this.onChange} sitekey={Config.recaptcha_key}/>
+                        <ReCAPTCHA className="recaptcha" ref="recaptcha" onChange={this.recaptchaOnChange} sitekey={Config.recaptcha_key}/>
                     </div>
 
                     {alert}
