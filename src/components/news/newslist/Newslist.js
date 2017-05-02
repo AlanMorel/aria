@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import Config from '../../../Config';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import Category from '../../navigation/category/Category';
 import Pagination from '../../../components/navigation/pagination/Pagination';
@@ -99,9 +99,19 @@ class Newslist extends React.Component {
         });
     }
 
+    shouldPaginate(){
+        if (!this.props.pagination) {
+            return false;
+        }
+        if (!this.state.data.success) {
+            return false;
+        }
+        return true;
+    }
+
     render() {
 
-        if (this.props.pagination && this.state.data.success) {
+        if (this.shouldPaginate()) {
             var page_info = {
                 prev: this.state.data.prev,
                 current: this.state.data.current,

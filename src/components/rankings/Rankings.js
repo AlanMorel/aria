@@ -12,10 +12,10 @@ class Rankings extends React.Component {
 
     render() {
         var params = this.props.match.params;
-
+        var subtitle = "See who's who in " + Config.server_name + ".";
         return (
             <div>
-                <Banner title="Rankings" subtitle={"See who's who in " + Config.server_name + "."}></Banner>
+                <Banner title="Rankings" subtitle={subtitle}></Banner>
                 <main className="rankings">
                     <Rankingslist params={params} pagination={true} category={true}/>
                 </main>

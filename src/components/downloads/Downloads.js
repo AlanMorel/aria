@@ -11,12 +11,14 @@ class Downloads extends React.Component {
 
     getSetup(){
         if (!Config.setup_download_link){
-            return <div></div>;
+            return (
+                <div></div>
+            );
         }
-
+        var h1 = Config.server_name + " Setup";
         return (
             <div>
-                <h1>{Config.server_name} Setup</h1>
+                <h1>{h1}</h1>
                 <a href={Config.setup_download_link} target="_blank">
                     <div className="download-link">
                         <img src="/images/setup.png" alt=""/>
@@ -34,10 +36,10 @@ class Downloads extends React.Component {
         if (!Config.client_download_link){
             return <div></div>;
         }
-
+        var h1 = Config.server_name + " Client";
         return (
             <div>
-                <h1>{Config.server_name} Client</h1>
+                <h1>{h1}</h1>
                 <a href={Config.client_download_link} target="_blank">
                     <div className="download-link">
                         <img src="/images/client.png" alt=""/>
