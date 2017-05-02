@@ -8,7 +8,7 @@ class Header extends React.Component {
         return (
             <div className="header">
                 <Links/>
-                <Prompts></Prompts>
+                <Prompts status={this.props.status}/>
             </div>
         );
     }

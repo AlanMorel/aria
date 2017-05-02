@@ -20,9 +20,9 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            logged_in: false,
-            username: "yolo",
-            gm_level: 0
+            logged_in: true,
+            username: "Alan",
+            gm_level: 5
         };
     }
 
@@ -38,7 +38,7 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Header/>
+                    <Header status={this.state}/>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/about" component={About}/>
                     <Route exact path="/news" component={News}/>

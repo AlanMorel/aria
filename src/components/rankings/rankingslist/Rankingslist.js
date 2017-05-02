@@ -11,11 +11,13 @@ class Rankingslist extends React.Component {
 
     constructor(props, context) {
         super(props, context);
+        this.searchJobChange = this.searchJobChange.bind(this);
         this.searchUsernameChange = this.searchUsernameChange.bind(this);
         this.state = {
             data: {
                 data: []
             },
+            job: "",
             username: ""
         };
     }
@@ -98,6 +100,10 @@ class Rankingslist extends React.Component {
         return true;
     }
 
+    searchJobChange(event) {
+        this.setState({job: event.target.value});
+    }
+
     searchUsernameChange(event) {
         this.setState({username: event.target.value});
     }
@@ -121,29 +127,32 @@ class Rankingslist extends React.Component {
 
         if (this.isRankingsType("job")){
             var jobSelection = (
-                <select className="job">
-                    <option>Select Job</option>
-                    <optgroup label="Explorers">
-                        <option value="beginner">Beginner</option>
-                        <option value="warrior">Warriors</option>
-                        <option value="magician">Magician</option>
-                        <option value="bowman">Bowman</option>
-                        <option value="thief">Thief</option>
-                        <option value="pirate">Pirate</option>
-                    </optgroup>
-                    <optgroup label="Cygnus Knights">
-                        <option value="noblesse">Noblesse</option>
-                        <option value="dawn-warrior">Dawn Warrior</option>
-                        <option value="blaze-wizard">Blaze Wizard</option>
-                        <option value="wind-archer">Wind Archer</option>
-                        <option value="night-walker">Night Walker</option>
-                        <option value="thunder-breaker">Thunder Breaker</option>
-                    </optgroup>
-                    <optgroup label="Heroes">
-                        <option value="aran">Aran</option>
-                        <option value="evan">Evan</option>
-                    </optgroup>
-                </select>
+                <div>
+                    <select className="job" onChange={this.searchJobChange}>
+                        <option>Select Job</option>
+                        <optgroup label="Explorers">
+                            <option value="beginner">Beginner</option>
+                            <option value="warrior">Warriors</option>
+                            <option value="magician">Magician</option>
+                            <option value="bowman">Bowman</option>
+                            <option value="thief">Thief</option>
+                            <option value="pirate">Pirate</option>
+                        </optgroup>
+                        <optgroup label="Cygnus Knights">
+                            <option value="noblesse">Noblesse</option>
+                            <option value="dawn-warrior">Dawn Warrior</option>
+                            <option value="blaze-wizard">Blaze Wizard</option>
+                            <option value="wind-archer">Wind Archer</option>
+                            <option value="night-walker">Night Walker</option>
+                            <option value="thunder-breaker">Thunder Breaker</option>
+                        </optgroup>
+                        <optgroup label="Heroes">
+                            <option value="aran">Aran</option>
+                            <option value="evan">Evan</option>
+                        </optgroup>
+                    </select>
+                    <Link className="submit" to={{pathname: '/rankings/job/' + this.state.job}}>Search</Link>
+                </div>
             );
         } else if (this.isRankingsType("search")){
             var search = (

@@ -66,15 +66,23 @@ class Prompts extends React.Component {
     }
 
     render() {
-        return (
-            <div className="prompts">
-                <a onClick={this.openJoin} className="prompt-button">Join</a>
-                <a onClick={this.openLogin} className="prompt-button">Login</a>
-                <Join open={this.state.showJoin} close={this.closeJoin} openPopup={this.openPopup}/>
-                <Login open={this.state.showLogin} close={this.closeLogin} openPopup={this.openPopup}/>
-                <Popup state={this.state.popup} close={this.closePopup}/>
-            </div>
-        );
+        if (this.props.status.logged_in){
+            return (
+                <div className="prompts">
+                    <a className="prompt-button">Logout</a>
+                </div>
+            );
+        } else {
+            return (
+                <div className="prompts">
+                    <a onClick={this.openJoin} className="prompt-button">Join</a>
+                    <a onClick={this.openLogin} className="prompt-button">Login</a>
+                    <Join open={this.state.showJoin} close={this.closeJoin} openPopup={this.openPopup}/>
+                    <Login open={this.state.showLogin} close={this.closeLogin} openPopup={this.openPopup}/>
+                    <Popup state={this.state.popup} close={this.closePopup}/>
+                </div>
+            );
+        }
     }
 }
 
