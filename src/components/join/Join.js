@@ -8,7 +8,7 @@ class Join extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            errors: []
+            error: []
         };
     }
 
@@ -25,15 +25,9 @@ class Join extends React.Component {
                 this.props.openPopup("Welcome!", "Your account has been registered successfully. We're glad to have you on board!");
                 this.props.close();
             } else {
-                var errors = [];
+                this.setState({error: response.data.error});
 
-                for (var key in response.data.error) {
-                    errors.push(response.data.error[key][0]);
-                }
-
-                this.setState({errors: errors});
-
-                console.log(errors);
+                console.log(response.data.error);
                 console.log("Failure");
             }
         });
@@ -46,16 +40,16 @@ class Join extends React.Component {
     render() {
         if (!this.props.open){
             this.state = {
-                errors: []
+                error: []
             };
             return (
                 <div></div>
             );
         }
 
-        if (this.state.errors.length){
+        if (this.state.error.length){
             var alert = (
-                <div className="alert">{this.state.errors[0]}</div>
+                <div className="alert">{this.state.error}</div>
             );
         }
 

@@ -7,7 +7,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            errors: []
+            error: []
         };
     }
 
@@ -23,15 +23,9 @@ class Login extends React.Component {
                 console.log("Success");
                 this.props.close();
             } else {
-                var errors = [];
+                this.setState({error: response.data.error});
 
-                for (var key in response.data.error) {
-                    errors.push(response.data.error[key][0]);
-                }
-
-                this.setState({errors: errors});
-
-                console.log(errors);
+                console.log(response.data.error);
                 console.log("Failure");
             }
         });
@@ -48,9 +42,9 @@ class Login extends React.Component {
             );
         }
 
-        if (this.state.errors.length){
+        if (this.state.error){
             var alert = (
-                <div className="alert">{this.state.errors[0]}</div>
+                <div className="alert">{this.state.error}</div>
             );
         }
 

@@ -15,7 +15,8 @@ class Rankingslist extends React.Component {
         this.searchUsernameChange = this.searchUsernameChange.bind(this);
         this.state = {
             data: {
-                data: []
+                data: [],
+                error: [],
             },
             job: "",
             username: ""
@@ -70,19 +71,21 @@ class Rankingslist extends React.Component {
     }
 
     getPlayers(){
-        if (this.state.data.success === false){
+        if (this.state.data.success == false){
             return (
-                <div className="error">No players to display.</div>
+                <div className="error">{this.state.data.error}</div>
             );
         }
 
         var base = (this.state.data.current - 1) * 5;
-        var offset = base;
+        var rank = base;
+
+        var isUsernameSearch = this.isRankingsType("search");
 
         return this.state.data.data.map(function(player) {
-            offset += 1;
+            rank += 1;
             return (
-                <Player player={player} rank={offset} key={player.name}></Player>
+                <Player player={player} rank={isUsernameSearch ? null : rank} key={player.name}></Player>
             );
         });
     }
@@ -108,13 +111,26 @@ class Rankingslist extends React.Component {
         this.setState({username: event.target.value});
     }
 
+    shouldPaginate(){
+        if (!this.props.pagination) {
+            return false;
+        }
+        if (!this.state.data.success) {
+            return false;
+        }
+        if (this.isRankingsType("search")){
+            return false;
+        }
+        return true;
+    }
+
     render() {
 
         if (this.props.category) {
             var category = <Category type="rankings" active={this.props.params.param1}/>
         }
 
-        if (this.props.pagination && this.state.data.success) {
+        if (this.shouldPaginate()) {
             var page_info = {
                 prev: this.state.data.prev,
                 current: this.state.data.current,

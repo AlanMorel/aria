@@ -17,7 +17,8 @@ class Newslist extends React.Component {
         super(props);
         this.state = {
             data: {
-                data: []
+                data: [],
+                error: []
             }
         };
     }
@@ -70,7 +71,7 @@ class Newslist extends React.Component {
     getPosts() {
         if (this.state.data.success === false){
             return (
-                <div className="error">No posts to display.</div>
+                <div className="error">{this.state.data.error}</div>
             );
         }
 
