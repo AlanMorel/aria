@@ -34,7 +34,7 @@ class Join extends React.Component {
     }
 
     recaptchaOnChange(value) {
-      console.log("Captcha value:", value);
+        console.log("Captcha value:", value);
     }
 
     render() {
