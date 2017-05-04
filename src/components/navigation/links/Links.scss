@@ -1,13 +1,14 @@
 @import "../../../stylesheets/Variables.scss";
 
-.active {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
 .links {
     text-align: center;
     font-size: 0.9rem;
     font-family: $primary-font;
+    background-color: #ea706d;
+
+    .active {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 
     ul {
         display: flex;

@@ -1,5 +1,32 @@
 @import "../../stylesheets/Variables.scss";
 
 .greeting {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left;
+    font-family: $secondary-font;
+    font-size: 0.9rem;
+    padding: 0 calc(50% - #{$body-width / 2});
 
+    .active {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    .options {
+        display: inline-flex;
+        margin: 0 1rem;
+
+        li {
+            display: inline-flex;
+        }
+
+        a {
+            color: white;
+            padding: 1rem;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
 }

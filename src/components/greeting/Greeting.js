@@ -1,13 +1,22 @@
 import React from 'react';
-import Config from '../../Config';
+import { NavLink } from 'react-router-dom';
 
-class Footer extends React.Component {
+class Greeting extends React.Component {
     render() {
+        if (!this.props.status.logged_in){
+            return (
+                <div></div>
+            );
+        }
         return (
             <section className="greeting">
+                <span className="welcome">Welcome back, {this.props.status.username}</span>
+                <ul className="options">
+                    <li><NavLink exact activeClassName="active" to="/logout">Logout</NavLink></li>
+                </ul>
             </section>
         );
     }
 }
 
-export default Footer;
+export default Greeting;

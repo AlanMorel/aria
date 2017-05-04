@@ -1,17 +1,19 @@
 import React from 'react';
 
-import Links from '../../../components/navigation/links/Links';
 import Alert from '../../../components/navigation/alert/Alert';
+import Links from '../../../components/navigation/links/Links';
+import Greeting from '../../../components/greeting/Greeting';
 import Prompts from '../../../components/navigation/prompts/Prompts';
 
 class Header extends React.Component {
     render() {
         return (
-            <div className="header">
-                <Links/>
+            <section className="header">
                 <Alert/>
+                <Links/>
+                <Greeting status={this.props.status}/>
                 <Prompts status={this.props.status}/>
-            </div>
+            </section>
         );
     }
 }
