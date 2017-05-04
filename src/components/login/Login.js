@@ -20,14 +20,21 @@ class Login extends React.Component {
             console.log(response.data);
 
             if (response.data.success){
-                console.log("Success");
+                console.log("Successful Login");
                 this.props.close();
+                this.props.setLogin(response.data);
             } else {
-                this.setState({error: response.data.error});
-
+                console.log("Failed to Login");
                 console.log(response.data.error);
-                console.log("Failure");
+                this.setState({error: response.data.error});
             }
+            // test
+            this.props.setLogin({
+                logged_in: true,
+                username: "Alan",
+                gm_level: 5
+            });
+            this.props.close();
         });
 
     }

@@ -19,6 +19,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
+        this.setLogin = this.setLogin.bind(this);
         this.state = {
             logged_in: true,
             username: "Alan",
@@ -33,12 +34,16 @@ class App extends React.Component {
         });
     }
 
+    setLogin(status){
+        this.setState(status);
+    }
+
     render() {
 
         return (
             <Router>
                 <div>
-                    <Header status={this.state}/>
+                    <Header status={this.state} setLogin={this.setLogin}/>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/about" component={About}/>
                     <Route exact path="/news" component={News}/>

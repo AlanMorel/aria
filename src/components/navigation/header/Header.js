@@ -12,7 +12,7 @@ class Header extends React.Component {
                 <Alert/>
                 <Links/>
                 <Greeting status={this.props.status}/>
-                <Prompts status={this.props.status}/>
+                <Prompts status={this.props.status} setLogin={this.props.setLogin}/>
             </section>
         );
     }
