@@ -9,8 +9,6 @@ var categories = {
 class Category extends React.Component {
 
     render() {
-        console.log(this.props.type);
-        console.log(this.props.active);
 
         var base = '/' + this.props.type + '/';
         var activeName = this.props.active ? this.props.active.toLowerCase() : "all";

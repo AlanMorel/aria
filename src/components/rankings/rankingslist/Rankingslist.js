@@ -35,6 +35,8 @@ class Rankingslist extends React.Component {
           this.requestData(newProps.params);
         } else if (this.props.params.param2 !== newProps.params.param2) {
           this.requestData(newProps.params);
+        } else if (this.props.params.param3 !== newProps.params.param3) {
+          this.requestData(newProps.params);
         }
     }
 
@@ -71,7 +73,7 @@ class Rankingslist extends React.Component {
     }
 
     getPlayers(){
-        if (this.state.data.success == false){
+        if (this.state.data.success === false){
             return (
                 <div className="error">{this.state.data.error}</div>
             );
@@ -144,8 +146,8 @@ class Rankingslist extends React.Component {
         if (this.isRankingsType("job")){
             var jobSelection = (
                 <div>
-                    <select className="job" onChange={this.searchJobChange}>
-                        <option>Select Job</option>
+                    <select className="job" onChange={this.searchJobChange} defaultValue={"select"}>
+                        <option value="select" disabled="disabled">Select Job</option>
                         <optgroup label="Explorers">
                             <option value="beginner">Beginner</option>
                             <option value="warrior">Warriors</option>

@@ -8,7 +8,6 @@ class More extends React.Component {
         var link = {
             pathname: type
         };
-
         return (
             <div className="more">
                 <Link to={link}>See more {type}</Link>
