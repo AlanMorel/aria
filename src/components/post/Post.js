@@ -20,7 +20,7 @@ class Post extends React.Component {
         Axios.get(Config.base_url + `post/` + id).then(response => {
             console.log(response.data);
             this.setState({
-                post: response.data
+                post: response.data.data[0]
             });
         });
     }
