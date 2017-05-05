@@ -11,13 +11,13 @@ class Greeting extends React.Component {
 
     logout() {
         console.log("Logging out...");
-        Axios.get(Config.base_url + `logout`).then(response => {
+        Axios.get(Config.base_url + `logout`, { withCredentials: true }).then(response => {
             console.log(response.data);
-            if (response.data.success === false){
-                console.log("Error: " + response.data.error);
-            } else {
+            if (response.data.success){
                 console.log("Successfully logged out.");
-                this.props.setLogin(response.data);
+                this.props.setLogin(response.data.data);
+            } else {
+                console.log("Error: " + response.data.error);
             }
         });
     }

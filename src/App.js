@@ -28,7 +28,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url).then(response => {
+        Axios.get(Config.base_url, { withCredentials: true }).then(response => {
             console.log(response.data);
             this.setState(response.data);
         });
