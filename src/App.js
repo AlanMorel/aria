@@ -21,9 +21,9 @@ class App extends React.Component {
         super(props);
         this.setLogin = this.setLogin.bind(this);
         this.state = {
-            logged_in: true,
-            username: "Alan",
-            gm_level: 5
+            logged_in: false,
+            username: "",
+            gm_level: 0
         };
     }
 
