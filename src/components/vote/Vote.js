@@ -5,8 +5,13 @@ import Banner from '../navigation/banner/Banner';
 
 class Vote extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     componentDidMount() {
         Config.setTitle("Vote");
+        console.log(this.props.status);
     }
 
     render() {

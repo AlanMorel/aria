@@ -42,6 +42,10 @@ class App extends React.Component {
 
     render() {
 
+        var VotePage = (props) => {
+            return <Vote status={this.state}/>;
+        }
+
         return (
             <Router>
                 <div>
@@ -58,7 +62,7 @@ class App extends React.Component {
                     <Route exact path="/rankings/:param1/:param2" component={Rankings}/>
                     <Route exact path="/rankings/:param1/:param2/:param3" component={Rankings}/>
                     <Route exact path="/downloads" component={Downloads}/>
-                    <Route exact path="/vote" component={Vote}/>
+                    <Route exact path="/vote" component={VotePage}/>
                     <Footer/>
                 </div>
             </Router>
