@@ -9,16 +9,12 @@ class Greeting extends React.Component {
         this.logout = this.logout.bind(this);
     }
 
-    logout(){
+    logout() {
         console.log("Logging out...");
         Axios.get(Config.base_url + `logout`).then(response => {
             console.log(response.data);
             if (response.data.success === false){
                 console.log("Error: " + response.data.error);
-                // testing purposes only
-                this.props.setLogin({
-                    logged_in: false
-                });
             } else {
                 console.log("Successfully logged out.");
                 this.props.setLogin(response.data);
