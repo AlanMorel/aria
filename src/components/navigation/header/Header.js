@@ -11,7 +11,7 @@ class Header extends React.Component {
             <section className="header">
                 <Alert/>
                 <Links/>
-                <Greeting status={this.props.status}/>
+                <Greeting status={this.props.status} setLogin={this.props.setLogin}/>
                 <Prompts status={this.props.status} setLogin={this.props.setLogin}/>
             </section>
         );
