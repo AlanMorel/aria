@@ -3,35 +3,41 @@
 
 @import "Variables.scss";
 
-@import "../components/navigation/header/Header.scss";
-@import "../components/navigation/banner/Banner.scss";
-@import "../components/navigation/links/Links.scss";
-@import "../components/navigation/alert/Alert.scss";
-@import "../components/navigation/prompts/Prompts.scss";
-@import "../components/navigation/pagination/Pagination.scss";
-@import "../components/navigation/category/Category.scss";
-@import "../components/navigation/more/More.scss";
-
-@import "../components/greeting/Greeting.scss";
+@import "../components/downloads/Downloads.scss";
 @import "../components/footer/Footer.scss";
-@import "../components/social/discord/Discord.scss";
+@import "../components/greeting/Greeting.scss";
 
 @import "../components/home/Home.scss";
 @import "../components/home/status/Status.scss";
 
 @import "../components/join/Join.scss";
 @import "../components/login/Login.scss";
-@import "../components/popup/Popup.scss";
 
-@import "../components/promo/Promo.scss";
+@import "../components/navigation/alert/Alert.scss";
+@import "../components/navigation/banner/Banner.scss";
+@import "../components/navigation/category/Category.scss";
+@import "../components/navigation/header/Header.scss";
+@import "../components/navigation/links/Links.scss";
+@import "../components/navigation/more/More.scss";
+@import "../components/navigation/pagination/Pagination.scss";
+@import "../components/navigation/prompts/Prompts.scss";
 
 @import "../components/news/News.scss";
 @import "../components/news/newslist/Newslist.scss";
+
+@import "../components/popup/Popup.scss";
+
 @import "../components/post/Post.scss";
+@import "../components/promo/Promo.scss";
+
 @import "../components/rankings/Rankings.scss";
 @import "../components/rankings/player/Player.scss";
 @import "../components/rankings/rankingslist/Rankingslist.scss";
-@import "../components/downloads/Downloads.scss";
+
+@import "../components/social/discord/Discord.scss";
+
+@import "../components/vote/Vote.scss";
+
 
 body {
     background-image: url("/images/background.png");

@@ -7,7 +7,7 @@ Config.client_download_link = "https://www.google.com/";
 
 Config.forum_link = "https://www.google.com/";
 
-Config.recaptcha_key = "6LfkDBsUAAAAAMcODRQf8nXm5blabpR4sEnQFcXp"; 
+Config.recaptcha_key = "6LfkDBsUAAAAAMcODRQf8nXm5blabpR4sEnQFcXp";
 //6LcJOh8UAAAAAINqVN5dTY5XgroY3utxiKrHft1X
 
 Config.version = 83;
@@ -58,6 +58,14 @@ Config.post_type = [
     'Event',
     'Community'
 ];
+
+Config.vote_sites = {
+    gtop: {
+        name: "GTOP 100",
+        url: "http://www.gtop100.com/topsites/MapleStory",
+        hours: 24
+    }
+};
 
 Config.setTitle = function(title) {
     document.title = title + " | " + Config.server_name + " - v" + Config.version + " MapleStory Private Server";
