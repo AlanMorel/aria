@@ -42,11 +42,14 @@
 
     .avatar {
         position: absolute;
-        right: 0;
-        top: -5rem;
+        right: 15rem;
+        top: -7rem;
 
         img {
-            width: 20rem;
+            width: 400%;
+            image-rendering: auto;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
         }
     }
 
