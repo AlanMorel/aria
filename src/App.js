@@ -35,6 +35,8 @@ class App extends React.Component {
     }
 
     setLogin(status){
+        console.log("Setting new login status");
+        console.log(status);
         this.setState(status);
     }
 

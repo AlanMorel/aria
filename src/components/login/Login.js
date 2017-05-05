@@ -15,28 +15,20 @@ class Login extends React.Component {
         e.preventDefault();
 
         var form = new FormData(this.refs.form);
-
         Axios.post(Config.base_url + "login", form).then((response) => {
             console.log(response.data);
 
             if (response.data.success){
                 console.log("Successful Login");
                 this.props.close();
-                this.props.setLogin(response.data);
+                this.props.setLogin(response.data.data);
+                this.props.setLogin({logged_in: true});
             } else {
                 console.log("Failed to Login");
                 console.log(response.data.error);
                 this.setState({error: response.data.error});
             }
-            // test
-            this.props.setLogin({
-                logged_in: true,
-                username: "Alan",
-                gm_level: 5
-            });
-            this.props.close();
         });
-
     }
 
     render() {

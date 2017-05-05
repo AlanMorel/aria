@@ -17,9 +17,7 @@ class Greeting extends React.Component {
                 console.log("Error: " + response.data.error);
                 // testing purposes only
                 this.props.setLogin({
-                    logged_in: false,
-                    username: "Alan",
-                    gm_level: 5
+                    logged_in: false
                 });
             } else {
                 console.log("Successfully logged out.");
