@@ -3,6 +3,7 @@
 
 @import "Variables.scss";
 
+@import "../components/controlpanel/ControlPanel.scss";
 @import "../components/downloads/Downloads.scss";
 @import "../components/footer/Footer.scss";
 @import "../components/greeting/Greeting.scss";
@@ -37,7 +38,6 @@
 @import "../components/social/discord/Discord.scss";
 
 @import "../components/vote/Vote.scss";
-
 
 body {
     background-image: url("/images/background.png");

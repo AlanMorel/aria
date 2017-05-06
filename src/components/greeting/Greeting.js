@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Axios from 'axios';
 import Config from '../../Config';
 
@@ -30,7 +31,8 @@ class Greeting extends React.Component {
             <section className="greeting">
                 <span className="welcome">Welcome back, {this.props.status.username}</span>
                 <ul className="options">
-                    <li onClick={this.logout}>Logout</li>
+                    <li onClick={this.logout}><span>Logout</span></li>
+                    <li><NavLink activeClassName="active" to={{pathname: '/controlpanel'}}>Control Panel</NavLink></li>
                 </ul>
             </section>
         );

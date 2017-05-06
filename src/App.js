@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Axios from 'axios';
 import Config from './Config';
 
-import Home from './components/home/Home';
 import About from './components/about/About';
-import Header from './components/navigation/header/Header';
-import Footer from './components/footer/Footer';
-import Post from './components/post/Post';
-import News from './components/news/News';
-import Rankings from './components/rankings/Rankings';
+import ControlPanel from './components/controlpanel/ControlPanel';
 import Downloads from './components/downloads/Downloads';
+import Footer from './components/footer/Footer';
+import Home from './components/home/Home';
+import Header from './components/navigation/header/Header';
+import News from './components/news/News';
+import Post from './components/post/Post';
+import Rankings from './components/rankings/Rankings';
 import Vote from './components/vote/Vote';
 
 import './stylesheets/App.css';
@@ -45,6 +46,10 @@ class App extends React.Component {
         var VotePage = (props) => {
             return <Vote status={this.state}/>;
         }
+        
+        var ControlPanelPage = (props) => {
+            return <ControlPanel status={this.state}/>;
+        }
 
         return (
             <Router>
@@ -63,6 +68,7 @@ class App extends React.Component {
                     <Route exact path="/rankings/:param1/:param2/:param3" component={Rankings}/>
                     <Route exact path="/downloads" component={Downloads}/>
                     <Route exact path="/vote" component={VotePage}/>
+                    <Route exact path="/controlpanel" component={ControlPanelPage}/>
                     <Footer/>
                 </div>
             </Router>

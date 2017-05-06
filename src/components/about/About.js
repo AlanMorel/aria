@@ -13,7 +13,7 @@ class About extends React.Component {
         var subtitle = "What's this " + Config.server_name + " thing?";
         return (
             <div>
-                <Banner title="About" subtitle={subtitle}/>
+                <Banner title="About" subtitle={subtitle} />
                 <main className="about">This is where the about content goes.</main>
             </div>
         );

@@ -31,8 +31,11 @@
         li {
             display: inline-flex;
             color: white;
-            padding: 1rem;
 
+            &>*{
+                padding: 1rem;
+            }
+            
             &:hover {
                 background-color: rgba(0, 0, 0, 0.25);
             }
@@ -40,6 +43,7 @@
 
         a {
             display: block;
+            color: white;
         }
     }
 }
