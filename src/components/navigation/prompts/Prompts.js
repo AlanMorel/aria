@@ -74,8 +74,8 @@ class Prompts extends React.Component {
                 <a onClick={this.openJoin} className="prompt-button">Join</a>
                 <a onClick={this.openLogin} className="prompt-button">Login</a>
                 <Join open={this.state.showJoin} close={this.closeJoin} openPopup={this.openPopup} />
-                <Login open={this.state.showLogin} close={this.closeLogin} openPopup={this.openPopup} setLogin={this.props.setLogin}/>
-                <Popup state={this.state.popup} close={this.closePopup}/>
+                <Login open={this.state.showLogin} close={this.closeLogin} openPopup={this.openPopup} setLogin={this.props.setLogin} />
+                <Popup state={this.state.popup} close={this.closePopup} />
             </div>
         );
     }

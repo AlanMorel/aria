@@ -18,7 +18,7 @@ class Vote extends React.Component {
         }
     }
 
-    getVoteSites(){
+    getVoteSites() {
         var voteSites = [];
         for (var i in Config.vote_sites) {
             var site = Config.vote_sites[i];
@@ -27,7 +27,7 @@ class Vote extends React.Component {
                     <h1>{site.name}</h1>
                     <a href={this.getSiteUrl(site)} target="_blank">
                         <div className="vote-link">
-                            <img src="/images/vote.png" alt=""/>
+                            <img src="/images/vote.png" alt="" />
                             <div className="description">
                                 <h2>Click here to vote on {site.name}.</h2>
                                 <h3>You can vote once every {site.hours} hours.</h3>
@@ -40,7 +40,7 @@ class Vote extends React.Component {
         return voteSites;
     }
 
-    getInfo(){
+    getInfo() {
         if (this.props.status.logged_in){
             return "If the vote is successful, the rewards will be added to your account shortly.";
         } else {
@@ -52,7 +52,7 @@ class Vote extends React.Component {
         var sites = this.getVoteSites();
         return (
             <div>
-                <Banner title="Vote" subtitle="Support us by voting!"></Banner>
+                <Banner title="Vote" subtitle="Support us by voting!" />
                 <main className="vote">
                     <h3 className="info">{this.getInfo()}</h3>
                     {sites}

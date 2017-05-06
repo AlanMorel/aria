@@ -30,8 +30,7 @@ class Facebook extends React.Component {
                     style={styles}
                     scrolling={Config.facebook.scrolling}
                     frameBorder={Config.facebook.frameborder}
-                    allowTransparency={Config.facebook.allowtransparency}>
-                </iframe>
+                    allowTransparency={Config.facebook.allowtransparency} />
             </div>
         );
     }

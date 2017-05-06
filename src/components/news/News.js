@@ -25,9 +25,9 @@ class News extends React.Component {
 
         return (
             <div>
-                <Banner title={title} subtitle="Stay up-to-date with messages from the team."></Banner>
+                <Banner title={title} subtitle="Stay up-to-date with messages from the team." />
                 <main className="news">
-                    <Newslist params={params} pagination={true} category={true}/>
+                    <Newslist params={params} pagination={true} category={true} />
                 </main>
             </div>
         );

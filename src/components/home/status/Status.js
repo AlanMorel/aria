@@ -69,7 +69,7 @@ class Status extends React.Component {
             <div className="status">
                 <div className={status}>
                     <div className="icon">
-                        <img src={"/images/" + status + ".png"} alt=""/>
+                        <img src={"/images/" + status + ".png"} alt="" />
                     </div>
                     <div className="description">
                         <div className="title">{title}</div>

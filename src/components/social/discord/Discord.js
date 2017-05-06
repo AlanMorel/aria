@@ -11,8 +11,7 @@ class Discord extends React.Component {
                     width={Config.discord.width}
                     height={Config.discord.height}
                     allowTransparency={Config.discord.allowtransparency}
-                    frameBorder={Config.discord.frameborder}>
-                </iframe>
+                    frameBorder={Config.discord.frameborder} />
             </div>
         );
     }

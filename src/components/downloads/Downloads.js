@@ -19,7 +19,7 @@ class Downloads extends React.Component {
                 <h1>{h1}</h1>
                 <a href={Config.setup_download_link} target="_blank">
                     <div className="download-link">
-                        <img src="/images/setup.png" alt=""/>
+                        <img src="/images/setup.png" alt="" />
                         <div className="download-description">
                             <h2>Click here to download our setup.</h2>
                             <h3>Run as administrator.</h3>
@@ -40,7 +40,7 @@ class Downloads extends React.Component {
                 <h1>{h1}</h1>
                 <a href={Config.client_download_link} target="_blank">
                     <div className="download-link">
-                        <img src="/images/client.png" alt=""/>
+                        <img src="/images/client.png" alt="" />
                         <div className="download-description">
                             <h2>Click here to download our client.</h2>
                             <h3>Run as administrator.</h3>
@@ -58,7 +58,7 @@ class Downloads extends React.Component {
 
       return (
           <div>
-              <Banner title="Downloads" subtitle="Get the files you need to get in-game!"></Banner>
+              <Banner title="Downloads" subtitle="Get the files you need to get in-game!" />
               <main className="downloads">
                   <h1>Installation Instructions</h1>
                   <ol>

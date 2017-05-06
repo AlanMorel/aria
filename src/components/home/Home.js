@@ -22,24 +22,24 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <Banner title={Config.server_name} subtitle={"v" + Config.version + " MapleStory Private Server (" + Config.exp_rate + "x exp, " + Config.meso_rate + "x meso, " + Config.drop_rate + "x drop)"}></Banner>
+                <Banner title={Config.server_name} subtitle={"v" + Config.version + " MapleStory Private Server (" + Config.exp_rate + "x exp, " + Config.meso_rate + "x meso, " + Config.drop_rate + "x drop)"} />
                 <main className="home">
                     <div className="left">
                         <h1>Latest News and Events</h1>
-                        <Newslist pagination={false} category={false}/>
+                        <Newslist pagination={false} category={false} />
                         <More type="news"/>
-                        <Promo page="vote" text={"Vote for " + Config.server_name + "!"}/>
-                        <Promo page="downloads" text="Get in-game!"/>
+                        <Promo page="vote" text={"Vote for " + Config.server_name + "!"} />
+                        <Promo page="downloads" text="Get in-game!" />
                         <h1>Player Rankings</h1>
-                        <Rankingslist pagination={false} category={false}/>
-                        <More type="rankings"/>
+                        <Rankingslist pagination={false} category={false} />
+                        <More type="rankings" />
                     </div>
                     <div className="right">
                         <h1>Server Status</h1>
-                        <Status/>
-                        <Discord/>
-                        <Twitter/>
-                        <Facebook/>
+                        <Status />
+                        <Discord />
+                        <Twitter />
+                        <Facebook />
                     </div>
                 </main>
             </div>

@@ -87,7 +87,7 @@ class Rankingslist extends React.Component {
         return this.state.data.data.map(function(player) {
             rank += 1;
             return (
-                <Player player={player} rank={isUsernameSearch ? null : rank} key={player.name}></Player>
+                <Player player={player} rank={isUsernameSearch ? null : rank} key={player.name} />
             );
         });
     }
@@ -129,7 +129,7 @@ class Rankingslist extends React.Component {
     render() {
 
         if (this.props.category) {
-            var category = <Category type="rankings" active={this.props.params.param1}/>
+            var category = <Category type="rankings" active={this.props.params.param1} />
         }
 
         if (this.shouldPaginate()) {
@@ -140,7 +140,7 @@ class Rankingslist extends React.Component {
                 last: this.state.data.last
             }
             var params = [this.props.params.param1, this.props.params.param2, this.props.params.param3];
-            var pagination = <Pagination type="rankings" page_info={page_info} params={params}/>
+            var pagination = <Pagination type="rankings" page_info={page_info} params={params} />
         }
 
         if (this.isRankingsType("job")){
@@ -175,7 +175,7 @@ class Rankingslist extends React.Component {
         } else if (this.isRankingsType("search")){
             var search = (
                 <div className="search">
-                    <input type="text" name="name" placeholder="Player Name" onChange={this.searchUsernameChange}/>
+                    <input type="text" name="name" placeholder="Player Name" onChange={this.searchUsernameChange} />
                     <Link className="submit" to={{pathname: '/rankings/search/' + this.state.username}}>Search</Link>
                 </div>
             );

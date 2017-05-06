@@ -15,7 +15,7 @@ class Player extends React.Component {
         return (
             <section className="player">
                 <div className="avatar">
-                    <img src={"https://playorion.net/characters/" + ign + ".png"} alt=""/>
+                    <img src={"https://playorion.net/characters/" + ign + ".png"} alt="" />
                 </div>
                 <h2>{rank}{this.props.player.name}</h2>
                 <h3><span className="level">Level {this.props.player.level}</span> ({this.props.player.exp} exp)</h3>

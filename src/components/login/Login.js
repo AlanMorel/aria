@@ -51,14 +51,14 @@ class Login extends React.Component {
                     <div className="prompt-title">Login</div>
                     <div>
                         <label htmlFor="username">Username</label>
-                        <input className="text" name="username" type="text"/>
+                        <input className="text" name="username" type="text" />
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
-                        <input className="password" name="password" type="password"/>
+                        <input className="password" name="password" type="password" />
                     </div>
                     {alert}
-                    <input className="button" type="submit" value="Login"/>
+                    <input className="button" type="submit" value="Login" />
                 </form>
             </div>
         );
