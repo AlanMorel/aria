@@ -10,6 +10,14 @@ class Vote extends React.Component {
         console.log(this.props.status);
     }
 
+    getSiteUrl(site){
+        if(!this.props.status.logged_in){
+            return site.url;
+        } else {
+            return site.url + site.getPingback(this.props.status.username);
+        }
+    }
+
     getVoteSites(){
         var voteSites = [];
         for (var i in Config.vote_sites) {
@@ -17,7 +25,7 @@ class Vote extends React.Component {
             voteSites.push(
                 <div key={site.name}>
                     <h1>{site.name}</h1>
-                    <a href={site.url} target="_blank">
+                    <a href={this.getSiteUrl(site)} target="_blank">
                         <div className="vote-link">
                             <img src="/images/vote.png" alt=""/>
                             <div className="description">
@@ -32,12 +40,24 @@ class Vote extends React.Component {
         return voteSites;
     }
 
+    getWarning(){
+        if (this.props.status.logged_in){
+            return null;
+        }
+
+        return (
+            <h3 className="warning">If you would like to be rewarded for voting, please log in. You may choose to vote anyways.</h3>
+        );
+    }
+
     render() {
         var sites = this.getVoteSites();
+        var warning = this.getWarning();
         return (
             <div>
                 <Banner title="Vote" subtitle="Support us by voting!"></Banner>
                 <main className="vote">
+                    {warning}
                     {sites}
                 </main>
             </div>

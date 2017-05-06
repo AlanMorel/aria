@@ -62,8 +62,11 @@ Config.post_type = [
 Config.vote_sites = {
     gtop: {
         name: "GTOP 100",
-        url: "http://www.gtop100.com/topsites/MapleStory",
-        hours: 24
+        url: "http://www.gtop100.com/topsites/MapleStory/sitedetails/Orion-v90-Nostalgia-with-a-refreshing-twist-92001",
+        hours: 24,
+        getPingback: function(username) {
+            return "?vote=1&pingUsername=" + username;
+        }
     }
 };
 

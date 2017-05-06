@@ -1,6 +1,11 @@
 @import "../../stylesheets/Variables.scss";
 
 .vote {
+
+    .warning {
+        color: #424caf;
+    }
+
     .vote-link {
 
         border: solid 1px #c5c5c5;
