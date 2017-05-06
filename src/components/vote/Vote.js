@@ -40,24 +40,21 @@ class Vote extends React.Component {
         return voteSites;
     }
 
-    getWarning(){
+    getInfo(){
         if (this.props.status.logged_in){
-            return null;
+            return "If the vote is successful, the rewards will be added to your account shortly.";
+        } else {
+            return "If you would like to be rewarded for voting, please log in. You may choose to vote anyways.";
         }
-
-        return (
-            <h3 className="warning">If you would like to be rewarded for voting, please log in. You may choose to vote anyways.</h3>
-        );
     }
 
     render() {
         var sites = this.getVoteSites();
-        var warning = this.getWarning();
         return (
             <div>
                 <Banner title="Vote" subtitle="Support us by voting!"></Banner>
                 <main className="vote">
-                    {warning}
+                    <h3 className="info">{this.getInfo()}</h3>
                     {sites}
                 </main>
             </div>
