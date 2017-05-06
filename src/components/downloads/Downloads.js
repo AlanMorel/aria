@@ -11,9 +11,7 @@ class Downloads extends React.Component {
 
     getSetup(){
         if (!Config.setup_download_link){
-            return (
-                <div></div>
-            );
+            return null;
         }
         var h1 = Config.server_name + " Setup";
         return (
@@ -34,7 +32,7 @@ class Downloads extends React.Component {
 
     getClient(){
         if (!Config.client_download_link){
-            return <div></div>;
+            return null;
         }
         var h1 = Config.server_name + " Client";
         return (

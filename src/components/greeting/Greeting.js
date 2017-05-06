@@ -24,9 +24,7 @@ class Greeting extends React.Component {
 
     render() {
         if (!this.props.status.logged_in){
-            return (
-                <div></div>
-            );
+            return null;
         }
         return (
             <section className="greeting">

@@ -4,9 +4,7 @@ import Config from '../../../Config';
 class Alert extends React.Component {
     render() {
         if (!Config.alert.content.length) {
-            return (
-                <div></div>
-            );
+            return null;
         }
         return (
             <div className="alert">

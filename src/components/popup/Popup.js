@@ -4,9 +4,7 @@ class Popup extends React.Component {
 
     render() {
         if (!this.props.state.show){
-            return (
-                <div></div>
-            );
+            return null;
         }
         return (
             <div className="popup">
