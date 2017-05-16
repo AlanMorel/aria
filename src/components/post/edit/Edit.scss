@@ -1,0 +1,39 @@
+@import "../../../stylesheets/Variables.scss";
+
+.edit-post {
+
+    .control-panel & {
+        border: solid 1px black;
+    }
+
+    padding: 1rem;
+
+    .edit-post-title {
+        margin-top: 0;
+    }
+
+    .new-post-section {
+        margin-bottom: 0.5rem;
+    }
+
+    label {
+        width: 8rem;
+        vertical-align: top;
+        display: inline-block;
+        font-size: 1.25rem;
+    }
+
+    textarea, input {
+        width: calc(100% - 10rem);
+        font-size: 1.25rem;
+    }
+
+    select {
+        font-size: 1.25rem;
+    }
+
+    textarea {
+        resize: none;
+        height: 10rem;
+    }
+}

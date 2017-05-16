@@ -46,7 +46,7 @@ class App extends React.Component {
         var VotePage = (props) => {
             return <Vote status={this.state}/>;
         }
-        
+
         var ControlPanelPage = (props) => {
             return <ControlPanel status={this.state}/>;
         }
@@ -62,6 +62,7 @@ class App extends React.Component {
                     <Route exact path="/news/:param1/:param2" component={News}/>
                     <Route exact path="/post" component={Post}/>
                     <Route exact path="/post/:id" component={Post}/>
+                    <Route exact path="/post/:id/:mode" component={Post}/>
                     <Route exact path="/rankings" component={Rankings}/>
                     <Route exact path="/rankings/:param1" component={Rankings}/>
                     <Route exact path="/rankings/:param1/:param2" component={Rankings}/>

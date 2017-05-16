@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Config from '../../Config';
 
 import Banner from '../navigation/banner/Banner';
+import Edit from '../post/edit/Edit';
 
 var options = { month: "long", day: "numeric" };
 
@@ -11,7 +12,9 @@ class Post extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            post: {}
+            post: {
+                title: ""
+            }
         };
     }
 
@@ -25,22 +28,45 @@ class Post extends React.Component {
         });
     }
 
+    editMode(){
+        if (!this.props.match.params.mode){
+            return false;
+        }
+        if (this.props.match.params.mode.toLowerCase() !== "edit"){
+            return false;
+        }
+        return true;
+    }
+
     render() {
-        var post = this.state.post;
-        var date = new Date(post.created_at).toLocaleDateString("en-us", options);
-        return (
-            <div>
-                <Banner title="Post" subtitle="" />
-                <main className="post">
-                  <div className="container">
-                      <h2>{post.title}</h2>
-                      <h3 className="meta-data">Written by {post.author} on {date}</h3>
-                      <div className="content">{post.content}</div>
-                      <div className="views">{post.views} views</div>
-                  </div>
-                </main>
-            </div>
-        );
+        var date = new Date(this.state.post.created_at).toLocaleDateString("en-us", options);
+
+        if (this.editMode()){
+            return (
+                <div>
+                    <Banner title="Post" subtitle="" />
+                    <main className="post">
+                      <div className="container">
+                          <Edit title="Edit Post" post={this.state.post}></Edit>
+                      </div>
+                    </main>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <Banner title="Post" subtitle="" />
+                    <main className="post">
+                      <div className="container">
+                          <h2 className="title">{this.state.post.title}</h2>
+                          <h3 className="meta-data">Written by {this.state.post.author} on {date}</h3>
+                          <div className="content">{this.state.post.content}</div>
+                          <div className="views">{this.state.post.views} views</div>
+                      </div>
+                    </main>
+                </div>
+            );
+        }
     }
 }
 

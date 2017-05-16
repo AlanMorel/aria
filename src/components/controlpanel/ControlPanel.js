@@ -4,6 +4,7 @@ import Config from '../../Config';
 import Axios from 'axios';
 
 import Banner from '../navigation/banner/Banner';
+import Edit from '../post/edit/Edit';
 
 var options = {
     month: "short",
@@ -15,20 +16,13 @@ class ControlPanel extends React.Component {
     constructor(props) {
         super(props);
         this.openNewPost = this.openNewPost.bind(this);
-        this.submitPost = this.submitPost.bind(this);
-        this.newPostTitleChange = this.newPostTitleChange.bind(this);
-        this.newPostCategoryChange = this.newPostCategoryChange.bind(this);
-        this.newPostContentsChange = this.newPostContentsChange.bind(this);
 
         this.state = {
             data: {
                 data: [],
                 error: [],
             },
-            status: -2,
-            title: "",
-            category: "",
-            contents: ""
+            status: -2
         };
     }
 
@@ -76,48 +70,16 @@ class ControlPanel extends React.Component {
         this.setState({status: -1});
     }
 
-    newPostTitleChange(event) {
-        this.setState({title: event.target.value});
-    }
-
-    newPostCategoryChange(event) {
-        this.setState({category: event.target.value});
-    }
-
-    newPostContentsChange(event) {
-        this.setState({contents: event.target.value});
-    }
-
     getNewPostDiv() {
         if (this.state.status === -2){
             return <span className="new" onClick={this.openNewPost}>+ Create new Post</span>
         } else if (this.state.status === -1){
-            var news = ["All", "General", "Announcement", "Update", "Event", "Community"];
-            var selections = news.map(function(category) {
-                return (
-                    <option key={category}>{category}</option>
-                );
-            });
-            return (
-                <div className="new-post">
-                    <h2>Create a new Post</h2>
-                    <div className="new-post-section">
-                        <label>Category: </label>
-                        <select onChange={this.newPostCategoryChange}>
-                            {selections}
-                        </select>
-                    </div>
-                    <div className="new-post-section">
-                        <label>Title: </label>
-                        <input type="text" onChange={this.newPostTitleChange}></input>
-                    </div>
-                    <div className="new-post-section">
-                        <label>Contents: </label>
-                        <textarea onChange={this.newPostContentsChange}></textarea>
-                    </div>
-                    <div onClick={this.submitPost}>Submit Post</div>
-                </div>
-            );
+            var post = {
+                title: "",
+                type: "",
+                content: ""
+            }
+            return <Edit title="Create new Post" post={post}></Edit>;
         } else if (this.state.status === 0){
             return <div>Your post is being sent...</div>;
         } else {
