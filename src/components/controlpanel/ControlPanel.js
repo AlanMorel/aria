@@ -11,6 +11,12 @@ var options = {
     day: "numeric"
 };
 
+var statusCode = {
+    HIDE: -2,
+    SHOW: -1,
+    SENDING: 0
+}
+
 class ControlPanel extends React.Component {
 
     constructor(props) {
@@ -22,7 +28,7 @@ class ControlPanel extends React.Component {
                 data: [],
                 error: [],
             },
-            status: -2
+            status: statusCode.HIDE
         };
     }
 
@@ -67,11 +73,11 @@ class ControlPanel extends React.Component {
     }
 
     openNewPost() {
-        this.setState({status: -1});
+        this.setState({status: statusCode.SHOW});
     }
 
     getNewPostDiv() {
-        if (this.state.status === -2){
+        if (this.state.status === statusCode.HIDE){
             return <span className="new" onClick={this.openNewPost}>+ Create new Post</span>
         } else if (this.state.status === -1){
             var post = {
@@ -79,20 +85,15 @@ class ControlPanel extends React.Component {
                 type: "",
                 content: ""
             }
-            return <Edit title="Create new Post" post={post}></Edit>;
-        } else if (this.state.status === 0){
+            return <Edit title="Create new Post" post={post} submit={this.submitPost}></Edit>;
+        } else if (this.state.status === statusCode.SENDING){
             return <div>Your post is being sent...</div>;
         } else {
             return <div>Your post has been created! View it <NavLink activeClassName="active" to={{pathname: '/post/' + this.state.status}}>here.</NavLink></div>;
         }
     }
 
-    submitPost(){
-        var data = {
-            'title': this.state.title,
-            'category': this.state.category,
-            'contents': this.state.contents
-        }
+    submitPost(data){
         console.log(data);
         Axios.post(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
             console.log(response.data);

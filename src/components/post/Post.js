@@ -38,6 +38,20 @@ class Post extends React.Component {
         return true;
     }
 
+    submitPost(data){
+        console.log(data);
+        Axios.put(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
+            console.log(response.data);
+            if (response.data.success){
+                console.log("Successfully posted post.");
+
+            } else {
+                console.log("Error: " + response.data.error);
+            }
+        });
+    }
+
+
     render() {
         var date = new Date(this.state.post.created_at).toLocaleDateString("en-us", options);
 
@@ -47,7 +61,7 @@ class Post extends React.Component {
                     <Banner title="Post" subtitle="" />
                     <main className="post">
                       <div className="container">
-                          <Edit title="Edit Post" post={this.state.post}></Edit>
+                          <Edit title="Edit Post" post={this.state.post} submit={this.submitPost}></Edit>
                       </div>
                     </main>
                 </div>

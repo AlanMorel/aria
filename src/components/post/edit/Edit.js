@@ -6,14 +6,15 @@ class Edit extends React.Component {
     constructor(props) {
         super(props);
 
+        this.submit = this.submit.bind(this);
         this.newPostTitleChange = this.newPostTitleChange.bind(this);
         this.newPostCategoryChange = this.newPostCategoryChange.bind(this);
-        this.newPostContentsChange = this.newPostContentsChange.bind(this);
+        this.newPostContentChange = this.newPostContentChange.bind(this);
 
         this.state = {
             title: "",
             category: "",
-            contents: ""
+            content: ""
         };
     }
 
@@ -25,12 +26,24 @@ class Edit extends React.Component {
         this.setState({category: event.target.value});
     }
 
-    newPostContentsChange(event) {
-        this.setState({contents: event.target.value});
+    newPostContentChange(event) {
+        this.setState({content: event.target.value});
     }
 
     componentDidMount() {
 
+    }
+
+    submit() {
+        console.log("SUBMITTING POST");
+        var data = {
+            'title': this.state.title,
+            'category': this.state.category,
+            'content': this.state.content
+        }
+        console.log(data);
+        this.props.submit(data);
+        console.log("SUBMITTING POST2");
     }
 
     render() {
@@ -55,10 +68,10 @@ class Edit extends React.Component {
                     <input type="text" onChange={this.newPostTitleChange} value={this.props.post.title}></input>
                 </div>
                 <div className="new-post-section">
-                    <label>Contents: </label>
-                    <textarea onChange={this.newPostContentsChange} value={this.props.post.content}></textarea>
+                    <label>Content: </label>
+                    <textarea onChange={this.newPostContentChange} value={this.props.post.content}></textarea>
                 </div>
-                <div onClick={this.submitPost}>Submit Post</div>
+                <div onClick={this.submit}>Submit Post</div>
             </div>
         );
     }
