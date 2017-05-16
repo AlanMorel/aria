@@ -43,44 +43,45 @@ class Post extends React.Component {
         Axios.put(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
-                console.log("Successfully posted post.");
-
+                console.log("Successfully editted post.");
             } else {
                 console.log("Error: " + response.data.error);
             }
         });
     }
 
-
-    render() {
-        var date = new Date(this.state.post.created_at).toLocaleDateString("en-us", options);
-
+    getBody(){
         if (this.editMode()){
-            return (
-                <div>
-                    <Banner title="Post" subtitle="" />
-                    <main className="post">
-                      <div className="container">
-                          <Edit title="Edit Post" post={this.state.post} submit={this.submitPost}></Edit>
-                      </div>
-                    </main>
-                </div>
-            );
+            if(this.state.post.title.length > 0){
+                return <Edit title="Edit Post" post={this.state.post} submit={this.submitPost}></Edit>;
+            } else {
+                return <div>Data loading...</div>
+            }
         } else {
+            var date = new Date(this.state.post.created_at).toLocaleDateString("en-us", options);
+
             return (
                 <div>
-                    <Banner title="Post" subtitle="" />
-                    <main className="post">
-                      <div className="container">
-                          <h2 className="title">{this.state.post.title}</h2>
-                          <h3 className="meta-data">Written by {this.state.post.author} on {date}</h3>
-                          <div className="content">{this.state.post.content}</div>
-                          <div className="views">{this.state.post.views} views</div>
-                      </div>
-                    </main>
+                    <h2 className="title">{this.state.post.title}</h2>
+                    <h3 className="meta-data">Written by {this.state.post.author} on {date}</h3>
+                    <div className="content">{this.state.post.content}</div>
+                    <div className="views">{this.state.post.views} views</div>
                 </div>
             );
         }
+    }
+
+    render() {
+        return (
+            <div>
+                <Banner title="Post" subtitle="" />
+                <main className="post">
+                  <div className="container">
+                      {this.getBody()}
+                  </div>
+                </main>
+            </div>
+        );
     }
 }
 
