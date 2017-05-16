@@ -64,7 +64,7 @@ class Edit extends React.Component {
                     <label>Content: </label>
                     <textarea onChange={this.newPostContentChange} value={this.state.content}></textarea>
                 </div>
-                <div onClick={this.submit}>Submit Post</div>
+                <div className="submit-post" onClick={this.submit}>Submit Post</div>
             </div>
         );
     }

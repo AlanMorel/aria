@@ -6,7 +6,7 @@
         border: solid 1px black;
     }
 
-    padding: 1rem;
+    padding: 1rem 1rem 3rem;
 
     .edit-post-title {
         margin-top: 0;
@@ -34,6 +34,22 @@
 
     textarea {
         resize: none;
-        height: 10rem;
+        height: 20rem;
+    }
+
+    .submit-post {
+        color: white;
+        padding: 0.25rem 1rem;
+        background-color: #424caf;
+        border-radius: 0.25rem;
+        border: solid 1px #333b8a;
+        font-size: 0.9rem;
+        cursor: pointer;
+        float: right;
+        margin-right: 1.6rem;
+
+        &:hover {
+            background-color: #333b8a;
+        }
     }
 }
