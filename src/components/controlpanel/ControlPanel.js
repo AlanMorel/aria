@@ -14,11 +14,21 @@ class ControlPanel extends React.Component {
 
     constructor(props) {
         super(props);
+        this.openNewPost = this.openNewPost.bind(this);
+        this.submitPost = this.submitPost.bind(this);
+        this.newPostTitleChange = this.newPostTitleChange.bind(this);
+        this.newPostCategoryChange = this.newPostCategoryChange.bind(this);
+        this.newPostContentsChange = this.newPostContentsChange.bind(this);
+
         this.state = {
             data: {
                 data: [],
-                error: []
-            }
+                error: [],
+            },
+            status: -2,
+            title: "",
+            category: "",
+            contents: ""
         };
     }
 
@@ -41,7 +51,7 @@ class ControlPanel extends React.Component {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
             return (
                     <div className="control-panel-post" key={post.id}>
-                        <NavLink to={{pathname: '/controlpanel/' + post.id}}>
+                        <NavLink to={{pathname: '/post/' + post.id}}>
                             <span className="title">{post.title}</span>
                         </NavLink>
                         <span className="author">{post.author}</span>
@@ -55,13 +65,82 @@ class ControlPanel extends React.Component {
             <div>
                 <h2>Community Posts</h2>
                 <div>
-                    <NavLink to={{pathname: '/controlpanel/new'}}>
-                        <span className="new">+ Create new Post</span>
-                    </NavLink>
+                    {this.getNewPostDiv()}
                 </div>
                 <div className="control-panel-posts">{posts}</div>
             </div>
         )
+    }
+
+    openNewPost() {
+        this.setState({status: -1});
+    }
+
+    newPostTitleChange(event) {
+        this.setState({title: event.target.value});
+    }
+
+    newPostCategoryChange(event) {
+        this.setState({category: event.target.value});
+    }
+
+    newPostContentsChange(event) {
+        this.setState({contents: event.target.value});
+    }
+
+    getNewPostDiv() {
+        if (this.state.status === -2){
+            return <span className="new" onClick={this.openNewPost}>+ Create new Post</span>
+        } else if (this.state.status === -1){
+            var news = ["All", "General", "Announcement", "Update", "Event", "Community"];
+            var selections = news.map(function(category) {
+                return (
+                    <option key={category}>{category}</option>
+                );
+            });
+            return (
+                <div className="new-post">
+                    <h2>Create a new Post</h2>
+                    <div className="new-post-section">
+                        <label>Category: </label>
+                        <select onChange={this.newPostCategoryChange}>
+                            {selections}
+                        </select>
+                    </div>
+                    <div className="new-post-section">
+                        <label>Title: </label>
+                        <input type="text" onChange={this.newPostTitleChange}></input>
+                    </div>
+                    <div className="new-post-section">
+                        <label>Contents: </label>
+                        <textarea onChange={this.newPostContentsChange}></textarea>
+                    </div>
+                    <div onClick={this.submitPost}>Submit Post</div>
+                </div>
+            );
+        } else if (this.state.status === 0){
+            return <div>Your post is being sent...</div>;
+        } else {
+            return <div>Your post has been created! View it <NavLink activeClassName="active" to={{pathname: '/post/' + this.state.status}}>here.</NavLink></div>;
+        }
+    }
+
+    submitPost(){
+        var data = {
+            'title': this.state.title,
+            'category': this.state.category,
+            'contents': this.state.contents
+        }
+        console.log(data);
+        Axios.post(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
+            console.log(response.data);
+            if (response.data.success){
+                console.log("Successfully posted post.");
+
+            } else {
+                console.log("Error: " + response.data.error);
+            }
+        });
     }
 
     getAlert() {
