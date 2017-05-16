@@ -1,5 +1,4 @@
 import React from 'react';
-import Config from '../../../Config';
 
 class Edit extends React.Component {
 

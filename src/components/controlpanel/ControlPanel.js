@@ -4,7 +4,7 @@ import Config from '../../Config';
 import Axios from 'axios';
 
 import Banner from '../navigation/banner/Banner';
-import Edit from '../post/edit/Edit';
+import Editor from '../post/editor/Editor';
 
 var options = {
     month: "short",
@@ -85,7 +85,7 @@ class ControlPanel extends React.Component {
                 type: "",
                 content: ""
             }
-            return <Edit title="Create new Post" post={post} submit={this.submitPost}></Edit>;
+            return <Editor title="Create new Post" post={post} submit={this.submitPost} />;
         } else if (this.state.status === statusCode.SENDING){
             return <div>Your post is being sent...</div>;
         } else {

@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Config from '../../Config';
 
 import Banner from '../navigation/banner/Banner';
-import Edit from '../post/edit/Edit';
+import Editor from '../post/editor/Editor';
 
 var options = { month: "long", day: "numeric" };
 
@@ -53,7 +53,7 @@ class Post extends React.Component {
     getBody(){
         if (this.editMode()){
             if(this.state.post.title.length > 0){
-                return <Edit title="Edit Post" post={this.state.post} submit={this.submitPost}></Edit>;
+                return <Editor title="Edit Post" post={this.state.post} submit={this.submitPost} />;
             } else {
                 return <div>Data loading...</div>
             }
