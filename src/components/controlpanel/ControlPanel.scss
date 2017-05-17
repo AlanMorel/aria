@@ -2,7 +2,14 @@
 
 .control-panel {
 
-    .new {
+    input[type="text"] {
+        font-size: 1rem;
+        margin-right: 1rem;
+        padding: 0.15rem;
+        width: 40rem;
+    }
+
+    .new, .update-button {
         color: white;
         padding: 0.25rem 1rem;
         background-color: #424caf;

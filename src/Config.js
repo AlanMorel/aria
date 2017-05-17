@@ -15,11 +15,7 @@ Config.exp_rate = 1;
 Config.meso_rate = 1;
 Config.drop_rate = 1;
 
-Config.alert = {
-    type: "announcement",
-    content: "Hello world! Welcome to the Aria CMS! This is an example announcement!",
-    post_id: 0
-}
+Config.alert = "Hello world! Welcome to the Aria CMS! This is an example announcement!";
 
 Config.discord = {
     base_url: 'https://discordapp.com/widget',
