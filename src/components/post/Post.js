@@ -64,7 +64,7 @@ class Post extends React.Component {
                 <div>
                     <h2 className="title">{this.state.post.title}</h2>
                     <h3 className="meta-data">Written by {this.state.post.author} on {date}</h3>
-                    <div className="content">{this.state.post.content}</div>
+                    <div className="content" dangerouslySetInnerHTML={{ __html: this.state.post.content }} ></div>
                     <div className="views">{this.state.post.views} views</div>
                 </div>
             );

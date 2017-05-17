@@ -9,6 +9,8 @@
     padding: 0 calc(50% - #{$body-width / 2});
     animation-name: fade;
     animation-duration: 1s;
+    display: flex;
+    justify-content: space-between;
 
     @keyframes fade {
         from {
@@ -23,6 +25,10 @@
         background-color: rgba(0, 0, 0, 0.25);
     }
 
+    .welcome {
+        line-height: 3rem;
+    }
+
     .options {
         display: inline-flex;
         margin: 0 1rem;
@@ -35,7 +41,7 @@
             &>*{
                 padding: 1rem;
             }
-            
+
             &:hover {
                 background-color: rgba(0, 0, 0, 0.25);
             }
