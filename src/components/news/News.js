@@ -1,5 +1,4 @@
 import React from 'react';
-import Config from '../../Config';
 import Utility from '../../Utility';
 
 import Banner from '../navigation/banner/Banner';

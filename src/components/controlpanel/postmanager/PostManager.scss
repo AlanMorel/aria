@@ -1,0 +1,55 @@
+@import "../../../stylesheets/Variables.scss";
+
+.post-manager {
+    .control-panel-posts {
+        margin-top: 1rem;
+    }
+
+    .control-panel-post {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+        padding: 0.5rem 0;
+        border-bottom: solid 1px lightgray;
+
+        a:hover {
+            color: #ea706d;
+        }
+
+        span {
+            font-family: $secondary-font;
+            font-size: 1rem;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+        }
+
+        .title {
+            width: 70%;
+            font-family: $secondary-font;
+        }
+
+        .author {
+            width: 10%;
+        }
+
+        .date {
+            width: 10%;
+        }
+
+        .delete {
+            width: 10%;
+            color: red;
+            border: solid 1px red;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            padding: 0.1rem;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: red;
+                color: white;
+            }
+        }
+    }
+}

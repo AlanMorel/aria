@@ -1,0 +1,20 @@
+@import "../../../stylesheets/Variables.scss";
+
+.settings {
+    .settings-alert {
+        margin-bottom: 1rem;
+    }
+
+    .rate {
+        width: 3rem;
+        display: inline-block;
+    }
+
+    input {
+        margin-right: 1rem;
+    }
+
+    .settings-rates {
+        margin-bottom: 1rem;
+    }
+}
