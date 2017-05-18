@@ -46,39 +46,6 @@ class PostManager extends React.Component {
         });
     }
 
-    getPosts() {
-        if (this.state.data.success === false){
-            return (
-                <div className="error">{this.state.data.error}</div>
-            );
-        }
-
-        var self = this;
-        var posts = this.state.data.data.map(function(post) {
-            var date = new Date(post.created_at).toLocaleDateString("en-us", options);
-            return (
-                    <div className="control-panel-post" key={post.id}>
-                        <NavLink to={{pathname: '/post/' + post.id}}>
-                            <span className="title">{post.title}</span>
-                        </NavLink>
-                        <span className="author">{post.author}</span>
-                        <span className="date">{date}</span>
-                        <span className="delete" onClick={() => self.deletePost(post.id)}>Delete</span>
-                    </div>
-                );
-        });
-
-        return (
-            <div>
-                <h2>Community Posts</h2>
-                <div>
-                    {this.getNewPostDiv()}
-                </div>
-                <div className="control-panel-posts">{posts}</div>
-            </div>
-        )
-    }
-
     openNewPost() {
         this.setState({status: statusCode.SHOW});
     }
@@ -110,6 +77,39 @@ class PostManager extends React.Component {
                 console.log("Error: " + response.data.error);
             }
         });
+    }
+
+    getPosts() {
+        if (this.state.data.success === false){
+            return (
+                <div className="error">{this.state.data.error}</div>
+            );
+        }
+
+        var self = this;
+        var posts = this.state.data.data.map(function(post) {
+            var date = new Date(post.created_at).toLocaleDateString("en-us", options);
+            return (
+                    <div className="control-panel-post" key={post.id}>
+                        <NavLink to={{pathname: '/post/' + post.id}}>
+                            <span className="title">{post.title}</span>
+                        </NavLink>
+                        <span className="author">{post.author}</span>
+                        <span className="date">{date}</span>
+                        <span className="delete" onClick={() => self.deletePost(post.id)}>Delete</span>
+                    </div>
+                );
+        });
+
+        return (
+            <div>
+                <h2>Community Posts</h2>
+                <div>
+                    {this.getNewPostDiv()}
+                </div>
+                <div className="control-panel-posts">{posts}</div>
+            </div>
+        )
     }
 
     render() {
