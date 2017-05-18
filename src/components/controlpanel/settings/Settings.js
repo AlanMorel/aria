@@ -67,7 +67,7 @@ class Settings extends React.Component {
             <div className="settings">
                 <h2>Settings</h2>
                 <div className="settings-alert">
-                    <span className="rate">Enter alert:</span>
+                    <span>Enter alert:</span>
                     <input type="text" placeholder="Enter an alert" onChange={this.alertChange} value={this.state.alert}></input>
                 </div>
                 <div className="settings-rates">

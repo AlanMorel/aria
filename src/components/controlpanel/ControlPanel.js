@@ -20,15 +20,26 @@ class ControlPanel extends React.Component {
         );
     }
 
+    getBody(){
+        if (this.props.status.logged_in){
+            var adminOptions = this.getAdminOptions();
+            return (
+                <div>
+                    <h1>What would you like to do today?</h1>
+                    {adminOptions}
+                </div>
+            );
+        } else {
+            return <div>Please log in to access the control panel.</div>;
+        }
+    }
+
     render() {
-        var adminOptions = this.getAdminOptions();
-        //var playerOptions = this.getPlayerOptions();
         return (
             <div>
                 <Banner title="Control Panel" subtitle="The place to manage your account."/>
                 <main className="control-panel">
-                    <h1>What would you like to do today?</h1>
-                    {adminOptions}
+                    {this.getBody()}
                 </main>
             </div>
         );
