@@ -1,5 +1,6 @@
 import React from 'react';
 import Config from '../../Config';
+import Utility from '../../Utility';
 
 import Banner from '../navigation/banner/Banner';
 import Status from '../home/status/Status';
@@ -16,7 +17,7 @@ import Facebook from '../social/facebook/Facebook';
 class Home extends React.Component {
 
     componentDidMount() {
-        Config.setTitle("Home");
+        Utility.setTitle("Home");
     }
 
     render() {

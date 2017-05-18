@@ -1,5 +1,6 @@
 import React from 'react';
 import Config from '../../Config';
+import Utility from '../../Utility';
 
 import Banner from '../navigation/banner/Banner';
 import Newslist from '../../components/news/newslist/Newslist';
@@ -7,7 +8,7 @@ import Newslist from '../../components/news/newslist/Newslist';
 class News extends React.Component {
 
     componentDidMount() {
-        Config.setTitle("News");
+        Utility.setTitle("News");
     }
 
     getTitle() {

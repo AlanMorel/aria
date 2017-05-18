@@ -1,12 +1,13 @@
 import React from 'react';
 import Config from '../../Config';
+import Utility from '../../Utility';
 
 import Banner from '../navigation/banner/Banner';
 
 class Vote extends React.Component {
 
     componentDidMount() {
-        Config.setTitle("Vote");
+        Utility.setTitle("Vote");
         console.log(this.props.status);
     }
 

@@ -54,7 +54,7 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Header status={this.state} setLogin={this.setLogin}/>
+                    <Header status={this.state} setLogin={this.setLogin} alert={Config.alert}/>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/about" component={About}/>
                     <Route exact path="/news" component={News}/>

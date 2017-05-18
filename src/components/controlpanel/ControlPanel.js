@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import Config from '../../Config';
+import Utility from '../../Utility';
 
 import Banner from '../navigation/banner/Banner';
 import Editor from '../post/editor/Editor';
@@ -35,7 +36,7 @@ class ControlPanel extends React.Component {
     }
 
     componentDidMount() {
-        Config.setTitle("Control Panel");
+        Utility.setTitle("Control Panel");
         Axios.get(Config.base_url + `news`).then(response => {
             console.log(response.data);
             this.setState({data: response.data});
@@ -94,7 +95,7 @@ class ControlPanel extends React.Component {
     getNewPostDiv() {
         if (this.state.status === statusCode.HIDE){
             return <span className="new" onClick={this.openNewPost}>+ Create new Post</span>
-        } else if (this.state.status === -1){
+        } else if (this.state.status === statusCode.SHOW){
             var post = {
                 title: "",
                 type: "",
@@ -128,7 +129,7 @@ class ControlPanel extends React.Component {
     getAlert() {
         return (
             <div>
-                <h2>Update Alert</h2>
+                <h2>Update Info</h2>
                 <div className="control-panel-alert">
                     <input type="text" placeholder="Enter an alert" value={this.state.alert} onChange={this.alertChange}></input>
                     <button onClick={this.updateAlert} className="update-button">Update Alert</button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Config from '../../Config';
+import Utility from '../../Utility';
 
 import Banner from '../navigation/banner/Banner';
 import Rankingslist from '../../components/rankings/rankingslist/Rankingslist';
@@ -7,7 +8,7 @@ import Rankingslist from '../../components/rankings/rankingslist/Rankingslist';
 class Rankings extends React.Component {
 
     componentDidMount() {
-        Config.setTitle("Rankings");
+        Utility.setTitle("Rankings");
     }
 
     render() {

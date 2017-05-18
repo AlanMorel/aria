@@ -1,5 +1,4 @@
 import React from 'react';
-import Config from '../../../Config';
 
 class Alert extends React.Component {
 
@@ -18,13 +17,13 @@ class Alert extends React.Component {
     }
 
     render() {
-        if (Config.alert.length < 1 || !this.state.show) {
+        if (this.props.alert.length < 1 || !this.state.show) {
             return null;
         }
         return (
             <div className="alert">
                 <span className="icon"></span>
-                {Config.alert}
+                {this.props.alert}
                 <span onClick={this.close} className="close">&#10006;</span>
             </div>
         );

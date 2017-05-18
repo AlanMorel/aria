@@ -1,6 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import Config from '../../../Config';
+import Utility from '../../../Utility';
+
 import { NavLink } from 'react-router-dom';
 
 import Category from '../../navigation/category/Category';
@@ -45,6 +47,7 @@ class Newslist extends React.Component {
             console.log(response.data);
             this.setState({data: response.data});
         });
+        Utility.scrollToTop();
     }
 
     getResource(params) {

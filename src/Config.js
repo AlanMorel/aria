@@ -66,8 +66,4 @@ Config.vote_sites = {
     }
 };
 
-Config.setTitle = function(title) {
-    document.title = title + " | " + Config.server_name + " - v" + Config.version + " MapleStory Private Server";
-};
-
 module.exports = Config;

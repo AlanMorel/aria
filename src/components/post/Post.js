@@ -40,7 +40,7 @@ class Post extends React.Component {
 
     submitPost(data){
         console.log(data);
-        Axios.put(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
+        Axios.patch(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
                 console.log("Successfully editted post.");
