@@ -40,7 +40,7 @@ class PostManager extends React.Component {
 
     deletePost(id) {
         console.log("Deleting post :" + id);
-        Axios.delete('/post/' + id,).then(response => {
+        Axios.delete(Config.base_url + '/post/' + id,).then(response => {
             console.log(response.data);
             //TODO remove post from state if successful
         });
