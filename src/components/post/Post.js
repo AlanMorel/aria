@@ -20,7 +20,7 @@ class Post extends React.Component {
 
     componentDidMount() {
         var id = this.props.match.params.id;
-        Axios.get(Config.base_url + `post/` + id).then(response => {
+        Axios.get(Config.base_url + `post/` + id, { withCredentials: true }).then(response => {
             console.log(response.data);
             this.setState({
                 post: response.data.data[0]
