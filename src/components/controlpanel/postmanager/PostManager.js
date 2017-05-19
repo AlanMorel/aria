@@ -76,9 +76,10 @@ class PostManager extends React.Component {
             if (response.data.success){
                 this.setState({status: statusCode.HIDE});
                 this.refs.modal.show("Success!", "You have successfully created a new post.");
-                //TODO append post to array
                 console.log("Successfully posted post.");
+                //TODO append post to array
             } else {
+                this.refs.modal.show("Server Error", response.data.error);
                 console.log("Error: " + response.data.error);
             }
         });

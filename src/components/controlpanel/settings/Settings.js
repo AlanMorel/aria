@@ -2,6 +2,8 @@ import React from 'react';
 import Axios from 'axios';
 import Config from '../../../Config';
 
+import Modal from '../../modal/Modal';
+
 class Settings extends React.Component {
 
     constructor(props) {
@@ -55,8 +57,10 @@ class Settings extends React.Component {
 
             if (response.data.success) {
                 this.setState(response.data);
+                this.refs.modal.show("Success!", "You have successfully updated the setttings.");
                 console.log("Successfully updated settings.");
             } else {
+                this.refs.modal.show("Server Error", response.data.error);
                 console.log("Error: " + response.data.error);
             }
         });
@@ -65,6 +69,7 @@ class Settings extends React.Component {
     render() {
         return (
             <div className="settings">
+                <Modal ref="modal" />
                 <h2>Settings</h2>
                 <div className="settings-alert">
                     <span>Enter alert:</span>
@@ -78,7 +83,7 @@ class Settings extends React.Component {
                     <span className="rate">Drop:</span>
                     <input type="number" min="1" max="1000" onChange={this.dropRateChange} value={this.state.drop}></input>
                 </div>
-                <button onClick={this.update} className="update-button">Update</button>
+                <button onClick={this.update} className="update-button">Update Settings</button>
             </div>
         );
     }

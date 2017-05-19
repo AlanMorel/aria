@@ -29,7 +29,7 @@ $width: 20rem;
         float: right;
         margin-top: -0.25rem;
         border-radius: 0.25rem;
-        padding: 0.1rem 0.3rem;
+        padding: 0 0.3rem 0.1rem;
         cursor: pointer;
         background-color: #45946b;
 
@@ -41,7 +41,6 @@ $width: 20rem;
     .modal-title {
         text-align: center;
         font-size: 2rem;
-        margin-top: 1rem;
     }
 
     .modal-text {
@@ -56,7 +55,7 @@ $width: 20rem;
         background-color: #45946b;
         padding: 0.5rem 2rem;
         border-radius: 0.25rem;
-        margin-top: 1.5rem;
+        margin-top: 0.5rem;
         float: right;
         cursor: pointer;
 
