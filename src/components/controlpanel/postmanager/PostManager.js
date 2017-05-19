@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Config from '../../../Config';
 
 import Editor from '../../post/editor/Editor';
+import Modal from '../../modal/Modal';
 
 var options = {
     month: "short",
@@ -48,6 +49,7 @@ class PostManager extends React.Component {
 
     openNewPost() {
         this.setState({status: statusCode.SHOW});
+        this.refs.modal.show("Hi there!", "You are now about to create a post!");
     }
 
     getNewPostDiv() {
@@ -72,6 +74,9 @@ class PostManager extends React.Component {
         Axios.post(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
+                this.setState({status: statusCode.HIDE});
+                this.refs.modal.show("Success!", "You have successfully created a new post.");
+                //TODO append post to array
                 console.log("Successfully posted post.");
             } else {
                 console.log("Error: " + response.data.error);
@@ -104,9 +109,8 @@ class PostManager extends React.Component {
         return (
             <div>
                 <h2>Community Posts</h2>
-                <div>
-                    {this.getNewPostDiv()}
-                </div>
+                {this.getNewPostDiv()}
+                <Modal ref="modal" />
                 <div className="control-panel-posts">{posts}</div>
             </div>
         )
