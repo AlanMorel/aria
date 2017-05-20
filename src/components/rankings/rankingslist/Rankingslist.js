@@ -7,6 +7,7 @@ import Utility from '../../../Utility';
 import Player from '../../../components/rankings/player/Player';
 import Category from '../../navigation/category/Category';
 import Pagination from '../../navigation/pagination/Pagination';
+import Loading from '../../loading/Loading';
 
 class Rankingslist extends React.Component {
 
@@ -79,6 +80,10 @@ class Rankingslist extends React.Component {
             return (
                 <div className="error">{this.state.data.error}</div>
             );
+        }
+
+        if (this.state.data.data.length === 0) {
+            return <Loading />
         }
 
         var base = (this.state.data.current - 1) * 5;

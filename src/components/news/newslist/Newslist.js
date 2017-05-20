@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 import Category from '../../navigation/category/Category';
 import Pagination from '../../../components/navigation/pagination/Pagination';
+import Loading from '../../loading/Loading';
 
 var options = {
     month: "short",
@@ -76,6 +77,10 @@ class Newslist extends React.Component {
             return (
                 <div className="error">{this.state.data.error}</div>
             );
+        }
+
+        if (this.state.data.data.length === 0) {
+            return <Loading />
         }
 
         return this.state.data.data.map(function(post) {
