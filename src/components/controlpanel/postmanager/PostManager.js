@@ -1,7 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import Config from '../../../Config';
 
 import Editor from '../../post/editor/Editor';
 import Modal from '../../modal/Modal';

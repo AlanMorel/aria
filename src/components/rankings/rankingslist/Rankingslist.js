@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
-import Config from '../../../Config';
 import Utility from '../../../Utility';
 
 import Player from '../../../components/rankings/player/Player';

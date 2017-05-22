@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Axios from 'axios';
-import Config from '../../Config';
 
 class Greeting extends React.Component {
 

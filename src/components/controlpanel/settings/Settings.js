@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import Config from '../../../Config';
 
 import Modal from '../../modal/Modal';
 

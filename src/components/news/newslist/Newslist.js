@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import Config from '../../../Config';
 import Utility from '../../../Utility';
 
 import { NavLink } from 'react-router-dom';
