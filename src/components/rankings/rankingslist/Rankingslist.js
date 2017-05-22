@@ -76,7 +76,7 @@ class Rankingslist extends React.Component {
     }
 
     getPlayers(){
-        if (this.state.data.success === false){
+        if (this.state.data.success === false) {
             return (
                 <div className="error">{this.state.data.error}</div>
             );
@@ -106,7 +106,7 @@ class Rankingslist extends React.Component {
         if (!this.props.params.param1) {
             return false;
         }
-        if (this.props.params.param1.toLowerCase() !== type){
+        if (this.props.params.param1.toLowerCase() !== type) {
             return false;
         }
         return true;
@@ -127,7 +127,7 @@ class Rankingslist extends React.Component {
         if (!this.state.data.success) {
             return false;
         }
-        if (this.isRankingsType("search")){
+        if (this.isRankingsType("search")) {
             return false;
         }
         return true;
@@ -150,7 +150,7 @@ class Rankingslist extends React.Component {
             var pagination = <Pagination type="rankings" page_info={page_info} params={params} />
         }
 
-        if (this.isRankingsType("job")){
+        if (this.isRankingsType("job")) {
             var jobSelection = (
                 <div>
                     <select className="job" onChange={this.searchJobChange} defaultValue={"select"}>
@@ -179,7 +179,7 @@ class Rankingslist extends React.Component {
                     <Link className="submit" to={{pathname: '/rankings/job/' + this.state.job}}>Search</Link>
                 </div>
             );
-        } else if (this.isRankingsType("search")){
+        } else if (this.isRankingsType("search")) {
             var search = (
                 <div className="search">
                     <input type="text" name="name" placeholder="Player Name" onChange={this.searchUsernameChange} />

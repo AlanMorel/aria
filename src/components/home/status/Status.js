@@ -45,14 +45,16 @@ class Status extends React.Component {
         return this.state.data.server_status.map(function(server) {
             var className = "server-" + (server.status ? "online" : "offline");
             return (
-                <li key={server.name}>{server.name} <span className={className}></span></li>
+                <li key={server.name}>
+                    {server.name} <span className={className}></span>
+                </li>
             )
         });
 
     }
 
     getOnlineCount() {
-        if (this.state.fetching){
+        if (this.state.fetching) {
             return;
         }
         return this.state.data.online_count + " players online";
@@ -60,10 +62,7 @@ class Status extends React.Component {
 
     render() {
 
-        var title = this.getTitle();
         var status = this.getStatus();
-        var statuses = this.getStatuses();
-        var onlineCount = this.getOnlineCount();
 
         return (
             <div className="status">
@@ -72,11 +71,11 @@ class Status extends React.Component {
                         <img src={"/images/" + status + ".png"} alt="" />
                     </div>
                     <div className="description">
-                        <div className="title">{title}</div>
-                        <div className="online-count">{onlineCount}</div>
+                        <div className="title">{this.getTitle()}</div>
+                        <div className="online-count">{this.getOnlineCount()}</div>
                     </div>
                 </div>
-                <ul className="server-statuses">{statuses}</ul>
+                <ul className="server-statuses">{this.getStatuses()}</ul>
             </div>
         );
     }

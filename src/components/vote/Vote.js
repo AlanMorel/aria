@@ -11,8 +11,8 @@ class Vote extends React.Component {
         console.log(this.props.status);
     }
 
-    getSiteUrl(site){
-        if(!this.props.status.logged_in){
+    getSiteUrl(site) {
+        if(!this.props.status.logged_in) {
             return site.url;
         } else {
             return site.url + site.getPingback(this.props.status.username);
@@ -42,7 +42,7 @@ class Vote extends React.Component {
     }
 
     getInfo() {
-        if (this.props.status.logged_in){
+        if (this.props.status.logged_in) {
             return "If the vote is successful, the rewards will be added to your account shortly.";
         } else {
             return "If you would like to be rewarded for voting, please log in. You may choose to vote anyways.";
@@ -50,13 +50,12 @@ class Vote extends React.Component {
     }
 
     render() {
-        var sites = this.getVoteSites();
         return (
             <div>
                 <Banner title="Vote" subtitle="Support us by voting!" />
                 <main className="vote">
                     <h3 className="info">{this.getInfo()}</h3>
-                    {sites}
+                    {this.getVoteSites()}
                 </main>
             </div>
         );

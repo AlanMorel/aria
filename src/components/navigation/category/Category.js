@@ -28,9 +28,9 @@ class Category extends React.Component {
 
       return (
         <div className="category">
-          <ul>
-              {category}
-          </ul>
+            <ul>
+                {category}
+            </ul>
       </div>
       );
     }

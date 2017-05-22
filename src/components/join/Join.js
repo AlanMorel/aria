@@ -12,15 +12,15 @@ class Join extends React.Component {
         };
     }
 
-    register(e) {
-        e.preventDefault();
+    register(event) {
+        event.preventDefault();
 
         var form = new FormData(this.refs.form);
 
         Axios.post('join', form).then((response) => {
             console.log(response.data);
 
-            if (response.data.success){
+            if (response.data.success) {
                 console.log("Success");
                 this.props.openPopup("Welcome!", "Your account has been registered successfully. We're glad to have you on board!");
                 this.props.close();
@@ -38,14 +38,14 @@ class Join extends React.Component {
     }
 
     render() {
-        if (!this.props.open){
+        if (!this.props.open) {
             this.state = {
                 error: []
             };
             return null;
         }
 
-        if (this.state.error.length){
+        if (this.state.error.length) {
             var alert = (
                 <div className="alert">{this.state.error}</div>
             );
@@ -53,8 +53,8 @@ class Join extends React.Component {
 
         return (
             <div className="join">
-                <form onSubmit={ this.register.bind(this) } ref="form">
-                    <div className="prompt-close" onClick={ this.props.close }>&#10006;</div>
+                <form onSubmit={this.register.bind(this)} ref="form">
+                    <div className="prompt-close" onClick={this.props.close}>&#10006;</div>
                     <div className="prompt-title">Join {Config.server_name}</div>
                     <div>
                         <label htmlFor="name">Name</label>

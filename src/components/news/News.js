@@ -20,14 +20,11 @@ class News extends React.Component {
     }
 
     render() {
-        var title = this.getTitle();
-        var params = this.props.match.params;
-
         return (
             <div>
-                <Banner title={title} subtitle="Stay up-to-date with messages from the team." />
+                <Banner title={this.getTitle()} subtitle="Stay up-to-date with messages from the team." />
                 <main className="news">
-                    <Newslist params={params} pagination={true} category={true} />
+                    <Newslist params={this.props.match.params} pagination={true} category={true} />
                 </main>
             </div>
         );

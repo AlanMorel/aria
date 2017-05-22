@@ -50,17 +50,17 @@ class Edit extends React.Component {
             <div className="edit-post">
                 <h2 className="edit-post-title">{this.props.title}</h2>
                 <div className="new-post-section">
-                    <label>Type: </label>
+                    <label>Type:</label>
                     <select onChange={this.newPostTypeChange} defaultValue={this.state.type}>
                         {selections}
                     </select>
                 </div>
                 <div className="new-post-section">
-                    <label>Title: </label>
+                    <label>Title:</label>
                     <input type="text" onChange={this.newPostTitleChange} value={this.state.title}></input>
                 </div>
                 <div className="new-post-section">
-                    <label>Content: </label>
+                    <label>Content:</label>
                     <textarea onChange={this.newPostContentChange} value={this.state.content}></textarea>
                 </div>
                 <div className="submit-post" onClick={this.submit}>Submit Post</div>

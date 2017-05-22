@@ -11,8 +11,8 @@ class Login extends React.Component {
         };
     }
 
-    login(e) {
-        e.preventDefault();
+    login(event) {
+        event.preventDefault();
 
         var form = new FormData(this.refs.form);
         Axios.post('login', form, { withCredentials: true }).then((response) => {
@@ -38,7 +38,7 @@ class Login extends React.Component {
             return null;
         }
 
-        if (this.state.error){
+        if (this.state.error) {
             var alert = (
                 <div className="alert">{this.state.error}</div>
             );
@@ -46,8 +46,8 @@ class Login extends React.Component {
 
         return (
             <div className="login">
-                <form onSubmit={ this.login.bind(this) } ref="form">
-                    <div className="prompt-close" onClick={ this.props.close }>&#10006;</div>
+                <form onSubmit={this.login.bind(this)} ref="form">
+                    <div className="prompt-close" onClick={this.props.close}>&#10006;</div>
                     <div className="prompt-title">Login</div>
                     <div>
                         <label htmlFor="username">Username</label>

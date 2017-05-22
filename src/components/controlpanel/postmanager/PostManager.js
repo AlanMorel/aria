@@ -53,23 +53,23 @@ class PostManager extends React.Component {
     }
 
     getNewPostDiv() {
-        if (this.state.status === statusCode.HIDE){
+        if (this.state.status === statusCode.HIDE) {
             return <span className="new" onClick={this.openNewPost}>+ Create new Post</span>
-        } else if (this.state.status === statusCode.SHOW){
+        } else if (this.state.status === statusCode.SHOW) {
             var post = {
                 title: "",
                 type: "",
                 content: ""
             }
             return <Editor title="Create new Post" post={post} submit={this.submitPost} />;
-        } else if (this.state.status === statusCode.SENDING){
+        } else if (this.state.status === statusCode.SENDING) {
             return <div>Your post is being sent...</div>;
         } else {
             return <div>Your post has been created! View it <NavLink activeClassName="active" to={{pathname: '/post/' + this.state.status}}>here.</NavLink></div>;
         }
     }
 
-    submitPost(data){
+    submitPost(data) {
         console.log(data);
         Axios.post('post', data, { withCredentials: true }).then(response => {
             console.log(response.data);
@@ -85,7 +85,7 @@ class PostManager extends React.Component {
         });
     }
 
-    getPosts() {
+    getBody() {
         if (this.state.data.success === false){
             return (
                 <div className="error">{this.state.data.error}</div>
@@ -96,22 +96,22 @@ class PostManager extends React.Component {
         var posts = this.state.data.data.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
             return (
-                    <div className="control-panel-post" key={post.id}>
-                        <NavLink to={{pathname: '/post/' + post.id}}>
-                            <span className="title">{post.title}</span>
-                        </NavLink>
-                        <span className="author">{post.author}</span>
-                        <span className="date">{date}</span>
-                        <span className="delete" onClick={() => self.deletePost(post.id)}>Delete</span>
-                    </div>
-                );
+                <div className="control-panel-post" key={post.id}>
+                    <NavLink to={{pathname: '/post/' + post.id}}>
+                        <span className="title">{post.title}</span>
+                    </NavLink>
+                    <span className="author">{post.author}</span>
+                    <span className="date">{date}</span>
+                    <span className="delete" onClick={() => self.deletePost(post.id)}>Delete</span>
+                </div>
+            );
         });
 
         return (
             <div>
+                <Modal ref="modal" />
                 <h2>Community Posts</h2>
                 {this.getNewPostDiv()}
-                <Modal ref="modal" />
                 <div className="control-panel-posts">{posts}</div>
             </div>
         )
@@ -119,7 +119,7 @@ class PostManager extends React.Component {
 
     render() {
         return (
-            <div className="post-manager">{this.getPosts()}</div>
+            <div className="post-manager">{this.getBody()}</div>
         );
     }
 }

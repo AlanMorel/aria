@@ -20,10 +20,14 @@ class Home extends React.Component {
         Utility.setTitle("Home");
     }
 
+    getSubtitle() {
+        return "v" + Config.version + " MapleStory Private Server (" + Config.exp_rate + "x exp, " + Config.meso_rate + "x meso, " + Config.drop_rate + "x drop)";
+    }
+
     render() {
         return (
             <div>
-                <Banner title={Config.server_name} subtitle={"v" + Config.version + " MapleStory Private Server (" + Config.exp_rate + "x exp, " + Config.meso_rate + "x meso, " + Config.drop_rate + "x drop)"} />
+                <Banner title={Config.server_name} subtitle={this.getSubtitle()} />
                 <main className="home">
                     <div className="left">
                         <h1>Latest News and Events</h1>

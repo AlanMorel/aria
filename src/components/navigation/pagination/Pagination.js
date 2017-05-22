@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Pagination extends React.Component {
 
-    getBase(){
+    getBase() {
         var url = '/' + this.props.type + '/';
         var params = this.props.params;
 
@@ -27,16 +27,16 @@ class Pagination extends React.Component {
         var last = this.props.page_info.last;
 
       return (
-        <nav className="pagination">
-            <div className="page-info">Page {current} / {last}</div>
-            <ul>
-              <li><Link to={{pathname: base + '1'}}>First</Link></li>
-              <li><Link to={{pathname: base + prev}}>Prev</Link></li>
-              <li><Link to={{pathname: base + current}} className="current">Current</Link></li>
-              <li><Link to={{pathname: base + next}}>Next</Link></li>
-              <li><Link to={{pathname: base + last}}>Last</Link></li>
-            </ul>
-        </nav>
+          <nav className="pagination">
+              <div className="page-info">Page {current} / {last}</div>
+              <ul>
+                  <li><Link to={{pathname: base + '1'}}>First</Link></li>
+                  <li><Link to={{pathname: base + prev}}>Prev</Link></li>
+                  <li><Link to={{pathname: base + current}} className="current">Current</Link></li>
+                  <li><Link to={{pathname: base + next}}>Next</Link></li>
+                  <li><Link to={{pathname: base + last}}>Last</Link></li>
+              </ul>
+          </nav>
       );
     }
 }

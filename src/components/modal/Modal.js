@@ -22,12 +22,12 @@ class Modal extends React.Component {
         });
     }
 
-    close(){
+    close() {
         this.setState({show: false});
     }
 
     render() {
-        if (!this.state.show){
+        if (!this.state.show) {
             return null;
         }
 

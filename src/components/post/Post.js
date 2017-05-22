@@ -43,7 +43,7 @@ class Post extends React.Component {
         var id = this.props.match.params.id;
         Axios.patch('post/' + id, data, { withCredentials: true }).then(response => {
             console.log(response.data);
-            if (response.data.success){
+            if (response.data.success) {
                 console.log("Successfully editted post.");
             } else {
                 console.log("Error: " + response.data.error);
@@ -53,7 +53,7 @@ class Post extends React.Component {
 
     getBody(){
         if (this.editMode()){
-            if(this.state.post.title.length > 0){
+            if(this.state.post.title.length > 0) {
                 return <Editor title="Edit Post" post={this.state.post} submit={this.submitPost} />;
             } else {
                 return <div>Data loading...</div>

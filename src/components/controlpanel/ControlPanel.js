@@ -20,13 +20,12 @@ class ControlPanel extends React.Component {
         );
     }
 
-    getBody(){
-        if (this.props.status.logged_in){
-            var adminOptions = this.getAdminOptions();
+    getBody() {
+        if (this.props.status.logged_in) {
             return (
                 <div>
                     <h1>What would you like to do today?</h1>
-                    {adminOptions}
+                    {this.getAdminOptions()}
                 </div>
             );
         } else {
