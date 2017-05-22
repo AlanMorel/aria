@@ -26,7 +26,7 @@ class Settings extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url + `settings`, { withCredentials: true }).then(response => {
+        Axios.get('settings', { withCredentials: true }).then(response => {
             console.log(response.data.data);
             this.setState(response.data.data);
         });
@@ -52,7 +52,7 @@ class Settings extends React.Component {
         console.log("Updating settings");
         console.log(this.state);
 
-        Axios.patch(Config.base_url + `settings`, this.state, {withCredentials: true}).then(response => {
+        Axios.patch('settings', this.state, {withCredentials: true}).then(response => {
             console.log(response.data);
 
             if (response.data.success) {

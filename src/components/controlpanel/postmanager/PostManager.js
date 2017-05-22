@@ -33,7 +33,7 @@ class PostManager extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url + `news`).then(response => {
+        Axios.get('news').then(response => {
             console.log(response.data);
             this.setState({data: response.data});
         });
@@ -41,7 +41,7 @@ class PostManager extends React.Component {
 
     deletePost(id) {
         console.log("Deleting post :" + id);
-        Axios.delete(Config.base_url + '/post/' + id,).then(response => {
+        Axios.delete('post/' + id).then(response => {
             console.log(response.data);
             //TODO remove post from state if successful
         });
@@ -71,7 +71,7 @@ class PostManager extends React.Component {
 
     submitPost(data){
         console.log(data);
-        Axios.post(Config.base_url + `post`, data, { withCredentials: true }).then(response => {
+        Axios.post('post', data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
                 this.setState({status: statusCode.HIDE});

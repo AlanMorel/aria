@@ -16,7 +16,7 @@ class Status extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url + `server`).then(response => {
+        Axios.get('server').then(response => {
             console.log(response.data);
             this.setState({
                 data: response.data,

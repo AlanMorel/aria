@@ -44,7 +44,7 @@ class Newslist extends React.Component {
     }
 
     requestData(params){
-        Axios.get(Config.base_url + `news` + this.getResource(params)).then(response => {
+        Axios.get('news' + this.getResource(params)).then(response => {
             console.log(response.data);
             this.setState({data: response.data});
         });

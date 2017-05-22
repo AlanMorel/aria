@@ -17,7 +17,7 @@ class Join extends React.Component {
 
         var form = new FormData(this.refs.form);
 
-        Axios.post(Config.base_url + "join", form).then((response) => {
+        Axios.post('join', form).then((response) => {
             console.log(response.data);
 
             if (response.data.success){

@@ -12,7 +12,7 @@ class Greeting extends React.Component {
 
     logout() {
         console.log("Logging out...");
-        Axios.get(Config.base_url + `logout`, { withCredentials: true }).then(response => {
+        Axios.get('logout', { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
                 console.log("Successfully logged out.");

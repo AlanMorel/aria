@@ -43,7 +43,7 @@ class Rankingslist extends React.Component {
     }
 
     requestData(params){
-        Axios.get(Config.base_url + `rankings` + this.getResource(params)).then(response => {
+        Axios.get('rankings' + this.getResource(params)).then(response => {
             console.log(response.data);
             this.setState({data: response.data});
         });

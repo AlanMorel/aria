@@ -15,7 +15,7 @@ class Login extends React.Component {
         e.preventDefault();
 
         var form = new FormData(this.refs.form);
-        Axios.post(Config.base_url + "login", form, { withCredentials: true }).then((response) => {
+        Axios.post('login', form, { withCredentials: true }).then((response) => {
             console.log(response.data);
 
             if (response.data.success){

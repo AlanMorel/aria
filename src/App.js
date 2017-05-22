@@ -20,6 +20,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
+        Axios.defaults.baseURL = Config.base_url;
         this.setLogin = this.setLogin.bind(this);
         this.state = {
             logged_in: false,
@@ -29,7 +30,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get(Config.base_url, { withCredentials: true }).then(response => {
+        Axios.get({ withCredentials: true }).then(response => {
             console.log(response.data);
             this.setState(response.data);
         });

@@ -20,7 +20,7 @@ class Post extends React.Component {
 
     componentDidMount() {
         var id = this.props.match.params.id;
-        Axios.get(Config.base_url + `post/` + id, { withCredentials: true }).then(response => {
+        Axios.get('post/' + id, { withCredentials: true }).then(response => {
             console.log(response.data);
             this.setState({
                 post: response.data.data[0]
@@ -41,7 +41,7 @@ class Post extends React.Component {
     submitPost(data){
         console.log(data);
         var id = this.props.match.params.id;
-        Axios.patch(Config.base_url + `post/` + id, data, { withCredentials: true }).then(response => {
+        Axios.patch('post/' + id, data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
                 console.log("Successfully editted post.");
