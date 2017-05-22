@@ -4,7 +4,9 @@ class Loading extends React.Component {
 
     render() {
         return (
-            <img src="/images/loading.gif" alt="Loading gif"/>
+            <div className="loading-effect">
+                <img src="/images/loading.gif" alt="Loading gif" />
+            </div>
         );
     }
 }
