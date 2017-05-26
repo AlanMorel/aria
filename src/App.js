@@ -30,7 +30,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get({ withCredentials: true }).then(response => {
+        Axios.get("", { withCredentials: true }).then(response => {
             console.log(response.data);
             this.setState(response.data);
         });
