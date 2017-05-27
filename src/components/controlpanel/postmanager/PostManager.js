@@ -48,7 +48,6 @@ class PostManager extends React.Component {
 
     openNewPost() {
         this.setState({status: statusCode.SHOW});
-        this.refs.modal.show("Hi there!", "You are now about to create a post!");
     }
 
     getNewPostDiv() {

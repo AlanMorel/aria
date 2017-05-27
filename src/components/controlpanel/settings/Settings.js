@@ -26,7 +26,7 @@ class Settings extends React.Component {
 
     componentDidMount() {
         Axios.get('settings', { withCredentials: true }).then(response => {
-            console.log(response.data.data);
+            console.log(response.data);
             this.setState(response.data.data);
         });
     }

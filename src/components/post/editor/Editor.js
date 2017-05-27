@@ -39,7 +39,7 @@ class Edit extends React.Component {
     }
 
     render() {
-        var news = ["All", "General", "Announcement", "Update", "Event", "Community"];
+        var news = ["General", "Announcement", "Update", "Event", "Community"];
         var selections = news.map(function(type) {
             return (
                 <option key={type}>{type}</option>
