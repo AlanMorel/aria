@@ -22,17 +22,28 @@ class Greeting extends React.Component {
         });
     }
 
+    getControlPanel(){
+        if (this.props.status.gm_level > 0){
+            return (
+                <li>
+                    <NavLink activeClassName="active" to={{pathname: '/controlpanel'}}>Control Panel</NavLink>
+                </li>
+            );
+        } else {
+            return null;
+        }
+    }
+
     render() {
         if (!this.props.status.logged_in) {
             return null;
         }
+        var controlPanel = this.getControlPanel();
         return (
             <section className="greeting">
                 <span className="welcome">Welcome back, {this.props.status.username}</span>
                 <ul className="options">
-                    <li>
-                        <NavLink activeClassName="active" to={{pathname: '/controlpanel'}}>Control Panel</NavLink>
-                    </li>
+                    {controlPanel}
                     <li onClick={this.logout}>
                         <span>Logout</span>
                     </li>
