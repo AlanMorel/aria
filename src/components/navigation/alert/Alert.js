@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 
 class Alert extends React.Component {
 
@@ -12,18 +13,28 @@ class Alert extends React.Component {
         };
     }
 
+    componentDidMount() {
+        Axios.get('server').then(response => {
+            console.log(response.data);
+            this.setState({
+                alert: response.data.alert,
+                show: true
+            });
+        });
+    }
+
     close() {
         this.setState({show: false});
     }
 
     render() {
-        if (this.props.alert.length < 1 || !this.state.show) {
+        if (!this.state.alert || this.state.alert.length < 1 || !this.state.show) {
             return null;
         }
         return (
             <div className="alert">
                 <span className="icon"></span>
-                {this.props.alert}
+                {this.state.alert}
                 <span onClick={this.close} className="close">&#10006;</span>
             </div>
         );

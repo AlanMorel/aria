@@ -9,7 +9,7 @@ class Header extends React.Component {
     render() {
         return (
             <section className="header">
-                <Alert alert={this.props.alert}/>
+                <Alert />
                 <Links />
                 <Greeting status={this.props.status} setLogin={this.props.setLogin} />
                 <Prompts status={this.props.status} setLogin={this.props.setLogin} />
