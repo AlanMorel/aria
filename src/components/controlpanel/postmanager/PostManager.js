@@ -39,11 +39,19 @@ class PostManager extends React.Component {
         });
     }
 
-    deletePost(id) {
+    deletePost(id, self) {
         console.log("Deleting post :" + id);
-        Axios.delete('post/' + id).then(response => {
+        Axios.delete('post/' + id, { withCredentials: true }).then(response => {
             console.log(response.data);
-            //TODO remove post from state if successful
+            if (response.data.success){
+                self.refs.modal.show("Success!", "You have successfully deleted the post.");
+                self.setState({status: statusCode.HIDE});
+                self.reloadPosts();
+                console.log("Successfully deleted post.");
+            } else {
+                self.refs.modal.show("Server Error", response.data.error);
+                console.log("Error: " + response.data.error);
+            }
         });
     }
 
@@ -95,7 +103,7 @@ class PostManager extends React.Component {
                     </NavLink>
                     <span className="author">{post.author}</span>
                     <span className="date">{date}</span>
-                    <span className="delete" onClick={() => self.deletePost(post.id)}>Delete</span>
+                    <span className="delete" onClick={() => self.deletePost(post.id, self)}>Delete</span>
                 </div>
             );
         });
