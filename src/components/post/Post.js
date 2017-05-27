@@ -3,6 +3,7 @@ import Axios from 'axios';
 
 import Banner from '../navigation/banner/Banner';
 import Editor from '../post/editor/Editor';
+import Modal from '../modal/Modal';
 
 var options = { month: "long", day: "numeric" };
 
@@ -37,14 +38,16 @@ class Post extends React.Component {
         return true;
     }
 
-    submitPost(data){
+    submitPost(data, self){
         console.log(data);
-        var id = this.props.match.params.id;
+        var id = self.props.match.params.id;
         Axios.patch('post/' + id, data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success) {
+                self.refs.modal.show("Success!", "You have successfully editted this post.");
                 console.log("Successfully editted post.");
             } else {
+                self.refs.modal.show("Server Error", response.data.error);
                 console.log("Error: " + response.data.error);
             }
         });
@@ -53,7 +56,7 @@ class Post extends React.Component {
     getBody(){
         if (this.editMode()){
             if(this.state.post.title.length > 0) {
-                return <Editor title="Edit Post" post={this.state.post} submit={this.submitPost} />;
+                return <Editor title="Edit Post" post={this.state.post} submit={this.submitPost} self={this}/>;
             } else {
                 return <div>Data loading...</div>
             }
@@ -76,9 +79,10 @@ class Post extends React.Component {
             <div>
                 <Banner title="Post" subtitle="" />
                 <main className="post">
-                  <div className="container">
-                      {this.getBody()}
-                  </div>
+                    <Modal ref="modal" />
+                    <div className="container">
+                        {this.getBody()}
+                    </div>
                 </main>
             </div>
         );

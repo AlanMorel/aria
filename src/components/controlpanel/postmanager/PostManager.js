@@ -90,7 +90,7 @@ class PostManager extends React.Component {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
             return (
                 <div className="control-panel-post" key={post.id}>
-                    <NavLink to={{pathname: '/post/' + post.id}}>
+                    <NavLink to={{pathname: '/post/' + post.id + '/edit'}}>
                         <span className="title">{post.title}</span>
                     </NavLink>
                     <span className="author">{post.author}</span>
