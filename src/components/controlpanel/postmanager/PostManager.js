@@ -23,18 +23,19 @@ class PostManager extends React.Component {
         this.openNewPost = this.openNewPost.bind(this);
 
         this.state = {
-            data: {
-                data: [],
-                error: [],
-            },
+            posts: [],
             status: statusCode.HIDE
         };
     }
 
     componentDidMount() {
-        Axios.get('news').then(response => {
+        this.reloadPosts();
+    }
+
+    reloadPosts(){
+        Axios.get('news/all').then(response => {
             console.log(response.data);
-            this.setState({data: response.data});
+            this.setState({posts: response.data});
         });
     }
 
@@ -68,13 +69,14 @@ class PostManager extends React.Component {
     }
 
     submitPost(data, self) {
+        console.log(data);
         Axios.post('post', data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
-                self.setState({status: statusCode.HIDE});
                 self.refs.modal.show("Success!", "You have successfully created a new post.");
+                self.setState({status: statusCode.HIDE});
+                self.reloadPosts();
                 console.log("Successfully posted post.");
-                //TODO append post to array
             } else {
                 self.refs.modal.show("Server Error", response.data.error);
                 console.log("Error: " + response.data.error);
@@ -83,14 +85,8 @@ class PostManager extends React.Component {
     }
 
     getBody() {
-        if (this.state.data.success === false){
-            return (
-                <div className="error">{this.state.data.error}</div>
-            );
-        }
-
         var self = this;
-        var posts = this.state.data.data.map(function(post) {
+        var posts = this.state.posts.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
             return (
                 <div className="control-panel-post" key={post.id}>
