@@ -35,14 +35,14 @@ class Edit extends React.Component {
             'type': this.state.type,
             'content': this.state.content
         }
-        this.props.submit(data);
+        this.props.submit(data, this.props.self);
     }
 
     render() {
         var news = ["General", "Announcement", "Update", "Event", "Community"];
         var selections = news.map(function(type) {
             return (
-                <option key={type}>{type}</option>
+                <option key={type} value={type}>{type}</option>
             );
         });
 

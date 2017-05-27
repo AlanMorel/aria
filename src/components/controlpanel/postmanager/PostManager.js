@@ -56,10 +56,10 @@ class PostManager extends React.Component {
         } else if (this.state.status === statusCode.SHOW) {
             var post = {
                 title: "",
-                type: "",
+                type: "General",
                 content: ""
             }
-            return <Editor title="Create new Post" post={post} submit={this.submitPost} />;
+            return <Editor title="Create new Post" post={post} submit={this.submitPost} self={this}/>;
         } else if (this.state.status === statusCode.SENDING) {
             return <div>Your post is being sent...</div>;
         } else {
@@ -67,17 +67,16 @@ class PostManager extends React.Component {
         }
     }
 
-    submitPost(data) {
-        console.log(data);
+    submitPost(data, self) {
         Axios.post('post', data, { withCredentials: true }).then(response => {
             console.log(response.data);
             if (response.data.success){
-                this.setState({status: statusCode.HIDE});
-                this.refs.modal.show("Success!", "You have successfully created a new post.");
+                self.setState({status: statusCode.HIDE});
+                self.refs.modal.show("Success!", "You have successfully created a new post.");
                 console.log("Successfully posted post.");
                 //TODO append post to array
             } else {
-                this.refs.modal.show("Server Error", response.data.error);
+                self.refs.modal.show("Server Error", response.data.error);
                 console.log("Error: " + response.data.error);
             }
         });
