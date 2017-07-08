@@ -97,7 +97,7 @@ class PostManager extends React.Component {
         var posts = this.state.posts.map(function(post) {
             var date = new Date(post.created_at).toLocaleDateString("en-us", options);
             return (
-                <div className="control-panel-post" key={post.id}>
+                <div className="admin-panel-post" key={post.id}>
                     <NavLink to={{pathname: '/post/' + post.id + '/edit'}}>
                         <span className="title">{post.title}</span>
                     </NavLink>
@@ -113,7 +113,7 @@ class PostManager extends React.Component {
                 <Modal ref="modal" />
                 <h2>Community Posts</h2>
                 {this.getNewPostDiv()}
-                <div className="control-panel-posts">{posts}</div>
+                <div className="admin-panel-posts">{posts}</div>
             </div>
         )
     }

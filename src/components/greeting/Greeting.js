@@ -22,11 +22,11 @@ class Greeting extends React.Component {
         });
     }
 
-    getControlPanel(){
+    getAdminPanel(){
         if (this.props.status.gm_level > 0){
             return (
                 <li>
-                    <NavLink activeClassName="active" to={{pathname: '/controlpanel'}}>Control Panel</NavLink>
+                    <NavLink activeClassName="active" to={{pathname: '/adminpanel'}}>Admin Panel</NavLink>
                 </li>
             );
         } else {
@@ -38,12 +38,12 @@ class Greeting extends React.Component {
         if (!this.props.status.logged_in) {
             return null;
         }
-        var controlPanel = this.getControlPanel();
+        var adminPanel = this.getAdminPanel();
         return (
             <section className="greeting">
                 <span className="welcome">Welcome back, {this.props.status.username}</span>
                 <ul className="options">
-                    {controlPanel}
+                    {adminPanel}
                     <li onClick={this.logout}>
                         <span>Logout</span>
                     </li>

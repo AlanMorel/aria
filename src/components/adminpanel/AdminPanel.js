@@ -1,14 +1,14 @@
 import React from 'react';
 import Utility from '../../Utility';
 
-import Settings from '../controlpanel/settings/Settings';
-import PostManager from '../controlpanel/postmanager/PostManager';
+import Settings from '../adminpanel/settings/Settings';
+import PostManager from '../adminpanel/postmanager/PostManager';
 import Banner from '../navigation/banner/Banner';
 
-class ControlPanel extends React.Component {
+class AdminPanel extends React.Component {
 
     componentDidMount() {
-        Utility.setTitle("Control Panel");
+        Utility.setTitle("Admin Panel");
     }
 
     getAdminOptions() {
@@ -29,15 +29,15 @@ class ControlPanel extends React.Component {
                 </div>
             );
         } else {
-            return <div>Please log in to access the control panel.</div>;
+            return <div>Please log in to access the admin panel.</div>;
         }
     }
 
     render() {
         return (
             <div>
-                <Banner title="Control Panel" subtitle="The place to manage your account."/>
-                <main className="control-panel">
+                <Banner title="Admin Panel" subtitle="The place to manage your website."/>
+                <main className="admin-panel">
                     {this.getBody()}
                 </main>
             </div>
@@ -45,4 +45,4 @@ class ControlPanel extends React.Component {
     }
 }
 
-export default ControlPanel;
+export default AdminPanel;

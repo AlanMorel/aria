@@ -43,7 +43,7 @@ Config.facebook = {
     allowtransparency: true
 }
 
-Config.base_url = "http://laravel.austin-adams.us/";
+Config.base_url = "http://laravel.austinradams.com/";
 
 Config.post_type = [
     'General',

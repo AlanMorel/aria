@@ -4,7 +4,7 @@ import Axios from 'axios';
 import Config from './Config';
 
 import About from './components/about/About';
-import ControlPanel from './components/controlpanel/ControlPanel';
+import AdminPanel from './components/adminpanel/AdminPanel';
 import Downloads from './components/downloads/Downloads';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
@@ -48,8 +48,8 @@ class App extends React.Component {
             return <Vote status={this.state}/>;
         }
 
-        var ControlPanelPage = (props) => {
-            return <ControlPanel status={this.state}/>;
+        var AdminPanelPage = (props) => {
+            return <AdminPanel status={this.state}/>;
         }
 
         return (
@@ -70,7 +70,7 @@ class App extends React.Component {
                     <Route exact path="/rankings/:param1/:param2/:param3" component={Rankings}/>
                     <Route exact path="/downloads" component={Downloads}/>
                     <Route exact path="/vote" component={VotePage}/>
-                    <Route exact path="/controlpanel" component={ControlPanelPage}/>
+                    <Route exact path="/adminpanel" component={AdminPanelPage}/>
                     <Footer/>
                 </div>
             </Router>

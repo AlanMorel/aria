@@ -43,7 +43,6 @@ class Home extends React.Component {
                         <h1>Server Status</h1>
                         <Status />
                         <Discord />
-                        <Twitter />
                         <Facebook />
                     </div>
                 </main>

@@ -23,7 +23,7 @@ class Post extends React.Component {
         Axios.get('post/' + id, { withCredentials: true }).then(response => {
             console.log(response.data);
             this.setState({
-                post: response.data.data[0]
+                post: response.data.data
             });
         });
     }

@@ -20,6 +20,9 @@ class Vote extends React.Component {
     }
 
     getVoteSites() {
+        if (!this.props.status.logged_in) {
+            return null;
+        }
         var voteSites = [];
         for (var i in Config.vote_sites) {
             var site = Config.vote_sites[i];
@@ -45,7 +48,7 @@ class Vote extends React.Component {
         if (this.props.status.logged_in) {
             return "If the vote is successful, the rewards will be added to your account shortly.";
         } else {
-            return "If you would like to be rewarded for voting, please log in. You may choose to vote anyways.";
+            return "Please log in to your account to vote for us.";
         }
     }
 

@@ -81,7 +81,7 @@ class Rankingslist extends React.Component {
             );
         }
 
-        if (this.state.data.data.length === 0) {
+        if (this.state.data.length === 0) {
             return <Loading />
         }
 
