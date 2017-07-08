@@ -7,7 +7,7 @@ class Links extends React.Component {
         return (
             <nav className="links">
                 <ul>
-                    <li><NavLink exact activeClassName="active" to="/">Aria</NavLink></li>
+                    <li><NavLink exact activeClassName="active" to="/">{Config.server_name}</NavLink></li>
                     <li><NavLink activeClassName="active" to={{pathname: '/about'}}>About</NavLink></li>
                     <li><NavLink activeClassName="active" to={{pathname: '/news'}}>News</NavLink></li>
                     <li><NavLink activeClassName="active" to={{pathname: '/rankings'}}>Rankings</NavLink></li>
