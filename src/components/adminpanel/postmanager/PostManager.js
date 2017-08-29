@@ -41,7 +41,7 @@ class PostManager extends React.Component {
 
     deletePost(id, self) {
         console.log("Deleting post :" + id);
-        Axios.delete('post/' + id, { withCredentials: true }).then(response => {
+        Axios.delete('post/' + id).then(response => {
             console.log(response.data);
             if (response.data.success){
                 self.refs.modal.show("Success!", "You have successfully deleted the post.");
@@ -78,7 +78,7 @@ class PostManager extends React.Component {
 
     submitPost(data, self) {
         console.log(data);
-        Axios.post('post', data, { withCredentials: true }).then(response => {
+        Axios.post('post', data).then(response => {
             console.log(response.data);
             if (response.data.success){
                 self.refs.modal.show("Success!", "You have successfully created a new post.");
