@@ -58,15 +58,15 @@ class Join extends React.Component {
                     <div className="prompt-title">Join {Config.server_name}</div>
                     <div>
                         <label htmlFor="name">Name</label>
-                        <input className="text" name="full_name" type="text" />
+                        <input className="text" name="name" type="text" />
                     </div>
                     <div>
                         <label htmlFor="email">Email</label>
                         <input className="text" name="email" type="email" />
                     </div>
                     <div>
-                        <label htmlFor="username">Username</label>
-                        <input className="text" name="username" type="text" />
+                        <label htmlFor="mapleid">MapleID</label>
+                        <input className="text" name="mapleid" type="text" />
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>

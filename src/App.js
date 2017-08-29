@@ -6,6 +6,7 @@ import Config from './Config';
 import About from './components/about/About';
 import AdminPanel from './components/adminpanel/AdminPanel';
 import Downloads from './components/downloads/Downloads';
+import Disclaimer from './components/disclaimer/Disclaimer';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
 import Header from './components/navigation/header/Header';
@@ -58,6 +59,7 @@ class App extends React.Component {
                     <Header status={this.state} setLogin={this.setLogin}/>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/about" component={About}/>
+                    <Route exact path="/disclaimer" component={Disclaimer}/>
                     <Route exact path="/news" component={News}/>
                     <Route exact path="/news/:param1" component={News}/>
                     <Route exact path="/news/:param1/:param2" component={News}/>

@@ -23,4 +23,20 @@ footer {
         font-family: $secondary-font;
         font-size: 0.9rem;
     }
+
+    .legal-disclaimer-button {
+        margin-top: 2rem;
+        padding: 0.5rem 1rem;
+        background-color: #2196F3;
+        display: inline-block;
+        border-radius: 0.25rem;
+
+        &:hover {
+            background-color: #1881d4;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
 }

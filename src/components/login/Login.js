@@ -49,8 +49,8 @@ class Login extends React.Component {
                     <div className="prompt-close" onClick={this.props.close}>&#10006;</div>
                     <div className="prompt-title">Login</div>
                     <div>
-                        <label htmlFor="username">Username</label>
-                        <input className="text" name="username" type="text" />
+                        <label htmlFor="email">Email</label>
+                        <input className="text" name="email" type="text" />
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
