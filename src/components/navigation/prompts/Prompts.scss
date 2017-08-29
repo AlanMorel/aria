@@ -116,4 +116,8 @@
             margin-top: 1rem;
         }
     }
+    
+    @media (max-width: $mobile) {
+        right: 0%;
+    }
 }

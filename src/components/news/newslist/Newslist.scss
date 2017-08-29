@@ -106,4 +106,15 @@
         padding: 0 1rem;
         box-sizing: border-box;
     }
+
+    @media (max-width: $mobile) {
+        .newslist-image {
+            width: 100%;
+        }
+
+        .newslist-information {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
 }

@@ -23,4 +23,10 @@ $home-width: 80rem;
         display:inline-block;
         vertical-align: top;
     }
+
+    @media (max-width: $mobile) {
+        .left, .right {
+            width: 100%;
+        }
+    }
 }

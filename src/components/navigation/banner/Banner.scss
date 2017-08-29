@@ -41,4 +41,13 @@
         font-size: 1rem;
         font-weight: 500;
     }
+
+    @media (max-width: $mobile) {
+        .banner-heading {
+            padding: 1rem;
+        }
+        h1, h2 {
+            width: 100%;
+        }
+    }
 }

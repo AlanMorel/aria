@@ -54,4 +54,15 @@
     .guild {
         font-weight: bold;
     }
+
+    @media (max-width: $mobile) {
+
+        .avatar {
+            right: 9rem;
+            top: -4rem;
+            img {
+                width: 300%;
+            }
+        }
+    }
 }
