@@ -11,7 +11,7 @@ class Greeting extends React.Component {
 
     logout() {
         console.log("Logging out...");
-        Axios.get('logout', { withCredentials: true }).then(response => {
+        Axios.get('logout').then(response => {
             console.log(response.data);
             if (response.data.success) {
                 console.log("Successfully logged out.");

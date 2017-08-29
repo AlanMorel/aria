@@ -7,8 +7,7 @@ Config.client_download_link = "https://www.google.com/";
 
 Config.forum_link = "https://www.google.com/";
 
-Config.recaptcha_key = "6LfkDBsUAAAAAMcODRQf8nXm5blabpR4sEnQFcXp";
-//6LcJOh8UAAAAAINqVN5dTY5XgroY3utxiKrHft1X
+Config.recaptcha_key = "";
 
 Config.version = 83;
 Config.exp_rate = 1;
@@ -43,7 +42,7 @@ Config.facebook = {
     allowtransparency: true
 }
 
-Config.base_url = "http://laravel.austinradams.com/";
+Config.base_url = "/api/";
 
 Config.post_type = [
     'General',
