@@ -41,7 +41,7 @@ class Greeting extends React.Component {
         var adminPanel = this.getAdminPanel();
         return (
             <section className="greeting">
-                <span className="welcome">Welcome back, {this.props.status.username}</span>
+                <span className="welcome">Welcome back, {this.props.status.username} ({this.props.status.mapleid})</span>
                 <ul className="options">
                     {adminPanel}
                     <li onClick={this.logout}>

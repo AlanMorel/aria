@@ -3,6 +3,13 @@ import Jobs from '../../../Jobs';
 
 class Player extends React.Component {
 
+  getGuild() {
+    if(this.props.player.guild_name) {
+      return this.props.player.guild_name;
+    }
+    return "No Guild";
+  }
+
     render() {
         var ign = "Connie";
 
@@ -21,7 +28,7 @@ class Player extends React.Component {
                 <h3><span className="level">Level {this.props.player.level}</span> ({this.props.player.exp} exp)</h3>
                 <h3>{Jobs[this.props.player.job_id].name}</h3>
                 <h3>{this.props.player.fame} Fame</h3>
-                <h3 className="guild">{this.props.player.guild_name} Guild</h3>
+                <h3 className="guild">{this.getGuild()}</h3>
             </section>
         );
     }

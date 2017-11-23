@@ -15,7 +15,7 @@ class Vote extends React.Component {
         if(!this.props.status.logged_in) {
             return site.url;
         } else {
-            return site.url + site.getPingback(this.props.status.username);
+            return site.url + site.getPingback(this.props.status.mapleid);
         }
     }
 

@@ -29,16 +29,14 @@ class Status extends React.Component {
         if (this.state.fetching) {
             return "loading";
         }
-
-        return this.state.data.online_count > 0 ? "online" : "offline";
+        return this.state.data.server_status[0].status ? "online" : "offline";
     }
 
     getTitle() {
         if (this.state.fetching) {
             return "Loading...";
         }
-
-        return Config.server_name + (this.state.data.online_count > 0 ? " is online" : " is offline");
+        return Config.server_name + (this.state.data.server_status[0].status ? " is online" : " is offline");
     }
 
     getStatuses() {
