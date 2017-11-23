@@ -7,7 +7,7 @@ Utility.scrollToTop = function() {
 };
 
 Utility.setTitle = function(title) {
-    document.title = title + " | " + Config.server_name + " -  MapleStory Private Server";
+    document.title = title + " | " + Config.server_name + " - MapleStory Private Server";
     this.scrollToTop();
 };
 
