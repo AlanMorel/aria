@@ -15,7 +15,7 @@ class Disclaimer extends React.Component {
             <div>
                 <Banner title="Legal Disclaimer" />
                 <main className="legal-disclaimer">
-                  <section className="legal-box">This is where the legal disclaimer content goes.</section>
+                    <section className="legal-box">This is where the legal disclaimer content goes.</section>
                 </main>
             </div>
         );

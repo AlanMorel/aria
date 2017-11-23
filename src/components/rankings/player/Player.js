@@ -3,12 +3,12 @@ import Jobs from '../../../Jobs';
 
 class Player extends React.Component {
 
-  getGuild() {
-    if(this.props.player.guild_name) {
-      return this.props.player.guild_name;
+    getGuild() {
+      if (this.props.player.guild_name) {
+          return this.props.player.guild_name;
+      }
+      return "No Guild";
     }
-    return "No Guild";
-  }
 
     render() {
         var ign = "Connie";

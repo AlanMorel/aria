@@ -19,7 +19,7 @@ class About extends React.Component {
             <div>
                 <Banner title="About" subtitle={this.getSubtitle()} />
                 <main className="about">
-                  <section className="about-box">This is where the about content goes.</section>
+                    <section className="about-box">This is where the about content goes.</section>
                 </main>
             </div>
         );
