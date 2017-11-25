@@ -31,9 +31,9 @@ class Login extends React.Component {
 
     render() {
         if (!this.props.open) {
-            this.setState({
+            this.state = {
                 error: []
-            });
+            };
             return null;
         }
 
