@@ -502,4 +502,4 @@ var Jobs = {
     }
 }
 
-module.exports = Jobs;
+export default Jobs

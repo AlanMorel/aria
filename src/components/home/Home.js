@@ -11,8 +11,8 @@ import More from '../navigation/more/More';
 import Promo from '../promo/Promo';
 
 import Discord from '../social/discord/Discord';
-import Twitter from '../social/twitter/Twitter';
 import Facebook from '../social/facebook/Facebook';
+// import Twitter from '../social/twitter/Twitter';
 
 class Home extends React.Component {
 

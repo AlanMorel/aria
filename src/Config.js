@@ -63,4 +63,4 @@ Config.vote_sites = {
     }
 };
 
-module.exports = Config;
+export default Config

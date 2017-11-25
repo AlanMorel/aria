@@ -11,4 +11,4 @@ Utility.setTitle = function(title) {
     this.scrollToTop();
 };
 
-module.exports = Utility;
+export default Utility

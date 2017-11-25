@@ -12,7 +12,7 @@ class Vote extends React.Component {
     }
 
     getSiteUrl(site) {
-        if(!this.props.status.logged_in) {
+        if (!this.props.status.logged_in) {
             return site.url;
         } else {
             return site.url + site.getPingback(this.props.status.mapleid);

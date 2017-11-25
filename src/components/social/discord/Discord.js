@@ -7,6 +7,7 @@ class Discord extends React.Component {
         return (
             <div className="discord">
                 <iframe
+                    title="Discord"
                     src={Config.discord.base_url + "?id=" + Config.discord.server_id + "&theme=" + Config.discord.theme}
                     width={Config.discord.width}
                     height={Config.discord.height}

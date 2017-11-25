@@ -29,6 +29,7 @@ class Facebook extends React.Component {
         return (
             <div className="facebook">
                 <iframe
+                    title="Facebook"
                     src={this.getFacebookUrl()}
                     width={Config.facebook.width}
                     height={Config.facebook.height}

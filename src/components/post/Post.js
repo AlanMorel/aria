@@ -55,7 +55,7 @@ class Post extends React.Component {
 
     getBody() {
         if (this.editMode()) {
-            if(this.state.post.title.length > 0) {
+            if (this.state.post.title.length > 0) {
                 return <Editor title="Edit Post" post={this.state.post} submit={this.submitPost} self={this}/>;
             } else {
                 return <div>Data loading...</div>

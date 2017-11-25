@@ -39,9 +39,9 @@ class Join extends React.Component {
 
     render() {
         if (!this.props.open) {
-            this.state = {
+            this.setState({
                 error: []
-            };
+            });
             return null;
         }
 
