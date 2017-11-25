@@ -22,8 +22,8 @@ class Greeting extends React.Component {
         });
     }
 
-    getAdminPanel(){
-        if (this.props.status.gm_level > 0){
+    getAdminPanel() {
+        if (this.props.status.gm_level > 0) {
             return (
                 <li>
                     <NavLink activeClassName="active" to={{pathname: '/adminpanel'}}>Admin Panel</NavLink>

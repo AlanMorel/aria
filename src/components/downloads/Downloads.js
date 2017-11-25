@@ -11,7 +11,7 @@ class Downloads extends React.Component {
     }
 
     getSetup() {
-        if (!Config.setup_download_link){
+        if (!Config.setup_download_link) {
             return null;
         }
         return (
@@ -31,7 +31,7 @@ class Downloads extends React.Component {
     }
 
     getClient() {
-        if (!Config.client_download_link){
+        if (!Config.client_download_link) {
             return null;
         }
         return (

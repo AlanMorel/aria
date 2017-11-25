@@ -3,7 +3,7 @@ import React from 'react';
 class Popup extends React.Component {
 
     render() {
-        if (!this.props.state.show){
+        if (!this.props.state.show) {
             return null;
         }
         return (

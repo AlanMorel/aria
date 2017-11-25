@@ -66,7 +66,7 @@ class Prompts extends React.Component {
     }
 
     render() {
-        if (this.props.status.logged_in){
+        if (this.props.status.logged_in) {
             return null;
         }
         return (

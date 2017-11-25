@@ -3,12 +3,7 @@ import Config from '../../../Config';
 
 class Facebook extends React.Component {
 
-    render() {
-        var styles = {
-            border: 'none',
-            overflow: 'hidden'
-        };
-
+    getFacebookUrl() {
         var url = Config.facebook.base_url;
         url += "plugins/page.php?";
         url += "href=" + encodeURI(Config.facebook.base_url + Config.facebook.username);
@@ -20,14 +15,24 @@ class Facebook extends React.Component {
         url += "&hide_cover=" + Config.facebook.hide_cover;
         url += "&show_facepile=" + Config.facebook.show_facepile;
         url += "&appId";
+        return url;
+    }
 
+    getWidgetStyles() {
+        return {
+            border: 'none',
+            overflow: 'hidden'
+        }
+    }
+
+    render() {
         return (
             <div className="facebook">
                 <iframe
-                    src={url}
+                    src={this.getFacebookUrl()}
                     width={Config.facebook.width}
                     height={Config.facebook.height}
-                    style={styles}
+                    style={this.getWidgetStyles()}
                     scrolling={Config.facebook.scrolling}
                     frameBorder={Config.facebook.frameborder}
                     allowTransparency={Config.facebook.allowtransparency} />

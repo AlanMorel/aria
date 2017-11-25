@@ -28,8 +28,8 @@ class Rankingslist extends React.Component {
         this.requestData(this.props.params);
     }
 
-    componentWillReceiveProps (newProps) {
-        if (!this.props.params || !newProps.params){
+    componentWillReceiveProps(newProps) {
+        if (!this.props.params || !newProps.params) {
             return;
         }
         if (this.props.params.param1 !== newProps.params.param1) {
@@ -41,7 +41,7 @@ class Rankingslist extends React.Component {
         }
     }
 
-    requestData(params){
+    requestData(params) {
         Axios.get('rankings' + this.getResource(params)).then(response => {
             console.log(response.data);
             this.setState({data: response.data});
@@ -74,7 +74,7 @@ class Rankingslist extends React.Component {
         return resource;
     }
 
-    getPlayers(){
+    getPlayers() {
         if (this.state.data.success === false) {
             return (
                 <div className="error">{this.state.data.error}</div>
@@ -119,7 +119,7 @@ class Rankingslist extends React.Component {
         this.setState({username: event.target.value});
     }
 
-    shouldPaginate(){
+    shouldPaginate() {
         if (!this.props.pagination) {
             return false;
         }

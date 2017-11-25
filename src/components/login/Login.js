@@ -17,7 +17,7 @@ class Login extends React.Component {
         Axios.post('login', form).then((response) => {
             console.log(response.data);
 
-            if (response.data.success){
+            if (response.data.success) {
                 console.log("Successful Login");
                 this.props.close();
                 this.props.setLogin(response.data.data);
@@ -30,7 +30,7 @@ class Login extends React.Component {
     }
 
     render() {
-        if (!this.props.open){
+        if (!this.props.open) {
             this.state = {
                 errors: []
             };

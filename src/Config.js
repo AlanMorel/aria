@@ -22,11 +22,11 @@ Config.discord = {
     height: 500,
     allowtransparency: true,
     frameborder: 0
-}
+};
 
 Config.twitter = {
     handle: 'PlayMapleOrion'
-}
+};
 
 Config.facebook = {
     base_url: 'https://www.facebook.com/',
@@ -40,7 +40,7 @@ Config.facebook = {
     scrolling: 'no',
     frameborder: 0,
     allowtransparency: true
-}
+};
 
 Config.base_url = "http://laravel.austinradams.com/";
 

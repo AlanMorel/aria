@@ -32,7 +32,7 @@ class PostManager extends React.Component {
         this.reloadPosts();
     }
 
-    reloadPosts(){
+    reloadPosts() {
         Axios.get('news/all').then(response => {
             console.log(response.data);
             this.setState({posts: response.data});
@@ -43,7 +43,7 @@ class PostManager extends React.Component {
         console.log("Deleting post :" + id);
         Axios.delete('post/' + id).then(response => {
             console.log(response.data);
-            if (response.data.success){
+            if (response.data.success) {
                 self.refs.modal.show("Success!", "You have successfully deleted the post.");
                 self.setState({status: statusCode.HIDE});
                 self.reloadPosts();
@@ -80,7 +80,7 @@ class PostManager extends React.Component {
         console.log(data);
         Axios.post('post', data).then(response => {
             console.log(response.data);
-            if (response.data.success){
+            if (response.data.success) {
                 self.refs.modal.show("Success!", "You have successfully created a new post.");
                 self.setState({status: statusCode.HIDE});
                 self.reloadPosts();

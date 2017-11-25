@@ -28,17 +28,17 @@ class Post extends React.Component {
         });
     }
 
-    editMode(){
-        if (!this.props.match.params.mode){
+    editMode() {
+        if (!this.props.match.params.mode) {
             return false;
         }
-        if (this.props.match.params.mode.toLowerCase() !== "edit"){
+        if (this.props.match.params.mode.toLowerCase() !== "edit") {
             return false;
         }
         return true;
     }
 
-    submitPost(data, self){
+    submitPost(data, self) {
         console.log(data);
         var id = self.props.match.params.id;
         Axios.patch('post/' + id, data).then(response => {
@@ -53,8 +53,8 @@ class Post extends React.Component {
         });
     }
 
-    getBody(){
-        if (this.editMode()){
+    getBody() {
+        if (this.editMode()) {
             if(this.state.post.title.length > 0) {
                 return <Editor title="Edit Post" post={this.state.post} submit={this.submitPost} self={this}/>;
             } else {

@@ -29,8 +29,8 @@ class Newslist extends React.Component {
         this.requestData(this.props.params);
     }
 
-    componentWillReceiveProps (newProps) {
-        if (!this.props.params || !newProps.params){
+    componentWillReceiveProps(newProps) {
+        if (!this.props.params || !newProps.params) {
             return;
         }
         if (this.props.params.param1 !== newProps.params.param1) {
@@ -72,7 +72,7 @@ class Newslist extends React.Component {
     }
 
     getPosts() {
-        if (this.state.data.success === false){
+        if (this.state.data.success === false) {
             return (
                 <div className="error">{this.state.data.error}</div>
             );
@@ -106,7 +106,7 @@ class Newslist extends React.Component {
         });
     }
 
-    shouldPaginate(){
+    shouldPaginate() {
         if (!this.props.pagination) {
             return false;
         }

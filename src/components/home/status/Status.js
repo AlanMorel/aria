@@ -48,7 +48,6 @@ class Status extends React.Component {
                 </li>
             )
         });
-
     }
 
     getOnlineCount() {
@@ -59,9 +58,7 @@ class Status extends React.Component {
     }
 
     render() {
-
         var status = this.getStatus();
-
         return (
             <div className="status">
                 <div className={status}>
