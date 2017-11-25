@@ -10,7 +10,7 @@ class More extends React.Component {
         };
         return (
             <div className="more">
-                <Link to={link}>See more {type}</Link>
+                <Link to={link}>See more {type} »</Link>
             </div>
         );
     }

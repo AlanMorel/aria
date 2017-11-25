@@ -45,6 +45,7 @@
     @media (max-width: $mobile) {
         .banner-heading {
             padding: 1rem;
+            box-sizing: border-box;
         }
         h1, h2 {
             width: 100%;

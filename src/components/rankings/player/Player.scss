@@ -1,10 +1,10 @@
 @import "../../../stylesheets/Variables.scss";
 
 .player {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     padding: 1rem 1rem 0.25rem;
     margin-bottom: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     position: relative;
     overflow: hidden;
     border: solid 1px #d2d2d2;
@@ -20,12 +20,12 @@
         font-family: $secondary-font;
         font-weight: 400;
         font-size: 2rem;
-        background-color: rgba(0,0,0,0.1);
-        border-radius: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
     }
 
     h3 {
-        margin: 0.3rem 0;
+        margin: 0.4rem 0;
         font-size: 1rem;
         font-weight: normal;
     }
