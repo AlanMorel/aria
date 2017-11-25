@@ -11,7 +11,7 @@ class Player extends React.Component {
     }
 
     render() {
-        var items = [1002736,32562,20246,1051111];
+        var items = [1002736, 32562, 20246, 1051111];
         var skinId = 2000;
         var hasElfEars = false;
         
