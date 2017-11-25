@@ -13,6 +13,7 @@ class Player extends React.Component {
     render() {
         var items = [1002736,32562,20246,1051111];
         var skinId = 2000;
+        var hasElfEars = false;
         
         if (this.props.rank) {
             var rank = (
@@ -23,7 +24,7 @@ class Player extends React.Component {
         return (
             <section className="player">
                 <div className="avatar">
-                    <img src={"http://labs.maplestory.io/api/gms/latest/character/compact/"+skinId+"/"+items.join(',')+"/stand1?showears=false"} alt={this.props.player.name} />
+                    <img src={"http://labs.maplestory.io/api/gms/latest/character/compact/"+skinId+"/"+items.join(',')+"/stand1?showears=" + hasElfEars} alt={this.props.player.name} />
                 </div>
                 <h2>{rank}{this.props.player.name}</h2>
                 <h3><span className="level">Level {this.props.player.level}</span> ({this.props.player.exp} exp)</h3>
