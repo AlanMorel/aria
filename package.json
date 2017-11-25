@@ -23,5 +23,10 @@
         "build": "npm run build-css && react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AlanMorel/aria"
+    },
+    "license": "MIT"
 }
