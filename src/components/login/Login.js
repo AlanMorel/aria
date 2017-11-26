@@ -37,7 +37,7 @@ class Login extends React.Component {
             return null;
         }
 
-        if (this.state.error) {
+        if (this.state.error.length) {
             var alert = (
                 <div className="alert">{this.state.error}</div>
             );
