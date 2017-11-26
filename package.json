@@ -7,7 +7,7 @@
         "react": "^16.1.1",
         "react-async-script": "^0.9.1",
         "react-dom": "^16.1.1",
-        "react-google-recaptcha": "^0.9.3",
+        "react-google-recaptcha": "^0.9.7",
         "react-scripts": "1.0.17"
     },
     "devDependencies": {

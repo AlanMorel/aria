@@ -11,7 +11,7 @@ class Discord extends React.Component {
                     src={Config.discord.base_url + "?id=" + Config.discord.server_id + "&theme=" + Config.discord.theme}
                     width={Config.discord.width}
                     height={Config.discord.height}
-                    allowTransparency={Config.discord.allowtransparency}
+                    allowtransparency={Config.discord.allowtransparency.toString()}
                     frameBorder={Config.discord.frameborder} />
             </div>
         );

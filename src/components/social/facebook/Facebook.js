@@ -36,7 +36,7 @@ class Facebook extends React.Component {
                     style={this.getWidgetStyles()}
                     scrolling={Config.facebook.scrolling}
                     frameBorder={Config.facebook.frameborder}
-                    allowTransparency={Config.facebook.allowtransparency} />
+                    allowtransparency={Config.facebook.allowtransparency.toString()} />
             </div>
         );
     }
