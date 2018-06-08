@@ -40,7 +40,7 @@ View in browser at `http://localhost:3000`
 
 ## Live Demos
 
-* [Development Environment](http://aria.austinradams.com/) - Hosted by Austin Adams
+* [Development Environment](https://aria.austinradams.com/) - Hosted by Austin Adams
 * [Orion](https://playorion.net/) - v92 MapleStory Private Server
 * [Vertisy](https://vertisy.ca/) - v90 MapleStory Private Server
 
