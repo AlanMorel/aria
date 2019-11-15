@@ -29,7 +29,7 @@ class Vote extends React.Component {
             voteSites.push(
                 <div key={site.name}>
                     <h1>{site.name}</h1>
-                    <a href={this.getSiteUrl(site)} target="_blank">
+                    <a href={this.getSiteUrl(site)} target="_blank" rel="noopener noreferrer">
                         <div className="vote-link">
                             <img src="/images/vote.png" alt="" />
                             <div className="description">

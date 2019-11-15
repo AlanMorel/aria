@@ -20,7 +20,7 @@ class Footer extends React.Component {
 
                     Thank you and enjoy!
                 */}
-                <div className="copyright">Aria Copyright &copy; 2019 <a href="https://alanmorel.com/" target="_blank">Alan Morel</a> and <a href="http://austinradams.com/" target="_blank">Austin Adams</a>. All rights reserved.</div>
+                <div className="copyright">Aria Copyright &copy; 2019 <a href="https://alanmorel.com/" target="_blank" rel="noopener noreferrer">Alan Morel</a> and <a href="http://austinradams.com/" target="_blank" rel="noopener noreferrer">Austin Adams</a>. All rights reserved.</div>
             </footer>
         );
     }

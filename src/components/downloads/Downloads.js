@@ -17,7 +17,7 @@ class Downloads extends React.Component {
         return (
             <div>
                 <h1>{Config.server_name + " Setup"}</h1>
-                <a href={Config.setup_download_link} target="_blank">
+                <a href={Config.setup_download_link} target="_blank" rel="noopener noreferrer">
                     <div className="download-link">
                         <img src="/images/setup.png" alt="Setup" />
                         <div className="download-description">
@@ -37,7 +37,7 @@ class Downloads extends React.Component {
         return (
             <div>
                 <h1>{Config.server_name + " Client"}</h1>
-                <a href={Config.client_download_link} target="_blank">
+                <a href={Config.client_download_link} target="_blank" rel="noopener noreferrer">
                     <div className="download-link">
                         <img src="/images/client.png" alt="Client" />
                         <div className="download-description">
