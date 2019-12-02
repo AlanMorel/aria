@@ -29,6 +29,13 @@ class Login extends React.Component {
         });
     }
 
+    handleClick(event) {
+      event.preventDefault();
+
+      this.props.close();
+      this.props.openReset();
+    }
+
     render() {
         if (!this.props.open) {
             this.state = {
@@ -55,6 +62,9 @@ class Login extends React.Component {
                     <div>
                         <label htmlFor="password">Password</label>
                         <input className="password" name="password" type="password" />
+                    </div>
+                    <div>
+                      <a id="forgotten" href="#" onClick={this.handleClick.bind(this)}>Forgot Password?</a>
                     </div>
                     {alert}
                     <input className="button" type="submit" value="Login" />

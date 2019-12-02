@@ -1,5 +1,11 @@
 @import "../../stylesheets/Variables.scss";
 
 .login {
-
+  #forgotten {
+    display: block;
+    margin-top: 1em;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: x-small;
+  }
 }
