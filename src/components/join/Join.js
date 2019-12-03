@@ -78,7 +78,7 @@ class Join extends React.Component {
                         <input className="confirm" name="password_confirmation" type="password" />
                     </div>
                     <div className="repatcha-container">
-                        <ReCAPTCHA className="recaptcha" ref={(r) => this.recaptcha = r} onChange={this.recaptchaOnChange} sitekey={Config.recaptcha_key} />
+                        <ReCAPTCHA className="recaptcha" ref={r => this.recaptcha = r} onChange={this.recaptchaOnChange} sitekey={Config.recaptcha_key} />
                     </div>
                     {alert}
                     <div>
