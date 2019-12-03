@@ -15,7 +15,7 @@ class Reset extends React.Component {
 
     let form = new FormData(this.refs.form);
 
-    Axios.post('reset', form).then((response) => {
+    Axios.post("reset', form).then((response) => {
       if (response.data.success) {
         this.props.close();
         this.props.openPopup("Success", response.data.data);
