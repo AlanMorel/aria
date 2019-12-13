@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
-class Login extends React.Component {
+class Reset extends React.Component {
 
     constructor(props) {
         super(props);
@@ -10,28 +10,19 @@ class Login extends React.Component {
         };
     }
 
-    login(event) {
+    reset(event) {
         event.preventDefault();
 
-        var form = new FormData(this.refs.form);
-        Axios.post('login', form).then((response) => {
-            console.log(response.data);
+        let form = new FormData(this.refs.form);
 
+        Axios.post('reset', form).then((response) => {
             if (response.data.success) {
-                console.log("Successful Login");
                 this.props.close();
-                this.props.setLogin(response.data.data);
+                this.props.openPopup("Success", response.data.data);
             } else {
-                console.log("Failed to Login");
-                console.log(response.data.error);
                 this.setState({error: response.data.error});
             }
         });
-    }
-
-    handleClick(event) {
-        this.props.close();
-        this.props.openReset();
     }
 
     render() {
@@ -49,12 +40,16 @@ class Login extends React.Component {
         }
 
         return (
-            <div className="login">
-                <form onSubmit={this.login.bind(this)} ref="form">
+            <div className="reset">
+                <form onSubmit={this.reset.bind(this)} ref="form">
                     <div className="prompt-close" onClick={this.props.close}>&#10006;</div>
-                    <div className="prompt-title">Login</div>
+                    <div className="prompt-title">Reset</div>
                     <div>
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="mapleid">MapleID:</label>
+                        <input className="text" name="mapleid" type="text" />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
                         <input className="text" name="email" type="text" />
                     </div>
                     <div>
@@ -62,14 +57,15 @@ class Login extends React.Component {
                         <input className="password" name="password" type="password" />
                     </div>
                     <div>
-                        <span className="forgotten-link" onClick={this.handleClick.bind(this)}>Forgot Password?</span>
+                        <label htmlFor="confirm">Confirm</label>
+                        <input className="confirm" name="password_confirmation" type="password" />
                     </div>
                     {alert}
-                    <input className="button" type="submit" value="Login" />
+                    <input className="button" type="submit" value="Reset" />
                 </form>
             </div>
         );
     }
 }
 
-export default Login;
+export default Reset;
