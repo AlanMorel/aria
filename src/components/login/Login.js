@@ -62,7 +62,7 @@ class Login extends React.Component {
                         <input className="password" name="password" type="password" />
                     </div>
                     <div>
-                      <span id="forgotten-link" onClick={this.handleClick.bind(this)}>Forgot Password?</span>
+                        <span className="forgotten-link" onClick={this.handleClick.bind(this)}>Forgot Password?</span>
                     </div>
                     {alert}
                     <input className="button" type="submit" value="Login" />
