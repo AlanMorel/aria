@@ -5,7 +5,6 @@ import Config from './Config';
 
 import About from './components/about/About';
 import AdminPanel from './components/adminpanel/AdminPanel';
-import Downloads from './components/downloads/Downloads';
 import Disclaimer from './components/disclaimer/Disclaimer';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
@@ -70,7 +69,6 @@ class App extends React.Component {
                     <Route exact path="/rankings/:param1" component={Rankings}/>
                     <Route exact path="/rankings/:param1/:param2" component={Rankings}/>
                     <Route exact path="/rankings/:param1/:param2/:param3" component={Rankings}/>
-                    <Route exact path="/downloads" component={Downloads}/>
                     <Route exact path="/vote" component={VotePage}/>
                     <Route exact path="/adminpanel" component={AdminPanelPage}/>
                     <Footer/>

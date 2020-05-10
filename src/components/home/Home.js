@@ -34,7 +34,7 @@ class Home extends React.Component {
                         <Newslist pagination={false} category={false} />
                         <More type="news"/>
                         <Promo image="promo" page="vote" text={"Vote for " + Config.server_name + "!"} />
-                        <Promo image="download" page="downloads" text="Get in-game!" />
+                        <Promo image="about" page="about" text={"What is " + Config.server_name + "?"} />
                         <h1>Player Rankings</h1>
                         <Rankingslist pagination={false} category={false} />
                         <More type="rankings" />

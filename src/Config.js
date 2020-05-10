@@ -2,11 +2,6 @@ var Config = {};
 
 Config.server_name = "Aria";
 
-Config.setup_download_link = "https://www.google.com/";
-Config.client_download_link = "https://www.google.com/";
-
-Config.forum_link = "https://www.google.com/";
-
 Config.recaptcha_key = "";
 
 Config.version = 83;
