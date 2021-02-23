@@ -17,13 +17,11 @@
 
 ## Installation
 
-Install node, npm, then clone this repository
+1. Install node, npm, clone this repository, then install the dependencies
 
 ```sh
 $ git clone https://github.com/AlanMorel/aria aria
 ```
-
-Install the dependencies
 
 ```sh
 $ cd aria
@@ -37,7 +35,7 @@ $ npm install yarn -g
 $ yarn install
 ```
 
-Edit `Config.js` to your liking, then start the app
+2. Edit `Config.js` to your liking, then start the app
 
 ```sh
 $ yarn start
